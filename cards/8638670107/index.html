@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NE- Connect | Official Profile</title>
+    
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="NE- Connect - Official Profile">
+    <meta property="og:description" content="Get directions, contact details, WhatsApp booking, and reviews for NE- Connect.">
+    <meta property="og:image" content="https://ne-connect.github.io/cards/8638670107/profile.jpg">
+    <meta property="og:url" content="https://ne-connect.github.io/cards/8638670107/">
+
+    <style>
+        :root { --primary: #1e3a8a; --bg: #f8fafc; --text: #334155; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background: var(--bg); color: var(--text); padding-bottom: 80px; }
+        
+        /* HEADER */
+        .header { background: white; padding: 20px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .logo-img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); margin-bottom: 10px; }
+        h1 { color: #0f172a; font-size: 22px; font-weight: 700; margin-bottom: 5px; }
+        .badge { background: #dbeafe; color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-block; }
+        
+        /* ACTION BUTTONS */
+        .actions { 
+            display: grid; 
+            gap: 8px; 
+            padding: 15px; 
+            max-width: 600px; 
+            margin: 0 auto; 
+            grid-template-columns: 1fr 1fr; 
+        }
+        .btn { 
+            padding: 10px; border-radius: 8px; text-align: center; text-decoration: none; font-weight: 700; font-size: 13px; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; 
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            min-height: 50px; 
+        }
+        
+        .btn-wa { background: #25D366; color: white; }
+        .btn-book { background: #7c3aed; color: white; }
+        .btn-map { background: #eff6ff; color: var(--primary); border: 1px solid #bfdbfe; }
+        .btn-review { background: #fbbf24; color: black; }
+
+        /* SECTIONS */
+        .card { background: white; margin: 15px 20px; padding: 20px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); max-width: 600px; }
+        .card-title { font-size: 16px; font-weight: 700; margin-bottom: 12px; color: #0f172a; border-left: 4px solid var(--primary); padding-left: 10px; }
+        p { font-size: 14px; line-height: 1.6; color: #475569; }
+        
+        /* GALLERY GRID */
+        .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 10px; }
+        .gallery img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; cursor: pointer; transition: 0.2s; }
+        .gallery img:hover { transform: scale(1.02); }
+
+        /* CONTACT LIST */
+        .contact-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-size: 14px; }
+        .icon { width: 32px; height: 32px; background: #f1f5f9; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); }
+
+        /* FOOTER */
+        .footer { text-align: center; font-size: 12px; color: #94a3b8; margin-top: 30px; }
+        
+        /* DEMO BADGE */
+        #demoBadge { position: fixed; top: 10px; right: 10px; background: #dc2626; color: white; padding: 6px 12px; font-size: 11px; font-weight: 700; border-radius: 20px; z-index: 999; display: none; }
+
+        @media(min-width: 600px) { .card, .header { margin: 20px auto; max-width: 600px; } }
+    </style>
+<link rel="canonical" href="https://ne-connect.github.io/cards/8638670107/">
+</head>
+<body>
+
+    
+
+    <div id="demoBadge">PREVIEW DEMO</div>
+
+    <div class="header">
+        <img src="https://ne-connect.github.io/cards/8638670107/profile.jpg" alt="Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/100?text=Logo'">
+        <h1>NE- Connect</h1>
+        <div class="badge">Manager</div>
+    </div>
+
+    <div class="actions">
+        <a href="#" class="btn btn-wa"><span>💬 Chat</span></a>
+        <a id="bookBtn" href="https://wa.me/918638370107?text=Hi%20NE-%20Connect%2C%20I%20saw%20your%20digital%20profile%20and%20want%20to%20book%20an%20appointment." target="_blank" class="btn btn-book"><span>📅 Book Now</span></a>
+        <a id="mapBtn" href="" target="_blank" class="btn btn-map"><span>📍 Directions</span></a>
+        <a id="reviewBtn" href="" target="_blank" class="btn btn-review"><span>⭐ Review</span></a>
+    </div>
+
+    <div class="card">
+        <div class="card-title">About Us</div>
+        <p>NE Connect helps local businesses grow their online presence without expensive websites. We specialize in Smart Digital Business Cards, Google Review Management, and Automated Appointment Systems.</p>
+    </div>
+
+    <div class="card" id="gallery-card">
+        <div class="card-title">Our Gallery</div>
+        <div class="gallery" id="gallery-container"></div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Contact Info</div>
+        <div class="contact-row">
+            <div class="icon">👤</div>
+            <div>
+                <div style="font-size:12px; color:#64748b;">Contact Person</div>
+                <div style="font-weight:600;">CEO</div>
+            </div>
+        </div>
+        <div class="contact-row">
+            <div class="icon">📞</div>
+            <div>
+                <div style="font-size:12px; color:#64748b;">Phone</div>
+                <div style="font-weight:600;">
+                    <a id="phoneLink" href="#" style="color:inherit;text-decoration:none;">
+                        <span id="phoneText">+91 8638670107</span>
+                    </a>
+                    <span id="copied" style="display:none; font-size:11px; color:#16a34a; font-weight:700; margin-left:6px;">Copied</span>
+                </div>
+            </div>
+        </div>
+        <div class="contact-row">
+            <div class="icon">🏠</div>
+            <div>
+                <div style="font-size:12px; color:#64748b;">Address</div>
+                <div style="font-weight:600;">Rajgarh, Guwahati</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div style="margin-bottom:6px; font-weight:600; color:#cbd5e1;">POWERED BY</div>
+        <a href="https://ne-connect.github.io/" target="_blank" style="text-decoration:none;">
+            <span style="color:#1e3a8a; font-weight:800; font-size:14px; letter-spacing:0.5px;">NE CONNECT</span>
+        </a>
+        <div style="margin-top:10px;">
+            <a href="https://ne-connect.github.io/" target="_blank" 
+               style="color:#64748b; font-size:11px; text-decoration:none; border:1px solid #e2e8f0; padding:6px 12px; border-radius:20px; background:#fff; display:inline-block; box-shadow:0 1px 2px rgba(0,0,0,0.02);">
+               🚀 Want a profile like this? Tap here
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function cleanNumber(n){ return (n || "").toString().replace(/[^\d]/g, "").replace(/^91/, "").slice(-10); }
+
+        const waBtn = document.querySelector(".btn-wa");
+        const bookBtn = document.getElementById("bookBtn");
+        const mapBtn = document.getElementById("mapBtn");
+        const reviewBtn = document.getElementById("reviewBtn");
+        
+        // 1. WhatsApp Logic
+        const waNumber = "8638370107";
+        const phoneNumber = "8638670107";
+        const rawName = "NE- Connect";
+        const safeName = (!rawName || rawName.includes("NE- Connect")) ? "there" : rawName;
+        const rawFinal = (waNumber && !waNumber.includes("8638370107") && waNumber.trim() !== "") ? waNumber : phoneNumber;
+        const finalWa = cleanNumber(rawFinal);
+        
+        if (!finalWa || finalWa.length < 10) { waBtn.style.display = "none"; } 
+        else {
+            const waMsg = `Hi ${safeName}, I have a query. Please assist.`;
+            waBtn.href = `https://wa.me/91${finalWa}?text=${encodeURIComponent(waMsg)}`;
+        }
+
+        // 2. Booking Logic
+        const bookLink = "https://wa.me/918638370107?text=Hi%20NE-%20Connect%2C%20I%20saw%20your%20digital%20profile%20and%20want%20to%20book%20an%20appointment.";
+        if (!bookLink || bookLink.includes("https://wa.me/918638370107?text=Hi%20NE-%20Connect%2C%20I%20saw%20your%20digital%20profile%20and%20want%20to%20book%20an%20appointment.") || bookLink === "") { bookBtn.style.display = "none"; }
+
+        // 3. Map Logic
+        const mapLink = "";
+        if (!mapLink || mapLink.includes("") || mapLink.trim() === "") { mapBtn.style.display = "none"; }
+
+        // 4. Review Logic
+        const reviewLink = "";
+        if (!reviewLink || reviewLink.includes("") || reviewLink.trim() === "") { reviewBtn.style.display = "none"; }
+
+        // GRID LAYOUT
+        let visibleCount = 0;
+        [waBtn, bookBtn, mapBtn, reviewBtn].forEach(btn => { if (btn.style.display !== "none") visibleCount++; });
+        const grid = document.querySelector('.actions');
+        if (visibleCount === 4) grid.style.gridTemplateColumns = "1fr 1fr";
+        else if (visibleCount === 3) grid.style.gridTemplateColumns = "1fr 1fr 1fr";
+        else grid.style.gridTemplateColumns = `repeat(${Math.max(1, visibleCount)}, 1fr)`;
+
+        // GALLERY
+        const galleryFiles = []; 
+        const galleryContainer = document.getElementById('gallery-container');
+        if (galleryFiles.length > 0) {
+            galleryFiles.forEach(src => {
+                const link = document.createElement('a');
+                link.href = src; link.target = "_blank"; link.rel = "noopener";  
+                const img = document.createElement('img'); img.src = src;
+                link.appendChild(img); galleryContainer.appendChild(link);
+            });
+        } else { document.getElementById('gallery-card').style.display = 'none'; }
+
+        // EXPIRED LOGIC (TIME BOMB)
+        const expiryStr = "2099-12-31"; 
+        if (expiryStr && expiryStr !== "2099-12-31") {
+            document.getElementById("demoBadge").style.display = "block";
+            const today = new Date();
+            const expiry = new Date(expiryStr);
+            expiry.setHours(23, 59, 59);
+
+            if (today > expiry) {
+                // LOCK SCREEN
+                document.body.innerHTML = `
+                    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;text-align:center;font-family:sans-serif;background:#fff;padding:20px;">
+                        <h1 style="color:#dc2626;font-size:24px;margin-bottom:10px;">⚠️ TRIAL EXPIRED</h1>
+                        <p style="color:#1f2937;font-weight:600;margin:0 0 5px;font-size:16px;">This business hub preview has ended.</p>
+                        <p style="color:#6b7280;font-size:14px;margin:0 0 25px;max-width:300px;line-height:1.5;">
+                            Your customers will not see this message after activation.
+                        </p>
+                        
+                        <a href="https://ne-connect.github.io/order.html?phone=8638670107" 
+                           style="background:#1e3a8a;color:white;padding:12px 25px;text-decoration:none;border-radius:50px;font-weight:700;box-shadow:0 4px 10px rgba(30, 58, 138, 0.3);">
+                           Remove Preview & Activate
+                        </a>
+
+                        <div style="margin-top:20px;font-size:13px;color:#6b7280;">
+                            Or message us on WhatsApp: 
+                            <br>
+                            <a href="https://wa.me/918638370107?text=Hi%20NE%20Connect%2C%20I%20want%20to%20activate%20my%20Business%20Hub%20for%208638670107." 
+                               target="_blank" style="color:#1e3a8a;font-weight:700;text-decoration:none;display:inline-block;margin-top:4px;">
+                                Tap here to Chat
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // PHONE LINK SAFETY
+        const phoneLink = document.getElementById("phoneLink");
+        const phoneText = document.getElementById("phoneText");
+        const copied = document.getElementById("copied");
+        const cleanPh = cleanNumber("8638670107");
+
+        // Safe Update: Update href and text separately without killing siblings
+        if (phoneLink) { phoneLink.href = `tel:+91${cleanPh}`; }
+        if (phoneText) { phoneText.textContent = `+91 ${cleanPh}`; }
+
+        if (phoneLink && navigator.clipboard) {
+            phoneLink.addEventListener("click", async (e) => {
+                if (window.innerWidth > 900) {
+                    e.preventDefault();
+                    try { 
+                        await navigator.clipboard.writeText(cleanPh);
+                        if (copied) {
+                            copied.style.display = "inline";
+                            setTimeout(() => copied.style.display = "none", 1200);
+                        }
+                    } catch {}
+                }
+            });
+        }
+    </script>
+</body>
+</html>
