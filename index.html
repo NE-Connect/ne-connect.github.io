@@ -3,135 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NE Connect | Digital Identity Solutions</title>
-    <meta name="description" content="Premium Digital Business Cards in Assam. Boost your business with Google Reviews. One-time payment.">
+    <title>NE Connect Business Hub | WhatsApp Enquiries & Google Reviews</title>
+    <meta name="description" content="Turn Google Maps visitors into customers. Automated WhatsApp bookings and 5-Star Review growth.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="https://ne-connect.github.io/logo.png">
+
+    <meta property="og:site_name" content="NE Connect">
+    <meta property="og:title" content="NE Connect Business Hub">
+    <meta property="og:description" content="One-time activation. No monthly fees. Turn Google visitors into WhatsApp enquiries & 5-star reviews.">
+    <meta property="og:image" content="https://ne-connect.github.io/logo.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ne-connect.github.io/">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://ne-connect.github.io/logo.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
-            --primary: #0a4275;       /* Royal Blue */
+            --primary: #0a4275;       /* Trust Blue */
+            --primary-dark: #062e56;
             --gold: #d4af37;          /* Premium Gold */
-            --orange: #F48120;        /* Orange Accent */
-            --bg: #f0f4f8;            
-            --text: #333;
-            --danger: #dc3545;
+            --gold-light: #fffcf5;
+            --bg: #f4f7fa;            
+            --text: #1f2937;
+            --text-light: #6b7280;
         }
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; }
+        
+        * { box-sizing: border-box; }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            background: var(--bg); 
+            color: var(--text); 
+            line-height: 1.6; 
+            -webkit-font-smoothing: antialiased;
+        }
 
         /* NAVBAR */
         .navbar { 
-            background: white; 
-            padding: 20px 5%; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+            background: rgba(255, 255, 255, 0.95); 
+            backdrop-filter: blur(10px);
+            padding: 12px 5%; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03); 
             display: flex; 
             justify-content: center; 
-            align-items: center; 
             position: sticky; 
             top: 0; 
             z-index: 1000; 
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
-        .brand { display: flex; flex-direction: column; align-items: center; text-decoration: none; gap: 10px; }
-        .logo-img { height: 110px; width: auto; border: 3px solid var(--orange); border-radius: 15px; padding: 5px; background: white; }
-        .brand-text { font-weight: 800; font-size: 24px; color: var(--primary); text-transform: uppercase; letter-spacing: 2px; }
-        .msme-badge { font-size: 11px; background: var(--primary); color: white; padding: 4px 10px; border-radius: 4px; margin-top: 5px; }
+        .brand { display: flex; flex-direction: column; align-items: center; text-decoration: none; }
+        .logo-img { height: 60px; width: auto; margin-bottom: 2px; }
+        .brand-text { font-weight: 800; font-size: 18px; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; line-height: 1; }
+        .msme-badge { font-size: 9px; background: var(--primary); color: white; padding: 2px 6px; border-radius: 4px; margin-top: 4px; font-weight: 600; letter-spacing: 0.5px; }
 
-        /* HERO */
-        .hero { text-align: center; padding: 60px 20px 100px; background: linear-gradient(135deg, #0a4275 0%, #001f3f 100%); color: white; }
-        .hero h1 { font-size: 42px; margin-bottom: 15px; line-height: 1.1; font-weight: 800; max-width: 800px; margin-left: auto; margin-right: auto; }
-        .hero p { font-size: 18px; opacity: 0.9; max-width: 600px; margin: 0 auto 30px; }
-        .trust-badges { display: flex; justify-content: center; gap: 20px; font-size: 14px; opacity: 0.9; margin-top: 30px; flex-wrap: wrap; }
-        .trust-badges span { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.15); padding: 8px 18px; border-radius: 30px; }
-        
-        .hero-btn { background: var(--gold); color: black; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; margin-top: 20px; }
-        .hero-btn:hover { transform: scale(1.05); box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); }
-        
-        /* SCARCITY NUKE & NUDGE */
-        .scarcity-text { font-size: 12px; margin-top: 15px; opacity: 0.8; font-style: italic; color: #ffeb3b; }
-        .hero-nudge { font-size: 13px; margin-top: 8px; color: #e0e0e0; font-weight: 500; }
-
-        /* PRICING CONTAINER */
-        .container { max-width: 1150px; margin: -60px auto 60px; padding: 0 20px; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; align-items: center; }
-        
-        .price-card { background: white; padding: 30px; border-radius: 15px; text-align: center; border: 1px solid #eee; transition: 0.3s; position: relative; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
-        .price-card:hover { transform: translateY(-5px); }
-
-        /* TIER: BASIC (De-emphasized) */
-        .basic { 
-            border-top: 5px solid #777; 
-            opacity: 0.85;            /* Make it look faded */
-            filter: grayscale(10%);   /* Make it look less colorful */
+        /* HERO SECTION */
+        .hero { 
+            text-align: center; 
+            padding: 60px 20px 100px; 
+            background: linear-gradient(135deg, #0a4275 0%, #001f3f 100%); 
+            color: white; 
+            position: relative;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
         }
         
-        /* TIER: PRO */
-        .pro { border-top: 5px solid var(--primary); border: 2px solid #e0e0e0; }
-
-        /* TIER: PROMAX (The Hero) */
-        .promax { 
-            border: 3px solid var(--gold); 
-            background: linear-gradient(to bottom, #fffbf0, #fff); 
-            transform: scale(1.05); 
-            z-index: 10; 
-            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.25);
-            padding-top: 40px;
-            padding-bottom: 40px;
+        .hero h1 { 
+            font-size: 36px; 
+            margin-bottom: 15px; 
+            font-weight: 800; 
+            line-height: 1.2; 
+            max-width: 800px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            position: relative;
+        }
+        .hero p { 
+            font-size: 18px; 
+            opacity: 0.9; 
+            max-width: 600px; 
+            margin: 0 auto 30px; 
+            font-weight: 400;
+            position: relative;
+        }
+        
+        /* CARD CONTAINER */
+        .container { max-width: 500px; margin: -80px auto 60px; padding: 0 20px; position: relative; z-index: 10; }
+        
+        .offer-card { 
+            background: white; 
+            border-radius: 24px; 
+            text-align: center; 
+            overflow: hidden; 
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); 
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+        }
+        .offer-card::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #b08d28, #d4af37, #b08d28);
         }
 
-        /* BADGES */
-        .badge { position: absolute; top: 0; left: 50%; transform: translateX(-50%); padding: 5px 15px; font-size: 12px; font-weight: bold; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; color: white; width: 100px; }
-        .badge-pro { background: var(--primary); }
-        .badge-promax { background: var(--gold); color: black; width: 160px; top: 15px; right: -45px; left: auto; transform: rotate(45deg); border-radius: 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); font-size: 13px; text-transform: uppercase; letter-spacing: 1px;}
-
-        .plan-name { font-size: 24px; font-weight: 800; margin: 10px 0 5px; color: #333; }
-        .price { font-size: 36px; font-weight: 800; color: #222; margin: 10px 0 0; }
+        .header-ribbon { 
+            background: var(--gold-light); 
+            color: #8a6d1c; 
+            font-weight: 700; 
+            padding: 12px; 
+            font-size: 13px; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            border-bottom: 1px dashed #e0d0a0;
+            margin-top: 6px;
+        }
         
-        /* SUBTITLE STYLES */
-        .sub-price { font-size: 13px; color: #666; margin-bottom: 5px; font-weight: 500; }
-        .sub-price.highlight { color: var(--primary); font-weight: 700; margin-bottom: 0; }
-        .social-proof { font-size: 12px; color: #555; margin-bottom: 15px; font-weight: 600; font-style: italic; }
+        .card-body { padding: 30px 24px; }
         
-        .pitch { font-size: 13px; color: #666; margin-bottom: 20px; font-style: italic; min-height: 40px; line-height: 1.4; padding: 0 10px; }
-        .pitch.promax-pitch { color: #b08d28; font-weight: 600; }
+        .product-title { font-size: 26px; font-weight: 800; color: var(--primary); margin-bottom: 4px; letter-spacing: -0.5px; }
+        .product-subtitle { color: var(--text-light); font-size: 15px; margin-bottom: 15px; font-weight: 500; }
+        
+        .target-audience { font-size: 13px; color: #4b5563; margin-bottom: 25px; font-weight: 500; background: #f3f4f6; display: inline-block; padding: 4px 12px; border-radius: 20px; }
 
-        /* FEATURES LIST */
-        .features { list-style: none; padding: 0; margin-bottom: 20px; text-align: left; border-top: 1px solid #eee; padding-top: 20px; }
-        .features li { padding: 8px 0; font-size: 14px; color: #555; display: flex; align-items: center; gap: 10px; }
-        .check { color: #28a745; font-size: 16px; }
-        .cross { color: #ccc; font-size: 16px; }
+        .price-container { 
+            margin: 20px 0; 
+            background: #f8fafc; 
+            padding: 20px; 
+            border-radius: 16px; 
+            border: 1px solid #e2e8f0; 
+        }
+        .old-price { font-size: 14px; color: var(--text-light); font-weight: 600; text-decoration: line-through; margin-bottom: 2px; }
+        .new-price { font-size: 48px; font-weight: 800; color: var(--text); line-height: 1; letter-spacing: -1px; }
+        .validity { font-size: 13px; font-weight: 700; color: var(--primary); text-transform: uppercase; margin-top: 8px; letter-spacing: 0.5px; }
+
+        /* FEATURES */
+        .features { list-style: none; padding: 0; margin: 30px 0; text-align: left; }
+        .features li { 
+            padding: 12px 0; 
+            border-bottom: 1px solid #f1f5f9; 
+            display: flex; 
+            align-items: flex-start; 
+            gap: 15px; 
+            font-size: 15px; 
+            color: #374151; 
+        }
+        .features li:last-child { border-bottom: none; }
+        .icon-check { color: #10b981; margin-top: 3px; font-size: 16px; }
 
         /* BUTTONS */
-        .card-btn { display: block; width: 100%; padding: 14px; text-align: center; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.2s; box-sizing: border-box; }
-        .btn-basic { border: 2px solid #ddd; color: #555; }
-        .btn-pro { background: var(--primary); color: white; }
-        
-        .btn-promax { 
-            background: linear-gradient(45deg, #c9a227, #f3d36b); 
-            color: black; 
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); 
-            font-size: 16px; 
-            border: 1px solid #cfaa32; 
+        .cta-btn { 
+            width: 100%; 
+            padding: 18px; 
+            border-radius: 12px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-size: 18px; 
+            transition: all 0.2s ease;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: none;
+            cursor: pointer;
         }
-        .card-btn:hover { opacity: 0.95; transform: translateY(-2px); }
+        
+        .btn-wa {
+            background: linear-gradient(180deg, #25D366 0%, #128C7E 100%);
+            color: white; 
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+        .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(37, 211, 102, 0.4); }
 
-        /* WARNING TEXTS */
-        .warning-text { font-size: 11px; color: var(--danger); margin-top: 10px; font-style: italic; border-top: 1px dotted #ddd; padding-top: 10px; }
-        .guidance-text { text-align: center; margin-top: 30px; color: #444; font-weight: 600; font-size: 14px; }
-        .nuclear-note { text-align: center; font-size: 12px; color: #777; margin-top: 10px; background: #fff3cd; display: inline-block; padding: 5px 15px; border-radius: 4px; border: 1px solid #ffeeba; }
+        .btn-order {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        .btn-order:hover { background: #f0f7ff; transform: translateY(-2px); }
 
-        /* ADD-ONS SECTION */
-        .addons-section { text-align: center; margin-top: 60px; margin-bottom: 60px; padding: 0 10px; }
-        .addons-title { font-size: 22px; color: var(--primary); margin-bottom: 25px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
-        .addons-table { width: 100%; max-width: 700px; margin: 0 auto; border-collapse: separate; border-spacing: 0; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1px solid #eee; }
-        .addons-table th { background: var(--primary); color: white; padding: 18px 20px; text-align: left; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
-        .addons-table td { padding: 16px 20px; border-bottom: 1px solid #f0f0f0; color: #555; font-size: 15px; font-weight: 500; }
-        .addons-table tr:last-child td { border-bottom: none; }
-        .addons-table .price-col { text-align: right; font-weight: 800; color: var(--primary); font-size: 16px; }
+        .btn-demo {
+            margin-top: 20px;
+            background: transparent;
+            color: var(--text-light);
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 2px;
+            text-decoration: none;
+            padding-bottom: 2px;
+        }
+        .btn-demo i { font-size: 16px; margin-bottom: 4px; }
+        .btn-demo:hover { color: var(--primary); }
+        .demo-warning { font-size: 10px; color: #dc2626; font-weight: 500; }
+        
+        .micro-trust { font-size: 12px; color: var(--text-light); margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 6px; }
 
-        footer { background: #001f3f; color: #8aa; padding: 60px 20px; text-align: center; font-size: 13px; margin-top: 80px; }
-        .footer-links a { color: #bbb; text-decoration: none; margin: 0 5px; }
+        /* FAQ SECTION */
+        .faq-section { max-width: 600px; margin: 40px auto 60px; padding: 0 20px; }
+        .faq-title { text-align: center; font-weight: 800; color: var(--primary); margin-bottom: 25px; font-size: 22px; }
+        .faq-item { 
+            background: white; 
+            border-radius: 12px; 
+            margin-bottom: 15px; 
+            padding: 20px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04); 
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        .faq-q { font-weight: 700; color: var(--text); font-size: 16px; margin-bottom: 8px; }
+        .faq-a { color: var(--text-light); font-size: 15px; line-height: 1.6; }
 
-        @media (max-width: 768px) {
-            .pricing-grid { gap: 40px; }
-            .promax { transform: scale(1); border-width: 4px; order: -1; } 
+        footer { 
+            text-align: center; 
+            font-size: 13px; 
+            color: var(--text-light); 
+            border-top: 1px solid #e5e7eb; 
+            padding: 40px 20px; 
+            background: white;
+        }
+        footer a { color: var(--text-light); transition: 0.2s; }
+        footer a:hover { color: var(--primary); }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 28px; }
+            .new-price { font-size: 40px; }
         }
     </style>
 </head>
@@ -139,133 +249,128 @@
 
     <nav class="navbar">
         <a href="#" class="brand">
-            <img src="logo.png" alt="NE Logo" class="logo-img">
-            <div style="text-align:center;">
-                <div class="brand-text">NE Connect</div>
-                <div class="msme-badge">GOVT. REG. MSME</div>
-            </div>
+            <img src="https://ne-connect.github.io/logo.png" alt="NE Connect" class="logo-img">
+            <div class="brand-text">NE Connect</div>
+            <div class="msme-badge">REG. MSME: UDYAM-AS-03-0083968</div>
         </a>
     </nav>
 
     <header class="hero">
-        <h1>A Digital Card That Brings You Calls, Reviews & Appointments</h1>
-        <p>Increase Calls, WhatsApp Inquiries & Google Reviews. <br>Join 50+ businesses in Assam.</p>
-        <div class="trust-badges">
-            <span><i class="fa-solid fa-check-circle"></i> No Subscriptions</span>
-            <span><i class="fa-solid fa-check-circle"></i> One-Time Payment</span>
-        </div>
-        <a href="order.html" class="hero-btn">Get Your Digital Card</a>
-        <div class="scarcity-text">⚠️ We accept a limited number of new clients per week to maintain quality.</div>
-        <div class="hero-nudge">Most clinics choose ProMax for reviews & appointment enquiries.</div>
+        <h1>Turn Google Visitors into WhatsApp Enquiries & 5-Star Reviews</h1>
+        <p>A lightweight business hub that opens instantly—no app, no monthly fee.</p>
     </header>
 
-    <div class="container" id="pricing">
-        <div class="pricing-grid">
+    <div class="container">
+        
+        <div class="offer-card">
+            <div class="header-ribbon">Most Popular in Assam</div>
             
-            <div class="price-card basic">
-                <div class="plan-name">BASIC</div>
-                <div class="price">₹1,499</div>
-                <div class="sub-price">One-time payment</div>
-                <div class="pitch">"The Digital Identity"<br>Perfect for individuals just starting out.</div>
-                <ul class="features">
-                    <li><i class="fa-solid fa-check-circle check"></i> Call & WhatsApp Buttons</li>
-                    <li><i class="fa-solid fa-check-circle check"></i> Save Contact (vCard)</li>
-                    <li><i class="fa-solid fa-check-circle check"></i> Lifetime Validity</li>
-                    <li><i class="fa-solid fa-circle-xmark cross"></i> No Edits</li>
-                    <li><i class="fa-solid fa-circle-xmark cross"></i> No Review Link</li>
-                </ul>
-                <a href="order.html" class="card-btn btn-basic">Select Basic</a>
-                <div class="warning-text">⚠️ Not recommended for clinics or businesses relying on Google reviews.</div>
-            </div>
-
-            <div class="price-card pro">
-                <div class="badge badge-pro">MOST CHOSEN</div>
-                <div class="plan-name">PRO</div>
-                <div class="price">₹3,999</div>
-                <div class="sub-price">For small businesses</div>
-                <div class="pitch">"The Mini Website"<br>Showcase your work and location.</div>
-                <ul class="features">
-                    <li><i class="fa-solid fa-check-circle check"></i> <b>Everything in Basic</b></li>
-                    <li><i class="fa-solid fa-check-circle check"></i> Google Maps Location</li>
-                    <li><i class="fa-solid fa-check-circle check"></i> Photo Gallery & About Us</li>
-                    <li><i class="fa-solid fa-check-circle check"></i> <strong>Delivery in 48 hrs</strong></li>
-                    <li><i class="fa-solid fa-check-circle check"></i> <strong>1 Free Revision</strong></li>
-                </ul>
-                <a href="order.html" class="card-btn btn-pro">Select Pro</a>
-            </div>
-
-            <div class="price-card promax">
-                <div class="badge badge-promax">BEST VALUE</div>
-                <div class="plan-name">PRO MAX</div>
-                <div class="price">₹6,999</div>
-                <div class="sub-price">Our most complete solution</div>
-                <div class="sub-price highlight">One-time | No monthly fees</div>
-                <div class="social-proof">Used by clinics across Assam</div>
+            <div class="card-body">
+                <div class="product-title">NE Connect Business Hub</div>
+                <div class="product-subtitle">Google Conversion System (All-in-One)</div>
                 
-                <div class="pitch promax-pitch">"Recommended for Clinics & Serious Businesses"</div>
+                <div class="target-audience">Works for: Clinics · Shops · Restaurants · Services</div>
+
+                <div class="price-container">
+                    <div class="old-price">Standard Price: ₹3,499</div>
+                    <div class="new-price"><span class="price">₹2,499</span></div>
+                    
+                    <div class="validity">One-time Activation · No Monthly Fees</div>
+                    
+                    <div style="font-size:12px;color:#dc2626;font-weight:600;margin-top:6px;">
+                        Introductory Price · Limited Slots (We onboard manually)
+                    </div>
+                </div>
+
                 <ul class="features">
-                    <li><i class="fa-solid fa-check-circle check"></i> <b>Everything in Pro</b></li>
-                    <li><i class="fa-solid fa-check-circle check"></i> <strong>5-Star Review Growth System</strong></li>
-                    <li><i class="fa-solid fa-check-circle check"></i> <strong>Automatic Appointment Requests</strong></li>
-                    <li><i class="fa-solid fa-check-circle check"></i> <strong>Priority Delivery (24 hrs)</strong></li>
-                    <li><i class="fa-solid fa-check-circle check"></i> <strong>2 Free Revisions</strong></li>
+                    <li>
+                        <i class="fa-solid fa-star icon-check"></i>
+                        <span><b>5-Star Review Booster:</b> Dedicated link to increase Google ratings.</span>
+                    </li>
+                    <li>
+                        <i class="fa-brands fa-whatsapp icon-check"></i>
+                        <span><b>1-Tap WhatsApp Booking:</b> Customers send pre-filled enquiries instantly.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-images icon-check"></i>
+                        <span><b>Digital Portfolio:</b> Showcase your menu, services, or clinic photos.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-bolt icon-check"></i>
+                        <span><b>Fast-Loading:</b> Hosted on reliable, lightweight infrastructure.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-gift icon-check"></i>
+                        <span><b>Bonus:</b> Printable QR Code Design included.</span>
+                    </li>
                 </ul>
+
+                <a href="https://wa.me/918638370107?text=Hi%20NE%20Connect%2C%20I%20want%20to%20activate%20the%20Business%20Hub%20for%20%E2%82%B92499.%0A%0AMy%20business%20category%3A%20_____%0ALocation%3A%20_____" class="cta-btn btn-wa">
+                    <i class="fa-brands fa-whatsapp"></i> Activate for ₹2,499
+                </a>
+
+                <a href="order.html" class="cta-btn btn-order">
+                    <i class="fa-solid fa-file-invoice"></i> Pay & Fill Details
+                </a>
                 
-                <div style="font-size: 11px; text-align: center; color: #666; margin-bottom: 10px; font-style: italic;">Includes setup, configuration & post-delivery support</div>
+                <div class="micro-trust">
+                    <i class="fa-solid fa-qrcode"></i> UPI Accepted · Delivery in 24–48 Hours
+                </div>
                 
-                <a href="order.html" class="card-btn btn-promax">Get ProMax — Recommended</a>
+                <div style="font-size:13px; color:#6b7280; text-align:center; margin-top:20px;">
+                    Try the preview below. No obligation.
+                </div>
+
+                <div style="text-align:center;">
+                    <a href="https://ne-connect.github.io/cards/8638370107/" class="btn-demo" target="_blank" rel="noopener nofollow">
+                        <span><i class="fa-solid fa-eye"></i> See Live Example</span>
+                        <span class="demo-warning">Demo resets weekly · Limited preview</span>
+                    </a>
+                    <div style="font-size:11px;color:#6b7280;margin-top:8px;">
+                        Want your own demo? Send your phone number on WhatsApp.
+                    </div>
+                </div>
             </div>
-
-        </div>
-
-        <div class="guidance-text">💡 Most clients start with Pro or ProMax for long-term flexibility.</div>
-        <div style="text-align:center;">
-            <div class="nuclear-note">⚠️ Note: Basic plan does not include future edits or support.</div>
-        </div>
-
-        <div class="addons-section">
-            <div class="addons-title">Additional Services & Add-ons</div>
-            <table class="addons-table">
-                <tr>
-                    <th>Service / Upgrade</th>
-                    <th class="price-col">Price</th>
-                </tr>
-                <tr>
-                    <td>Urgent Delivery (< 24 Hours)</td>
-                    <td class="price-col">₹999</td>
-                </tr>
-                <tr>
-                    <td>Template / Design Change (Post-Delivery)</td>
-                    <td class="price-col">₹999</td>
-                </tr>
-                <tr>
-                    <td>Extra Revision Round</td>
-                    <td class="price-col">₹499</td>
-                </tr>
-                <tr>
-                    <td>Content Writing / Text Rewrite</td>
-                    <td class="price-col">₹499</td>
-                </tr>
-                <tr>
-                    <td>Image Editing / Cleanup</td>
-                    <td class="price-col">₹499</td>
-                </tr>
-            </table>
-            <div class="small-note">* Add-on fees are payable in advance. Prices subject to change.</div>
         </div>
 
     </div>
 
-    <footer>
-        <span style="font-weight:bold; font-size:18px; display:block; margin-bottom:10px;">NE CONNECT</span>
-        <div style="margin-bottom:5px; font-weight:500;">Serving Assam-based businesses since 2025</div>
-        <div style="margin-bottom:10px;">Sonti Kutir, Rajgarh, Guwahati - 781024</div>
-        <div style="margin-bottom:20px; font-family:monospace; opacity:0.7;">UDYAM-AS-03-0083968</div>
-        <div class="footer-links">
-            <a href="legal.html">Privacy & Terms</a> | <a href="https://wa.me/918638370107">Support</a>
+    <div class="faq-section">
+        <div class="faq-title">Frequently Asked Questions</div>
+        
+        <div class="faq-item">
+            <div class="faq-q">Is there really no monthly fee?</div>
+            <div class="faq-a">Yes. You pay a one-time activation fee. Hosting is included. Updates/revisions are separate.</div>
         </div>
-        <br>
-        <p>© 2026 NE Connect. Made in India.</p>
+
+        <div class="faq-item">
+            <div class="faq-q">Can I edit my details later?</div>
+            <div class="faq-a">We provide one free revision round immediately after delivery. Any future updates are charged a small maintenance fee (₹299).</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">What do you need from me to activate?</div>
+            <div class="faq-a">Business name, Google Maps link, 5–10 photos, and services/menu list.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-q">Do I need a domain name?</div>
+            <div class="faq-a">No. Your hub is hosted on our secure NE Connect platform, so you don't need to buy a domain or server.</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>NE Connect · Premium Business Solutions<br>Guwahati, Assam - 781024</p>
+        
+        <p style="font-size:11px; opacity:0.7; max-width: 420px; margin: 10px auto;">
+            Hosting is included as long as NE Connect service is operational. 
+            Major redesigns or custom changes may be chargeable.
+        </p>
+        
+        <p style="margin-top: 15px;">
+            <a href="legal.html" style="text-decoration: underline;">Privacy & Terms</a>
+        </p>
+        <p>© 2026 NE Connect. All rights reserved.</p>
     </footer>
 
 </body>

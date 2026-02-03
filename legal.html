@@ -3,107 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legal & Policies | NE Connect</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Legal Center | NE Connect</title>
     <style>
-        :root {
-            --primary: #0a4275;       /* Royal Blue */
-            --orange: #F48120;        /* Orange Accent */
-            --bg: #f8fbf9;            
-            --text: #333;
-        }
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; }
-
-        /* NAVBAR */
-        .navbar { background: white; padding: 15px 5%; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        .brand { font-weight: 800; font-size: 20px; color: var(--primary); text-decoration: none; text-transform: uppercase; letter-spacing: 1px; }
-        .back-btn { background: var(--primary); color: white; padding: 8px 20px; border-radius: 50px; text-decoration: none; font-size: 14px; font-weight: bold; }
-
-        /* CONTENT CONTAINER */
-        .container { max-width: 800px; margin: 50px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        :root { --primary: #1e3a8a; --bg: #f8fafc; --text: #334155; --border: #e2e8f0; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; margin: 0; padding: 0; }
         
-        h1 { color: var(--primary); text-align: center; margin-bottom: 40px; border-bottom: 2px solid #eee; padding-bottom: 20px; }
-        h2 { color: var(--orange); font-size: 20px; margin-top: 30px; border-left: 4px solid var(--primary); padding-left: 10px; }
-        h3 { font-size: 16px; font-weight: 700; margin-top: 20px; color: #444; }
-        p, ul { color: #555; font-size: 15px; margin-bottom: 15px; }
-        li { margin-bottom: 8px; }
+        /* LAYOUT */
+        .container { max-width: 900px; margin: 40px auto; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; }
+        .header { background: var(--primary); color: white; padding: 30px; text-align: center; }
+        .header h1 { margin: 0; font-size: 24px; }
+        .header p { margin-top: 5px; opacity: 0.8; font-size: 14px; }
 
-        .highlight-box { background: #fffcf5; border: 1px solid #ffe58f; padding: 15px; border-radius: 8px; font-size: 14px; margin: 20px 0; }
+        /* TABS */
+        .tabs { display: flex; border-bottom: 1px solid var(--border); background: #f1f5f9; }
+        .tab-btn { flex: 1; padding: 15px; border: none; background: none; cursor: pointer; font-weight: 600; color: #64748b; transition: 0.2s; border-bottom: 3px solid transparent; }
+        .tab-btn:hover { background: #e2e8f0; }
+        .tab-btn.active { color: var(--primary); border-bottom: 3px solid var(--primary); background: white; }
 
-        /* FOOTER */
-        footer { text-align: center; padding: 40px; font-size: 13px; color: #888; border-top: 1px solid #eee; margin-top: 50px; }
+        /* CONTENT */
+        .content { padding: 40px; display: none; }
+        .content.active { display: block; }
+        
+        h2 { color: var(--primary); font-size: 18px; margin-top: 30px; margin-bottom: 10px; border-left: 4px solid #f59e0b; padding-left: 10px; }
+        h2:first-child { margin-top: 0; }
+        p { margin-bottom: 15px; font-size: 14px; color: #475569; text-align: justify; }
+        ul { margin-bottom: 15px; padding-left: 20px; }
+        li { font-size: 14px; margin-bottom: 8px; color: #475569; }
+
+        /* HIGHLIGHT BOXES */
+        .alert { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 15px; font-size: 13px; margin: 20px 0; }
+        .footer { text-align: center; padding: 20px; font-size: 12px; color: #94a3b8; border-top: 1px solid var(--border); }
+        a { color: var(--primary); text-decoration: none; font-weight: 600; }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .container { margin: 0; border-radius: 0; }
+            .content { padding: 20px; }
+        }
     </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <a href="index.html" class="brand">NE Connect</a>
-        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back Home</a>
-    </nav>
-
-    <div class="container">
-        <h1>Terms & Privacy Policy</h1>
-        
-        <div class="highlight-box">
-            <strong>Effective Date:</strong> January 2026<br>
-            <strong>Jurisdiction:</strong> Guwahati, Assam (India)
-        </div>
-
-        <h2>1. Terms of Service</h2>
-        
-        <h3>1.1 Scope of Service</h3>
-        <p>NE Connect provides digital business card design and hosting services. We create HTML-based digital profiles hosted on third-party servers (e.g., GitHub Pages) based on the information provided by the client.</p>
-
-        <h3>1.2 Payment & Refunds</h3>
-        <ul>
-            <li><strong>100% Advance:</strong> Full payment is required to initiate any work.</li>
-            <li><strong>No Refunds:</strong> Since this is a digital service involving manual design work, we do not offer refunds once the design process has started.</li>
-            <li><strong>One-Time Payment:</strong> Our packages (Basic, Pro, ProMax) are one-time fees. However, optional add-on services requested later may incur extra charges.</li>
-        </ul>
-
-        <h3>1.3 Revisions & Edits</h3>
-        <ul>
-            <li><strong>Revision Window:</strong> Clients have <strong>3 days</strong> (72 hours) after delivery to request corrections (e.g., wrong phone number, photo swap) as per their package limit.</li>
-            <li><strong>Paid Revisions:</strong> Any changes requested <strong>after 3 days</strong>, or changes exceeding the package limit, will be charged at <strong>₹499 per round</strong>.</li>
-            <li><strong>Design Lock:</strong> We do not redesign the entire template layout after delivery. Template changes are treated as a new order.</li>
-        </ul>
-
-        <h3>1.4 Hosting & Availability</h3>
-        <p>We use GitHub Pages for high-speed, secure hosting. While this service is currently free and stable:</p>
-        <ul>
-            <li>We are not liable for global outages of GitHub services.</li>
-            <li>If GitHub changes its pricing policy in the future, we may introduce a nominal hosting fee, with 30 days' notice.</li>
-        </ul>
-
-        <h3>1.5 Content Liability</h3>
-        <p>The client is solely responsible for the content (images, text, links) on their digital card. NE Connect reserves the right to suspend any card found to be promoting illegal activities, hate speech, or fraud, without refund.</p>
-
-        <hr style="border:0; border-top:1px solid #eee; margin:40px 0;">
-
-        <h2>2. Privacy Policy</h2>
-
-        <h3>2.1 Data Collection</h3>
-        <p>To create your digital card, we collect the following information:</p>
-        <ul>
-            <li>Name, Designation, and Contact Details (Phone, Email, Address).</li>
-            <li>Profile Photos and Gallery Images.</li>
-            <li>Social Media Links and Business Descriptions.</li>
-        </ul>
-
-        <h3>2.2 How We Use Your Data</h3>
-        <p>Your data is used <strong>strictly</strong> for the purpose of creating and hosting your digital business card. Your information becomes publicly accessible via your unique card URL (e.g., ne-connect.github.io/cards/your-number).</p>
-
-        <h3>2.3 Data Sharing</h3>
-        <p>We do not sell, trade, or transfer your personal data to outside parties. Your data resides on GitHub's secure servers for hosting purposes only.</p>
-
-        <h3>2.4 Right to Erasure</h3>
-        <p>You can request to delete your digital card at any time by contacting our support. Once deleted, your data will be removed from our repository permanently.</p>
-
+<div class="container">
+    <div class="header">
+        <h1>NE Connect Legal Center</h1>
+        <p>Transparency. Trust. Terms.</p>
     </div>
 
-    <footer>
-        <p>&copy; 2026 NE Connect. All rights reserved.<br>Sonti Kutir, Rajgarh, Guwahati - 781024</p>
-    </footer>
+    <div class="tabs">
+        <button class="tab-btn active" onclick="openTab(event, 'terms')">Terms of Service</button>
+        <button class="tab-btn" onclick="openTab(event, 'refund')">Refund Policy</button>
+        <button class="tab-btn" onclick="openTab(event, 'privacy')">Privacy Policy</button>
+    </div>
+
+    <div id="terms" class="content active">
+        <h2>1. Introduction</h2>
+        <p>Welcome to NE Connect ("Company", "We", "Us"). By purchasing a digital business profile or using our services, you ("Client", "User") agree to be bound by these Terms. If you do not agree, please do not use our services.</p>
+
+        <h2>2. Scope of Service</h2>
+        <p>NE Connect provides a hosted digital webpage (Business Hub) for businesses. We act as a technology provider, not a marketing agency.</p>
+        <ul>
+            <li><strong>Hosting:</strong> Your profile is hosted on a sub-domain (e.g., ne-connect.github.io/yourbusiness) or a shared infrastructure.</li>
+            <li><strong>Ownership:</strong> You retain ownership of your business data (photos, logos). We retain ownership of the source code, design layout, and underlying technology.</li>
+            <li><strong>Uptime:</strong> We utilize GitHub Pages and Global CDNs. While we strive for 99.9% uptime, we are not liable for outages caused by third-party providers.</li>
+        </ul>
+
+        <h2>3. No Guarantee of Results</h2>
+        <p>NE Connect provides a technology platform to help businesses improve visibility and customer communication. We do not guarantee increased sales, enquiries, reviews, or business growth, as these depend on market factors beyond our control.</p>
+
+        <div class="alert">
+            <strong>⚠️ CLAUSE 4: THE "AS-IS" ACTIVATION (IMPORTANT)</strong><br>
+            This service is provided on an <strong>"As-Is"</strong> basis under the One-Time Activation plan.
+            This means the layout, font, color scheme, and structure are fixed templates. 
+            Requests for custom code modifications, specific design changes, or feature additions are <strong>NOT included</strong> in this price. 
+        </div>
+
+        <h2>5. Maintenance & Updates</h2>
+        <p>The activation fee includes initial setup and one revision round (within 48 hours of delivery). Any further changes to text, images, or business details are chargeable at <strong>₹299 per request</strong> unless stated otherwise.</p>
+
+        <h2>6. Client Responsibilities</h2>
+        <p>The Client must provide accurate information and required assets (business name, phone number, photos, Google Maps link, etc.). Delays in submitting details may delay delivery timelines. NE Connect is not responsible for delays caused by incomplete or incorrect client information.</p>
+
+        <h2>7. Service Lifespan</h2>
+        <p>Hosting is provided as long as the NE Connect platform remains operational. We reserve the right to discontinue or migrate services with reasonable notice.</p>
+
+        <h2>8. Jurisdiction</h2>
+        <p>These terms shall be governed by the laws of India. Any disputes arising out of this agreement shall be subject to the exclusive jurisdiction of the courts in <strong>Guwahati, Assam</strong>.</p>
+    </div>
+
+    <div id="refund" class="content">
+        <h2>1. Preview Access</h2>
+        <p>We may provide limited preview access to demonstrate how the Business Hub works. Preview access is time-limited, non-extendable, and may reset automatically.</p>
+
+        <h2>2. No Refund Policy</h2>
+        <p>Due to the nature of digital goods and the manual effort involved in setup/coding:</p>
+        
+        <div class="alert">
+            <strong>ALL SALES ARE FINAL.</strong> Once the activation fee is paid and onboarding work has started (including setup, content formatting, or publishing), <strong>no refunds will be issued</strong> under any circumstances.
+        </div>
+
+        <h2>3. Exceptions</h2>
+        <p>A full refund will only be issued if:</p>
+        <ul>
+            <li>We fail to activate your profile within 48 hours of receiving both (a) payment confirmation and (b) complete required business details via the onboarding form.</li>
+            <li>There is a technical error on our end that prevents the profile from loading permanently, and we are unable to fix it within 7 days.</li>
+        </ul>
+        <p>Refunds are NOT issued for: "I changed my mind", "I don't like the design anymore", or "My business closed down".</p>
+    </div>
+
+    <div id="privacy" class="content">
+        <h2>1. Data Collection</h2>
+        <p>To create your digital profile, we collect the following public business information:</p>
+        <ul>
+            <li>Business Name, Address, and Phone Number.</li>
+            <li>Photos of your products/shop.</li>
+            <li>Google Maps Location Data.</li>
+        </ul>
+
+        <h2>2. How We Use Data</h2>
+        <p>This data is used solely for the purpose of generating your public-facing webpage. We do not sell your data to third-party telemarketers.</p>
+
+        <h2>3. Public Nature of Information</h2>
+        <p>Please note that the service is designed to make your information <strong>publicly accessible</strong> on the internet to help customers find you. Do not provide any phone numbers or addresses you wish to keep private.</p>
+
+        <h2>4. Data Retention</h2>
+        <p>We retain onboarding submissions and communication records for operational and compliance purposes. You may request deletion of your profile content; however, payment and support records may be retained as required by law or for legitimate business purposes.</p>
+
+        <h2>5. Contact Us</h2>
+        <p>For privacy concerns or to request the deletion of your data/profile, please contact us via WhatsApp at +91 8638370107.</p>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 NE Connect. All Rights Reserved.<br>
+        <a href="index.html">Back to Home</a>
+    </div>
+</div>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, content, tabbtns;
+        content = document.getElementsByClassName("content");
+        for (i = 0; i < content.length; i++) {
+            content[i].style.display = "none";
+        }
+        tabbtns = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tabbtns.length; i++) {
+            tabbtns[i].className = tabbtns[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
 
 </body>
 </html>

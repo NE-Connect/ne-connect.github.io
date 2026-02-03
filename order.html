@@ -3,36 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Start Your Order | NE Connect</title>
+    <title>Activate Your Business Hub | NE Connect</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        :root { --primary: #045F4D; --bg: #f8fbf9; }
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--bg); color: #333; }
-        .navbar { background: white; padding: 15px 5%; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; }
-        .brand { font-weight: 800; color: var(--primary); text-decoration: none; font-size: 18px; display: flex; align-items: center; gap: 10px; }
-        .back-link { text-decoration: none; color: #666; font-size: 14px; display: flex; align-items: center; gap: 5px; }
-        .container { max-width: 700px; margin: 40px auto; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 25px rgba(0,0,0,0.05); }
-        .header-box { background: var(--primary); color: white; padding: 30px; text-align: center; }
-        .header-box h1 { margin: 0; font-size: 24px; }
-        .header-box p { margin: 10px 0 0; opacity: 0.9; font-size: 14px; }
-        .form-wrapper { padding: 0; height: 100vh; min-height: 2400px; overflow: hidden; }
-        iframe { width: 100%; border: none; height: 100%; }
-        @media (max-width: 600px) { .container { margin: 0; border-radius: 0; } .form-wrapper { height: 2600px; } }
+        :root {
+            --primary: #0a4275;       /* Trust Blue */
+            --primary-dark: #062e56;
+            --gold: #d4af37;          /* Premium Gold */
+            --bg: #f4f7fa;            
+            --text: #1f2937;
+        }
+        
+        * { box-sizing: border-box; }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            background: var(--bg); 
+            color: var(--text); 
+            line-height: 1.6; 
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* NAVBAR */
+        .navbar { 
+            background: rgba(255, 255, 255, 0.95); 
+            backdrop-filter: blur(10px);
+            padding: 10px 5%; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03); 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .brand { display: flex; flex-direction: column; align-items: center; text-decoration: none; }
+        .logo-img { height: 50px; width: auto; margin-bottom: 2px; }
+        .brand-text { font-weight: 800; font-size: 16px; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; line-height: 1; }
+        
+        .back-link { 
+            text-decoration: none; 
+            color: var(--text); 
+            font-size: 14px; 
+            font-weight: 600; 
+            display: flex; 
+            align-items: center; 
+            gap: 6px;
+            background: #fff;
+            padding: 8px 16px;
+            border-radius: 50px;
+            border: 1px solid #e5e7eb;
+            transition: 0.2s;
+        }
+        .back-link:hover { border-color: var(--primary); color: var(--primary); }
+        .back-text { display: inline; }
+        
+        /* CONTAINER */
+        .container { 
+            max-width: 700px; 
+            margin: 30px auto; 
+            background: white; 
+            border-radius: 16px; 
+            overflow: hidden; 
+            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.1); 
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        /* HEADER BOX */
+        .header-box { 
+            background: linear-gradient(135deg, #0a4275 0%, #001f3f 100%); 
+            color: white; 
+            padding: 40px 30px; 
+            text-align: center; 
+        }
+        .step-badge {
+            background: #fbbf24;
+            color: #000;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .header-box h1 { margin: 0; font-size: 26px; font-weight: 800; }
+        .header-box p { margin: 10px 0 0; opacity: 0.9; font-size: 15px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        
+        /* PAYMENT ALERT BOX */
+        .payment-alert {
+            background: #fffbeb;
+            border-left: 5px solid #d97706;
+            color: #92400e;
+            padding: 25px;
+            margin: 0;
+            font-size: 14px;
+            text-align: left;
+            border-bottom: 1px solid #fcd34d;
+        }
+        .payment-title { font-weight: 800; font-size: 16px; margin-bottom: 5px; color: #b45309; display: flex; align-items: center; gap: 8px; }
+        .upi-box { 
+            background: white; 
+            padding: 8px 12px; 
+            border: 1px dashed #d97706; 
+            display: inline-block; 
+            font-family: monospace; 
+            font-weight: 700; 
+            margin-top: 8px; 
+            color: #000;
+            font-size: 15px;
+            border-radius: 6px;
+        }
+
+        /* NEXT STEPS LIST */
+        .next-steps {
+            margin-top: 15px;
+            font-size: 13px;
+            line-height: 1.6;
+            list-style: none;
+            padding: 0;
+            color: #78350f;
+        }
+        .next-steps li { margin-bottom: 4px; }
+
+        /* FORM AREA */
+        .form-wrapper { padding: 0; position: relative; }
+        
+        iframe { 
+            width: 100%; 
+            border: none; 
+            height: 2600px; 
+            display: block;
+        }
+        
+        /* FOOTER SUPPORT */
+        .support-line {
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+            color: #666;
+            background: #f9fafb;
+            border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 600px) { 
+            .container { margin: 0; border-radius: 0; } 
+            .form-wrapper iframe { height: 3000px; } 
+            .logo-img { height: 40px; }
+            .brand-text { font-size: 14px; }
+            .back-text { display: none; }
+        }
     </style>
 </head>
 <body>
+
     <nav class="navbar">
-        <a href="index.html" class="brand">NE CONNECT</a>
-        <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+        <a href="./index.html" class="brand">
+            <img src="https://ne-connect.github.io/logo.png" alt="NE Connect" class="logo-img">
+            <div class="brand-text">NE Connect</div>
+        </a>
+        <a href="./index.html" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i> 
+            <span class="back-text">Back to Home</span>
+        </a>
     </nav>
+
     <div class="container">
         <div class="header-box">
-            <h1>Start Your Order</h1>
-            <p>Please enter details exactly as you want them on the card.<br>Upload high-quality images for best results.</p>
+            <div class="step-badge">Final Step</div>
+            <h1>Activate Your Business Hub</h1>
+            <p>You are one step away. Please complete the payment and fill the form below to go live.</p>
         </div>
+        
+        <div class="payment-alert">
+            <div class="payment-title"><i class="fa-solid fa-circle-exclamation"></i> Payment Required First</div>
+            
+            To activate your One-Time Activation Plan, please complete the payment of <strong>₹2,499</strong>.
+            <br><br>
+            <div>Pay via UPI to:</div>
+            
+            <div class="upi-box">8638370107@upi</div>
+
+            <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+                <button type="button" id="copyUpiBtn"
+                    style="background:#fff; border:1px solid #d97706; color:#92400e; padding:8px 12px; border-radius:8px; font-weight:700; cursor:pointer; font-size:12px; display:flex; align-items:center; gap:5px;">
+                    <i class="fa-solid fa-copy"></i> Copy UPI ID
+                </button>
+                <span id="copyMsg" style="font-size:12px; color:#065f46; display:none; font-weight:700;">
+                    Copied!
+                </span>
+            </div>
+            
+            <div style="margin-top:8px; font-size:12px;">
+                ✅ Please pay using the <b>same phone number</b> you will enter in the form.
+            </div>
+
+            <br>
+            <em>Enter the Transaction ID / Ref No. in the form below.</em>
+
+            <ul class="next-steps">
+                <li><i class="fa-solid fa-check" style="color:#059669;"></i> Complete UPI payment</li>
+                <li><i class="fa-solid fa-check" style="color:#059669;"></i> Fill the form with payment reference</li>
+                <li><i class="fa-solid fa-check" style="color:#059669;"></i> We create your Business Hub within 24–48 hours</li>
+                <li><i class="fa-solid fa-check" style="color:#059669;"></i> You receive your live link on WhatsApp</li>
+            </ul>
+            
+            <div style="margin-top:10px; font-size:12px; opacity:0.85;">
+                Note: Once onboarding starts and the hub is created, the activation fee is non-refundable.
+            </div>
+
+            <div style="margin-top:15px; border-top:1px dashed #fcd34d; padding-top:10px;">
+                <a href="https://wa.me/918638370107?text=Hi%20NE%20Connect%2C%20I%20have%20completed%20the%20%E2%82%B92499%20payment.%20I%20will%20fill%20the%20form%20now." 
+                   style="color:#065f46; font-weight:700; text-decoration:none; font-size:13px; display:inline-flex; align-items:center; gap:6px;">
+                   <i class="fa-brands fa-whatsapp" style="font-size:16px;"></i> I’ve paid, message support
+                </a>
+            </div>
+        </div>
+        
         <div class="form-wrapper">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfKRtpZGEP1rhxfKjcPkcYdhooiVpt71BhGBSt2zu0JBSnMmw/viewform?embedded=true">Loading…</iframe>
+            <iframe loading="lazy" src="https://docs.google.com/forms/d/e/1FAIpQLSfKRtpZGEP1rhxfKjcPkcYdhooiVpt71BhGBSt2zu0JBSnMmw/viewform?embedded=true">Loading…</iframe>
+        </div>
+
+        <div style="text-align:center; padding:12px; font-size:13px; color:#6b7280; background:#fff;">
+            If the form doesn’t load, <a href="https://docs.google.com/forms/d/e/1FAIpQLSfKRtpZGEP1rhxfKjcPkcYdhooiVpt71BhGBSt2zu0JBSnMmw/viewform" target="_blank" rel="noopener" style="color:var(--primary); font-weight:700; text-decoration:none;">open it here</a>.
+        </div>
+
+        <div class="support-line">
+            Need help? <a href="https://wa.me/918638370107" style="color:var(--primary); font-weight:bold; text-decoration:none;">Chat with Support</a>
+            <div style="margin-top:8px; font-size:12px; color:#9ca3af;">
+                By submitting, you agree to our <a href="./legal.html" style="color:var(--primary); font-weight:600; text-decoration:none;">Privacy & Terms</a>.
+            </div>
         </div>
     </div>
+
+    <script>
+        (function(){
+            const upi = "8638370107@upi";
+            const btn = document.getElementById("copyUpiBtn");
+            const msg = document.getElementById("copyMsg");
+            if(!btn) return;
+        
+            btn.addEventListener("click", async () => {
+            try {
+                await navigator.clipboard.writeText(upi);
+                msg.style.display = "inline";
+                setTimeout(()=> msg.style.display="none", 1500);
+            } catch (e) {
+                // fallback for older browsers & iOS
+                const ta = document.createElement("textarea");
+                ta.value = upi;
+                
+                // Prevent scrolling/jumping on iOS
+                ta.style.position = "fixed";
+                ta.style.top = "-1000px";
+                ta.style.left = "0";
+                
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand("copy");
+                document.body.removeChild(ta);
+                msg.style.display = "inline";
+                setTimeout(()=> msg.style.display="none", 1500);
+            }
+            });
+        })();
+    </script>
+
 </body>
 </html>
