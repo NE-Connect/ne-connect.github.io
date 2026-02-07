@@ -6,252 +6,446 @@
     <title>NE- Connect | Official Profile</title>
     
     <meta name="robots" content="index, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <meta property="og:title" content="NE- Connect - Official Profile">
     <meta property="og:description" content="Get directions, contact details, WhatsApp booking, and reviews for NE- Connect.">
     <meta property="og:image" content="https://ne-connect.github.io/cards/8638670107/profile.jpg">
     <meta property="og:url" content="https://ne-connect.github.io/cards/8638670107/">
 
     <style>
-        :root { --primary: #1e3a8a; --bg: #f8fafc; --text: #334155; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
-        body { background: var(--bg); color: var(--text); padding-bottom: 80px; }
-        
-        /* HEADER */
-        .header { background: white; padding: 20px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .logo-img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); margin-bottom: 10px; }
-        h1 { color: #0f172a; font-size: 22px; font-weight: 700; margin-bottom: 5px; }
-        .badge { background: #dbeafe; color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-block; }
-        
-        /* ACTION BUTTONS */
-        .actions { 
-            display: grid; 
-            gap: 8px; 
-            padding: 15px; 
-            max-width: 600px; 
-            margin: 0 auto; 
-            grid-template-columns: 1fr 1fr; 
+        :root {
+            --primary: #2563eb;
+            --dark: #0f172a;
+            --gold: #d97706;       /* Rich Gold */
+            --gold-light: #fef3c7; /* Pale Gold */
+            --surface: #ffffff;
+            --bg: #f8fafc;
+            --text-main: #334155;
+            --text-light: #64748b;
         }
-        .btn { 
-            padding: 10px; border-radius: 8px; text-align: center; text-decoration: none; font-weight: 700; font-size: 13px; 
-            display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; 
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-            min-height: 50px; 
-        }
-        
-        .btn-wa { background: #25D366; color: white; }
-        .btn-book { background: #7c3aed; color: white; }
-        .btn-map { background: #eff6ff; color: var(--primary); border: 1px solid #bfdbfe; }
-        .btn-review { background: #fbbf24; color: black; }
 
-        /* SECTIONS */
-        .card { background: white; margin: 15px 20px; padding: 20px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); max-width: 600px; }
-        .card-title { font-size: 16px; font-weight: 700; margin-bottom: 12px; color: #0f172a; border-left: 4px solid var(--primary); padding-left: 10px; }
-        p { font-size: 14px; line-height: 1.6; color: #475569; }
+        /* Smooth Scroll & Selection Polish */
+        html { scroll-behavior: smooth; }
+        ::selection { background: rgba(245,158,11,0.25); }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; -webkit-font-smoothing: antialiased; }
         
-        /* GALLERY GRID */
-        .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 10px; }
-        .gallery img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; cursor: pointer; transition: 0.2s; }
+        body { background: var(--bg); color: var(--text-main); padding-bottom: 110px; }
+        
+        /* ROYAL HEADER */
+        .header-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            height: 180px;
+            border-radius: 0 0 32px 32px;
+            position: relative;
+            box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.4);
+            overflow: hidden;
+            border-bottom: 4px solid var(--gold);
+        }
+        
+        .header-bg::after {
+            content: ''; position: absolute; top:0; left:0; width:100%; height:100%;
+            background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 20px 20px; opacity: 0.5;
+        }
+
+        .profile-container {
+            text-align: center; margin-top: -90px; position: relative; padding: 0 20px;
+        }
+
+        /* VERIFIED PREMIUM FRAME */
+        .profile-pic-wrap {
+            display: inline-block; padding: 4px; border-radius: 50%;
+            background: linear-gradient(135deg, #fcd34d, #d97706, #fef3c7);
+            box-shadow: 0 16px 30px -12px rgba(0,0,0,0.35);
+            margin-bottom: 8px;
+        }
+
+        .profile-pic {
+            width: 140px; height: 140px;
+            border-radius: 50%;
+            border: 5px solid var(--surface);
+            display: block;
+            background: var(--surface);
+            object-fit: cover;
+        }
+
+        /* H1 with Verified Tick */
+        h1 {
+            margin: 12px 0 6px 0;
+            color: var(--dark);
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            display: flex; align-items: center; justify-content: center; gap: 6px;
+        }
+
+        /* Spacing via CSS */
+        .badge {
+            background: var(--gold-light); 
+            color: var(--gold);
+            padding: 6px 16px; border-radius: 20px;
+            font-size: 12px; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 0.05em;
+            display: inline-block; 
+            border: 1px solid rgba(217, 119, 6, 0.2);
+            margin-bottom: 10px; 
+        }
+
+        /* TRUST STRIP */
+        .trust-strip {
+            font-size: 11px; font-weight: 700;
+            color: rgba(15,23,42,0.75);
+            background: rgba(254,243,199,0.55);
+            border: 1px solid rgba(217,119,6,0.18);
+            display: inline-block; padding: 8px 14px;
+            border-radius: 999px; 
+            margin-top: 6px; 
+            white-space: normal; line-height: 1.4; max-width: 92%;
+            margin-left: auto; margin-right: auto;
+        }
+
+        /* DIVIDER LINE */
+        .profile-divider {
+            width: 140px;
+            height: 4px;
+            margin: 18px auto 24px auto;
+            border-radius: 99px;
+            background: linear-gradient(90deg, transparent, rgba(217,119,6,0.7), transparent);
+            opacity: 0.7;
+        }
+
+        /* MODERN BUTTON GRID */
+        .actions {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+            max-width: 500px; margin: 0 auto 24px auto; padding: 0 20px;
+        }
+
+        /* MICRO-INTERACTIONS */
+        .btn {
+            border: none; padding: 16px; border-radius: 16px;
+            font-weight: 700; font-size: 14px; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s, border-color 0.2s;
+            text-decoration: none; color: white;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            outline: none;
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -12px rgba(0,0,0,0.25); }
+        .btn:active { transform: scale(0.97); }
+        .btn:focus { outline: 3px solid rgba(217, 119, 6, 0.35); outline-offset: 2px; }
+
+        /* VIP SAVE BUTTON (With Gold Shine) */
+        .btn-save {
+            grid-column: 1 / -1; 
+            background: #0f172a; 
+            color: var(--gold);
+            border: 1px solid #1e293b;
+            font-size: 16px; padding: 18px;
+            box-shadow: 0 10px 20px -5px rgba(15, 23, 42, 0.2);
+            position: relative; overflow: hidden;
+        }
+        .btn-save::after {
+            content:""; position:absolute; top:-50%; left:-30%; width:40%; height:200%;
+            background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.35), transparent);
+            transform: rotate(20deg); animation: shine 4.5s infinite;
+        }
+        @keyframes shine{ 0%{ left:-40%; } 60%{ left:120%; } 100%{ left:120%; } }
+
+        .btn-call { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+        .btn-wa   { background: linear-gradient(135deg, #22c55e, #16a34a); }
+        .btn-book { background: linear-gradient(135deg, #8b5cf6, #7c3aed); } /* Royal Purple */
+        
+        /* TAP GLOW FOR WHITE BUTTONS */
+        .btn-map, .btn-rev { 
+            background: white; color: var(--dark); border: 1px solid #e2e8f0; 
+        }
+        .btn-map:hover, .btn-rev:hover {
+            border-color: rgba(217,119,6,0.35);
+            box-shadow: 0 14px 30px -14px rgba(217,119,6,0.35);
+        }
+
+        /* GLASS CARDS with INNER HIGHLIGHT */
+        .card {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+            border-radius: 24px;
+            padding: 24px;
+            margin: 0 20px 22px 20px;
+            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.05);
+            max-width: 500px;
+            border: 1px solid rgba(226,232,240,0.8);
+            border-top: 3px solid rgba(217,119,6,0.25);
+            position: relative; overflow: hidden;
+        }
+        .card::before {
+            content:""; position:absolute; top:0; left:0; right:0; height: 1px;
+            background: rgba(255,255,255,0.9); z-index: 1;
+        }
+        @media(min-width: 540px) { .card, .actions { margin-left: auto; margin-right: auto; } }
+
+        .card-title {
+            font-size: 15px; font-weight: 800; margin-bottom: 16px;
+            color: var(--dark); display: flex; align-items: center; gap: 10px;
+            text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.9;
+        }
+
+        p { font-size: 15px; line-height: 1.75; color: var(--text-main); }
+
+        /* GALLERY */
+        .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .gallery img {
+            width: 100%; aspect-ratio: 1; object-fit: cover;
+            border-radius: 12px; cursor: pointer;
+            transition: transform 0.2s;
+        }
         .gallery img:hover { transform: scale(1.02); }
 
-        /* CONTACT LIST */
-        .contact-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-size: 14px; }
-        .icon { width: 32px; height: 32px; background: #f1f5f9; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); }
+        /* QR SECTION */
+        .qr-section {
+            text-align: center; background: #fffbeb;
+            padding: 20px; border-radius: 16px; border: 2px dashed #fcd34d;
+        }
+        .qr-code { width: 140px; height: 140px; mix-blend-mode: multiply; }
 
-        /* FOOTER */
-        .footer { text-align: center; font-size: 12px; color: #94a3b8; margin-top: 30px; }
+        /* CONTACT INFO */
+        .contact-row { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+        .icon-box {
+            width: 44px; height: 44px; 
+            background: var(--gold-light); 
+            border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            color: var(--gold); font-size: 20px;
+        }
+        .info-label { font-size: 11px; font-weight: 700; color: var(--text-light); text-transform: uppercase; margin-bottom: 2px;}
+        .info-val { font-size: 15px; font-weight: 600; color: var(--dark); }
+
+        /* FOOTER & PREMIUM FAB */
+        .footer { text-align: center; font-size: 12px; color: #94a3b8; margin-top: 40px; padding-bottom: 20px; }
         
-        /* DEMO BADGE */
-        #demoBadge { position: fixed; top: 10px; right: 10px; background: #dc2626; color: white; padding: 6px 12px; font-size: 11px; font-weight: 700; border-radius: 20px; z-index: 999; display: none; }
+        .fab {
+            position: fixed; bottom: 24px; right: 24px;
+            background: linear-gradient(135deg, #0f172a, #111827);
+            color: var(--gold);
+            padding: 14px 24px; border-radius: 50px;
+            text-decoration: none; font-weight: 700;
+            box-shadow: 0 18px 40px -16px rgba(15,23,42,0.7);
+            z-index: 100; display: flex; align-items: center; gap: 8px;
+            transition: transform 0.2s; border: 1px solid rgba(255,255,255,0.1);
+        }
+        .fab:hover { transform: translateY(-3px); }
+        
+        .fab::before {
+            content:""; width:8px; height:8px; border-radius:50%;
+            background: #f59e0b;
+            box-shadow: 0 0 10px #f59e0b;
+            display:inline-block;
+        }
 
-        @media(min-width: 600px) { .card, .header { margin: 20px auto; max-width: 600px; } }
+        #demoBadge {
+            position: fixed; top: 12px; right: 12px;
+            background: rgba(220, 38, 38, 0.9); backdrop-filter: blur(4px);
+            color: white; padding: 6px 12px;
+            font-size: 11px; font-weight: 700; border-radius: 20px;
+            z-index: 999; display: none;
+        }
     </style>
 <link rel="canonical" href="https://ne-connect.github.io/cards/8638670107/">
 </head>
 <body>
 
     
-
     <div id="demoBadge">PREVIEW DEMO</div>
 
-    <div class="header">
-        <img src="https://ne-connect.github.io/cards/8638670107/profile.jpg" alt="Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/100?text=Logo'">
-        <h1>NE- Connect</h1>
+    <div class="header-bg"></div>
+    <div class="profile-container">
+        <div class="profile-pic-wrap">
+            <img src="https://ne-connect.github.io/cards/8638670107/profile.jpg" alt="Logo" class="profile-pic" onerror="this.src='https://via.placeholder.com/150?text=Logo'">
+        </div>
+        
+        <h1>NE- Connect <span style="vertical-align: middle; font-size:18px; color:#d97706; margin-left:4px;">✔</span></h1>
+        
         <div class="badge">Manager</div>
+        
+        <div class="trust-strip">✅ One-time setup • ⚡ Instant Call/Chat • ⭐ Review Boost</div>
+        
+        <div class="profile-divider"></div>
     </div>
 
     <div class="actions">
-        <a href="#" class="btn btn-wa"><span>💬 Chat</span></a>
-        <a id="bookBtn" href="https://wa.me/918638370107?text=Hi%20NE-%20Connect%2C%20I%20saw%20your%20digital%20profile%20and%20want%20to%20book%20an%20appointment." target="_blank" class="btn btn-book"><span>📅 Book Now</span></a>
-        <a id="mapBtn" href="" target="_blank" class="btn btn-map"><span>📍 Directions</span></a>
-        <a id="reviewBtn" href="" target="_blank" class="btn btn-review"><span>⭐ Review</span></a>
+        <button onclick="downloadVCard()" class="btn btn-save">💾 Save Contact</button>
+
+        <a href="tel:+918638670107" class="btn btn-call">📞 Call</a>
+        <a href="#" class="btn btn-wa">💬 Chat</a>
+        
+        <a id="bookBtn" href="https://wa.me/918638370107?text=Hi%20NE-%20Connect%2C%20I%20saw%20your%20digital%20profile%20and%20want%20to%20book%20an%20appointment." target="_blank" class="btn btn-book">📅 Book Now</a>
+        
+        <a id="mapBtn" href="" target="_blank" class="btn btn-map">📍 Directions</a>
+        <a id="reviewBtn" href="" target="_blank" class="btn btn-rev">⭐ Review</a>
     </div>
 
     <div class="card">
-        <div class="card-title">About Us</div>
+        <div class="card-title">ℹ️ About Us</div>
         <p>NE Connect helps local businesses grow their online presence without expensive websites. We specialize in Smart Digital Business Cards, Google Review Management, and Automated Appointment Systems.</p>
     </div>
 
     <div class="card" id="gallery-card">
-        <div class="card-title">Our Gallery</div>
+        <div class="card-title">📷 Our Gallery</div>
         <div class="gallery" id="gallery-container"></div>
     </div>
 
     <div class="card">
-        <div class="card-title">Contact Info</div>
+        <div class="card-title">📱 Scan to Share</div>
+        <div class="qr-section">
+            <img src="qr.png" class="qr-code" alt="QR Code">
+            <p style="font-size:13px; color:#b45309; margin-top:12px; font-weight:600;">Scan to call or review instantly</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">📍 Contact Details</div>
+        
         <div class="contact-row">
-            <div class="icon">👤</div>
+            <div class="icon-box">👤</div>
             <div>
-                <div style="font-size:12px; color:#64748b;">Contact Person</div>
-                <div style="font-weight:600;">CEO</div>
+                <div class="info-label">Contact Person</div>
+                <div class="info-val">CEO</div>
             </div>
         </div>
         <div class="contact-row">
-            <div class="icon">📞</div>
+            <div class="icon-box">📞</div>
             <div>
-                <div style="font-size:12px; color:#64748b;">Phone</div>
-                <div style="font-weight:600;">
-                    <a id="phoneLink" href="#" style="color:inherit;text-decoration:none;">
-                        <span id="phoneText">+91 8638670107</span>
-                    </a>
-                    <span id="copied" style="display:none; font-size:11px; color:#16a34a; font-weight:700; margin-left:6px;">Copied</span>
-                </div>
+                <div class="info-label">Phone</div>
+                <div class="info-val">+91 8638670107</div>
             </div>
         </div>
         <div class="contact-row">
-            <div class="icon">🏠</div>
+            <div class="icon-box">🏠</div>
             <div>
-                <div style="font-size:12px; color:#64748b;">Address</div>
-                <div style="font-weight:600;">Rajgarh, Guwahati</div>
+                <div class="info-label">Address</div>
+                <div class="info-val">Rajgarh, Guwahati</div>
             </div>
         </div>
     </div>
 
     <div class="footer">
-        <div style="margin-bottom:6px; font-weight:600; color:#cbd5e1;">POWERED BY</div>
+        <div style="margin-bottom:8px; font-weight:700; color:#cbd5e1; letter-spacing:1px; font-size:10px;">POWERED BY</div>
         <a href="https://ne-connect.github.io/" target="_blank" style="text-decoration:none;">
-            <span style="color:#1e3a8a; font-weight:800; font-size:14px; letter-spacing:0.5px;">NE CONNECT</span>
+            <span style="color:#0f172a; font-weight:900; font-size:18px; letter-spacing:-0.5px;">NE CONNECT</span>
         </a>
-        <div style="margin-top:10px;">
-            <a href="https://ne-connect.github.io/" target="_blank" 
-               style="color:#64748b; font-size:11px; text-decoration:none; border:1px solid #e2e8f0; padding:6px 12px; border-radius:20px; background:#fff; display:inline-block; box-shadow:0 1px 2px rgba(0,0,0,0.02);">
-               🚀 Want a profile like this? Tap here
-            </a>
-        </div>
     </div>
 
+    <a id="buyFab" href="#" class="fab">Activate This Profile</a>
+
     <script>
+        // --- UTILS ---
         function cleanNumber(n){ return (n || "").toString().replace(/[^\d]/g, "").replace(/^91/, "").slice(-10); }
 
-        const waBtn = document.querySelector(".btn-wa");
-        const bookBtn = document.getElementById("bookBtn");
-        const mapBtn = document.getElementById("mapBtn");
-        const reviewBtn = document.getElementById("reviewBtn");
-        
-        // 1. WhatsApp Logic
-        const waNumber = "8638370107";
-        const phoneNumber = "8638670107";
-        const rawName = "NE- Connect";
-        const safeName = (!rawName || rawName.includes("NE- Connect")) ? "there" : rawName;
-        const rawFinal = (waNumber && !waNumber.includes("8638370107") && waNumber.trim() !== "") ? waNumber : phoneNumber;
-        const finalWa = cleanNumber(rawFinal);
-        
-        if (!finalWa || finalWa.length < 10) { waBtn.style.display = "none"; } 
-        else {
-            const waMsg = `Hi ${safeName}, I have a query. Please assist.`;
-            waBtn.href = `https://wa.me/91${finalWa}?text=${encodeURIComponent(waMsg)}`;
+        // 1. VCARD (Robust)
+        function downloadVCard() {
+            const safeName = ("NE- Connect" || "contact").replace(/[\/\\:*?"<>|]+/g, "").trim();
+            const vcard = [
+                "BEGIN:VCARD", "VERSION:3.0",
+                "FN:NE- Connect", "ORG:NE- Connect",
+                "TEL;TYPE=WORK,VOICE:+918638670107",
+                "ADR;TYPE=WORK:;;Rajgarh, Guwahati",
+                "URL:https://ne-connect.github.io/cards/8638670107/", "END:VCARD"
+            ].join("\r\n");
+            const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url; a.download = `${safeName || "contact"}.vcf`;
+            document.body.appendChild(a); a.click(); document.body.removeChild(a);
+            setTimeout(() => URL.revokeObjectURL(url), 1000);
         }
 
-        // 2. Booking Logic
-        const bookLink = "https://wa.me/918638370107?text=Hi%20NE-%20Connect%2C%20I%20saw%20your%20digital%20profile%20and%20want%20to%20book%20an%20appointment.";
-        if (!bookLink || bookLink.includes("https://wa.me/918638370107?text=Hi%20NE-%20Connect%2C%20I%20saw%20your%20digital%20profile%20and%20want%20to%20book%20an%20appointment.") || bookLink === "") { bookBtn.style.display = "none"; }
+        // 2. WhatsApp Logic (Bulletproof Fallback)
+        const waBtn = document.querySelector(".btn-wa");
+        const waRaw = "8638370107";
+        const phRaw = "8638670107";
+        const hasSpecificWa = (waRaw && waRaw.trim() !== "" && !waRaw.includes("8638370107"));
+        const finalWa = cleanNumber(hasSpecificWa ? waRaw : phRaw);
 
-        // 3. Map Logic
-        const mapLink = "";
-        if (!mapLink || mapLink.includes("") || mapLink.trim() === "") { mapBtn.style.display = "none"; }
+        if (finalWa.length >= 10) {
+            const msg = `Hi ${"NE- Connect"}, I have a query.`;
+            waBtn.href = `https://wa.me/91${finalWa}?text=${encodeURIComponent(msg)}`;
+        } else { waBtn.style.display = "none"; }
 
-        // 4. Review Logic
-        const reviewLink = "";
-        if (!reviewLink || reviewLink.includes("") || reviewLink.trim() === "") { reviewBtn.style.display = "none"; }
+        // 3. BOOKING LOGIC (RESTORED)
+        const bookBtn = document.getElementById("bookBtn");
+        const bookLink = ("https://wa.me/918638370107?text=Hi%20NE-%20Connect%2C%20I%20saw%20your%20digital%20profile%20and%20want%20to%20book%20an%20appointment." || "").trim();
+        if (!bookLink || bookLink.length < 5 || bookLink.includes("https://wa.me/918638370107?text=Hi%20NE-%20Connect%2C%20I%20saw%20your%20digital%20profile%20and%20want%20to%20book%20an%20appointment.")) {
+            bookBtn.style.display = "none";
+        }
 
-        // GRID LAYOUT
-        let visibleCount = 0;
-        [waBtn, bookBtn, mapBtn, reviewBtn].forEach(btn => { if (btn.style.display !== "none") visibleCount++; });
-        const grid = document.querySelector('.actions');
-        if (visibleCount === 4) grid.style.gridTemplateColumns = "1fr 1fr";
-        else if (visibleCount === 3) grid.style.gridTemplateColumns = "1fr 1fr 1fr";
-        else grid.style.gridTemplateColumns = `repeat(${Math.max(1, visibleCount)}, 1fr)`;
+        // 4. Map & Review Logic
+        const mapBtn = document.getElementById("mapBtn");
+        const mapLink = ("" || "").trim();
+        if (!mapLink || mapLink === "#" || mapLink.length < 5 || mapLink.includes("")) mapBtn.style.display = "none";
 
-        // GALLERY
+        const reviewBtn = document.getElementById("reviewBtn");
+        const reviewLink = ("" || "").trim();
+        if (!reviewLink || reviewLink === "#" || reviewLink.length < 5 || reviewLink.includes("")) reviewBtn.style.display = "none";
+
+        // 5. Grid Fix
+        let btns = document.querySelectorAll('.actions .btn');
+        let visible = 0;
+        btns.forEach(b => { if(b.style.display !== 'none' && !b.classList.contains('btn-save')) visible++; });
+        if(visible === 1) document.querySelector('.actions').style.gridTemplateColumns = "1fr";
+
+        // 6. Gallery
         const galleryFiles = []; 
         const galleryContainer = document.getElementById('gallery-container');
-        if (galleryFiles.length > 0) {
+        if (galleryFiles && galleryFiles.length > 0) {
             galleryFiles.forEach(src => {
-                const link = document.createElement('a');
-                link.href = src; link.target = "_blank"; link.rel = "noopener";  
-                const img = document.createElement('img'); img.src = src;
-                link.appendChild(img); galleryContainer.appendChild(link);
+                const img = document.createElement('img'); img.src = src; img.onclick = () => window.open(src, '_blank');
+                galleryContainer.appendChild(img);
             });
         } else { document.getElementById('gallery-card').style.display = 'none'; }
 
-        // EXPIRED LOGIC (TIME BOMB)
+        // 7. FAB & Expiry (Safe Checks)
+        const buyFab = document.getElementById("buyFab");
         const expiryStr = "2099-12-31"; 
-        if (expiryStr && expiryStr !== "2099-12-31") {
-            document.getElementById("demoBadge").style.display = "block";
-            const today = new Date();
-            const expiry = new Date(expiryStr);
-            expiry.setHours(23, 59, 59);
+        const isDemo = (expiryStr && expiryStr !== "2099-12-31");
+        
+        if (isDemo && buyFab) {
+             const salesWa = cleanNumber("916001699400");
+             if (salesWa.length === 10) {
+                 const buyMsg = `I want to buy this profile for +91 8638670107`;
+                 buyFab.href = `https://wa.me/91${salesWa}?text=${encodeURIComponent(buyMsg)}`;
+             } else {
+                 buyFab.style.display = "none";
+             }
+        } else if (buyFab) { buyFab.style.display = "none"; }
 
-            if (today > expiry) {
-                // LOCK SCREEN
-                document.body.innerHTML = `
-                    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;text-align:center;font-family:sans-serif;background:#fff;padding:20px;">
-                        <h1 style="color:#dc2626;font-size:24px;margin-bottom:10px;">⚠️ TRIAL EXPIRED</h1>
-                        <p style="color:#1f2937;font-weight:600;margin:0 0 5px;font-size:16px;">This business hub preview has ended.</p>
-                        <p style="color:#6b7280;font-size:14px;margin:0 0 25px;max-width:300px;line-height:1.5;">
-                            Your customers will not see this message after activation.
-                        </p>
-                        
-                        <a href="https://ne-connect.github.io/order.html?phone=8638670107" 
-                           style="background:#1e3a8a;color:white;padding:12px 25px;text-decoration:none;border-radius:50px;font-weight:700;box-shadow:0 4px 10px rgba(30, 58, 138, 0.3);">
-                           Remove Preview & Activate
-                        </a>
-
-                        <div style="margin-top:20px;font-size:13px;color:#6b7280;">
-                            Or message us on WhatsApp: 
-                            <br>
-                            <a href="https://wa.me/918638370107?text=Hi%20NE%20Connect%2C%20I%20want%20to%20activate%20my%20Business%20Hub%20for%208638670107." 
-                               target="_blank" style="color:#1e3a8a;font-weight:700;text-decoration:none;display:inline-block;margin-top:4px;">
-                                Tap here to Chat
-                            </a>
-                        </div>
-                    </div>
-                `;
-            }
+        function parseExpiryLocal(dateStr){
+            const parts = (dateStr || "").split("-").map(Number);
+            if (parts.length !== 3) return null;
+            const [y,m,d] = parts;
+            return new Date(y, m-1, d, 23, 59, 59);
         }
 
-        // PHONE LINK SAFETY
-        const phoneLink = document.getElementById("phoneLink");
-        const phoneText = document.getElementById("phoneText");
-        const copied = document.getElementById("copied");
-        const cleanPh = cleanNumber("8638670107");
-
-        // Safe Update: Update href and text separately without killing siblings
-        if (phoneLink) { phoneLink.href = `tel:+91${cleanPh}`; }
-        if (phoneText) { phoneText.textContent = `+91 ${cleanPh}`; }
-
-        if (phoneLink && navigator.clipboard) {
-            phoneLink.addEventListener("click", async (e) => {
-                if (window.innerWidth > 900) {
-                    e.preventDefault();
-                    try { 
-                        await navigator.clipboard.writeText(cleanPh);
-                        if (copied) {
-                            copied.style.display = "inline";
-                            setTimeout(() => copied.style.display = "none", 1200);
-                        }
-                    } catch {}
-                }
-            });
+        if (isDemo) {
+            document.getElementById("demoBadge").style.display = "block";
+            const today = new Date();
+            const expiry = parseExpiryLocal(expiryStr);
+            if (expiry && today > expiry) {
+                document.body.innerHTML = `
+                    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;text-align:center;font-family:sans-serif;background:#fffbeb;padding:20px;">
+                        <h1 style="color:#dc2626;font-size:24px;margin-bottom:10px;">⚠️ TRIAL EXPIRED</h1>
+                        <p style="color:#1f2937;font-weight:600;margin:0 0 5px;font-size:16px;">This business hub preview has ended.</p>
+                        <a id="activateBtn" href="#" 
+                           style="background:#0f172a;color:#fcd34d;padding:14px 30px;text-decoration:none;border-radius:50px;font-weight:700;margin-top:20px;box-shadow:0 10px 20px -5px rgba(0,0,0,0.2);border:1px solid rgba(217,119,6,0.35);">
+                           Contact to Activate
+                        </a>
+                    </div>
+                `;
+                const salesWa = cleanNumber("916001699400");
+                const actMsg = `Hi NE Connect, I want to activate my Business Hub for +91 8638670107.`;
+                document.getElementById("activateBtn").href = `https://wa.me/91${salesWa}?text=${encodeURIComponent(actMsg)}`;
+            }
         }
     </script>
 </body>

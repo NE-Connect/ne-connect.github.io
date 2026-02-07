@@ -163,6 +163,13 @@
         .features li:last-child { border-bottom: none; }
         .icon-check { color: #10b981; margin-top: 3px; font-size: 16px; }
 
+        /* PULSE ANIMATION */
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
         /* BUTTONS */
         .cta-btn { 
             width: 100%; 
@@ -185,6 +192,7 @@
             background: linear-gradient(180deg, #25D366 0%, #128C7E 100%);
             color: white; 
             box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            animation: pulse-green 2s infinite; /* Added Pulse */
         }
         .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(37, 211, 102, 0.4); }
 
@@ -213,6 +221,16 @@
         .demo-warning { font-size: 10px; color: #dc2626; font-weight: 500; }
         
         .micro-trust { font-size: 12px; color: var(--text-light); margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 6px; }
+
+        /* RECENT CLIENTS (New Section) */
+        .trust-section { margin: 40px auto; max-width: 500px; padding: 0 20px; text-align: center; }
+        .trust-title { font-size: 14px; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
+        .client-grid { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .client-badge { 
+            background: white; padding: 8px 12px; border-radius: 20px; 
+            font-size: 12px; font-weight: 600; color: var(--primary); 
+            border: 1px solid #e5e7eb; display: flex; align-items: center; gap: 5px;
+        }
 
         /* FAQ SECTION */
         .faq-section { max-width: 600px; margin: 40px auto 60px; padding: 0 20px; }
@@ -263,7 +281,7 @@
     <div class="container">
         
         <div class="offer-card">
-            <div class="header-ribbon">Most Popular in Assam</div>
+            <div class="header-ribbon">Empowering local businesses to grow online. Helping businesses succeed digitally</div>
             
             <div class="card-body">
                 <div class="product-title">NE Connect Business Hub</div>
@@ -273,7 +291,7 @@
 
                 <div class="price-container">
                     <div class="old-price">Standard Price: ₹3,499</div>
-                    <div class="new-price"><span class="price">₹2,499</span></div>
+                    <div class="new-price">₹2,499</div>
                     
                     <div class="validity">One-time Activation · No Monthly Fees</div>
                     
@@ -305,7 +323,7 @@
                     </li>
                 </ul>
 
-                <a href="https://wa.me/918638370107?text=Hi%20NE%20Connect%2C%20I%20want%20to%20activate%20the%20Business%20Hub%20for%20%E2%82%B92499.%0A%0AMy%20business%20category%3A%20_____%0ALocation%3A%20_____" class="cta-btn btn-wa">
+                <a href="https://wa.me/916001699400?text=Hi%20NE%20Connect%2C%20I%20want%20to%20activate%20the%20Business%20Hub%20for%20%E2%82%B92499.%0A%0AMy%20business%20category%3A%20_____%0ALocation%3A%20_____" class="cta-btn btn-wa">
                     <i class="fa-brands fa-whatsapp"></i> Activate for ₹2,499
                 </a>
 
@@ -333,6 +351,15 @@
             </div>
         </div>
 
+    </div>
+
+    <div class="trust-section">
+        <div class="trust-title">Recently Activated in Assam</div>
+        <div class="client-grid">
+            <div class="client-badge"><i class="fa-solid fa-check-circle" style="color:#10b981"></i> City Pharmacy</div>
+            <div class="client-badge"><i class="fa-solid fa-check-circle" style="color:#10b981"></i> Raju's Kitchen</div>
+            <div class="client-badge"><i class="fa-solid fa-check-circle" style="color:#10b981"></i> Dr. Barman's Clinic</div>
+        </div>
     </div>
 
     <div class="faq-section">
