@@ -6,9 +6,7 @@
     <title>NE Connect Business Hub | WhatsApp Enquiries & Google Reviews</title>
     <meta name="description" content="Turn Google Maps visitors into customers. Automated WhatsApp bookings and 5-Star Review growth.">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" type="image/png" href="https://ne-connect.github.io/logo.png">
+    <link rel="icon" type="image/png" href="logo.png">
 
     <meta property="og:site_name" content="NE Connect">
     <meta property="og:title" content="NE Connect Business Hub">
@@ -16,9 +14,6 @@
     <meta property="og:image" content="https://ne-connect.github.io/logo.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ne-connect.github.io/">
-    
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:image" content="https://ne-connect.github.io/logo.png">
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -59,7 +54,10 @@
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
         .brand { display: flex; flex-direction: column; align-items: center; text-decoration: none; }
-        .logo-img { height: 60px; width: auto; margin-bottom: 2px; }
+        
+        /* LOGO ICON FIX */
+        .brand-icon { font-size: 36px; color: var(--primary); margin-bottom: 4px; }
+        
         .brand-text { font-weight: 800; font-size: 18px; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; line-height: 1; }
         .msme-badge { font-size: 9px; background: var(--primary); color: white; padding: 2px 6px; border-radius: 4px; margin-top: 4px; font-weight: 600; letter-spacing: 0.5px; }
 
@@ -192,7 +190,7 @@
             background: linear-gradient(180deg, #25D366 0%, #128C7E 100%);
             color: white; 
             box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-            animation: pulse-green 2s infinite; /* Added Pulse */
+            animation: pulse-green 2s infinite; 
         }
         .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(37, 211, 102, 0.4); }
 
@@ -222,7 +220,7 @@
         
         .micro-trust { font-size: 12px; color: var(--text-light); margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 6px; }
 
-        /* RECENT CLIENTS (New Section) */
+        /* RECENT CLIENTS SECTION */
         .trust-section { margin: 40px auto; max-width: 500px; padding: 0 20px; text-align: center; }
         .trust-title { font-size: 14px; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
         .client-grid { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
@@ -267,7 +265,7 @@
 
     <nav class="navbar">
         <a href="#" class="brand">
-            <img src="https://ne-connect.github.io/logo.png" alt="NE Connect" class="logo-img">
+            <i class="fa-solid fa-briefcase brand-icon"></i>
             <div class="brand-text">NE Connect</div>
             <div class="msme-badge">REG. MSME: UDYAM-AS-03-0083968</div>
         </a>
@@ -281,7 +279,7 @@
     <div class="container">
         
         <div class="offer-card">
-            <div class="header-ribbon">Empowering local businesses to grow online. Helping businesses succeed digitally</div>
+            <div class="header-ribbon">Empowering Local Businesses to Grow Online</div>
             
             <div class="card-body">
                 <div class="product-title">NE Connect Business Hub</div>
@@ -296,7 +294,7 @@
                     <div class="validity">One-time Activation · No Monthly Fees</div>
                     
                     <div style="font-size:12px;color:#dc2626;font-weight:600;margin-top:6px;">
-                        Introductory Price · Limited Slots (We onboard manually)
+                        Introductory Price · Limited Slots
                     </div>
                 </div>
 
@@ -340,7 +338,7 @@
                 </div>
 
                 <div style="text-align:center;">
-                    <a href="https://ne-connect.github.io/cards/8638370107/" class="btn-demo" target="_blank" rel="noopener nofollow">
+                    <a href="#" class="btn-demo" onclick="alert('Our demo server is currently refreshing with new examples. Please contact support on WhatsApp to see a live client sample!'); return false;">
                         <span><i class="fa-solid fa-eye"></i> See Live Example</span>
                         <span class="demo-warning">Demo resets weekly · Limited preview</span>
                     </a>
