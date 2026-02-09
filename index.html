@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NE Connect Business Hub | WhatsApp Enquiries & Google Reviews</title>
+    <title>NE Connect Business Hub | Guwahati's #1 Digital Card Creator</title>
     <meta name="description" content="Turn Google Maps visitors into customers. Automated WhatsApp bookings and 5-Star Review growth.">
     
     <link rel="icon" type="image/png" href="./logo.png">
@@ -198,33 +198,52 @@
         }
         .btn-order:hover { background: #f0f7ff; transform: translateY(-2px); }
 
-        .btn-demo {
-            margin-top: 20px;
-            background: transparent;
-            color: var(--text-light);
-            font-size: 14px;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            flex-direction: column;
-            gap: 2px;
-            text-decoration: none;
-            padding-bottom: 2px;
+        /* PORTFOLIO GRID */
+        .portfolio-section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            text-align: center;
         }
-        .btn-demo i { font-size: 16px; margin-bottom: 4px; }
-        .btn-demo:hover { color: var(--primary); }
-        .demo-warning { font-size: 10px; color: #dc2626; font-weight: 500; }
+        .section-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .grid-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            border: 1px solid #f1f5f9;
+        }
+        .grid-item:hover { transform: translateY(-3px); border-color: var(--primary); }
         
-        .micro-trust { font-size: 12px; color: var(--text-light); margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 6px; }
-
-        /* RECENT CLIENTS SECTION */
-        .trust-section { margin: 40px auto; max-width: 500px; padding: 0 20px; text-align: center; }
-        .trust-title { font-size: 14px; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
-        .client-grid { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-        .client-badge { 
-            background: white; padding: 8px 12px; border-radius: 20px; 
-            font-size: 12px; font-weight: 600; color: var(--primary); 
-            border: 1px solid #e5e7eb; display: flex; align-items: center; gap: 5px;
+        .thumb {
+            height: 120px;
+            width: 100%;
+            object-fit: cover;
+            background: #e2e8f0;
+        }
+        .item-info { padding: 12px; text-align: left; }
+        .item-cat { font-size: 10px; color: var(--text-light); text-transform: uppercase; font-weight: 700; }
+        .item-name { font-size: 13px; font-weight: 700; color: var(--text); margin-top: 2px; }
+        .live-badge { 
+            font-size: 9px; background: #ecfdf5; color: #059669; padding: 2px 6px; 
+            border-radius: 4px; display: inline-block; margin-top: 6px; font-weight: 600;
         }
 
         /* FAQ SECTION */
@@ -254,7 +273,7 @@
 
         @media (max-width: 480px) {
             .hero h1 { font-size: 28px; }
-            .new-price { font-size: 40px; }
+            .grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
@@ -322,38 +341,81 @@
                     <i class="fa-brands fa-whatsapp"></i> Activate for ₹2,499
                 </a>
 
-                <a href="order.html" class="cta-btn btn-order">
-                    <i class="fa-solid fa-file-invoice"></i> Pay & Fill Details
+                <a href="#portfolio" class="cta-btn btn-order" style="border: 1px solid #ccc; color: #444;">
+                    <i class="fa-solid fa-eye"></i> View Live Examples
                 </a>
-                
-                <div class="micro-trust">
-                    <i class="fa-solid fa-qrcode"></i> UPI Accepted · Delivery in 24–48 Hours
-                </div>
-                
-                <div style="font-size:13px; color:#6b7280; text-align:center; margin-top:20px;">
-                    Try the preview below. No obligation.
-                </div>
-
-                <div style="text-align:center;">
-                    <a href="#" class="btn-demo" onclick="alert('Our demo server is currently refreshing with new examples. Please contact support on WhatsApp to see a live client sample!'); return false;">
-                        <span><i class="fa-solid fa-eye"></i> See Live Example</span>
-                        <span class="demo-warning">Demo resets weekly · Limited preview</span>
-                    </a>
-                    <div style="font-size:11px;color:#6b7280;margin-top:8px;">
-                        Want your own demo? Send your phone number on WhatsApp.
-                    </div>
-                </div>
             </div>
         </div>
 
     </div>
 
-    <div class="trust-section">
-        <div class="trust-title">Recently Activated in Assam</div>
-        <div class="client-grid">
-            <div class="client-badge"><i class="fa-solid fa-check-circle" style="color:#10b981"></i> City Pharmacy</div>
-            <div class="client-badge"><i class="fa-solid fa-check-circle" style="color:#10b981"></i> Raju's Kitchen</div>
-            <div class="client-badge"><i class="fa-solid fa-check-circle" style="color:#10b981"></i> Dr. Barman's Clinic</div>
+    <div id="portfolio" class="portfolio-section">
+        <div class="section-title">Latest Digital Hubs</div>
+        <p style="font-size:14px; color:#6b7280; margin-bottom:20px;">Tap any card below to see the live demo.</p>
+        
+        <div class="grid">
+            <a href="Srinivas_Silk/" class="grid-item">
+                <img src="assets/silk.jpg" class="thumb" alt="Silk Saree">
+                <div class="item-info">
+                    <div class="item-cat">Fashion</div>
+                    <div class="item-name">Srinivas Silk</div>
+                    <div class="live-badge">● Live Demo</div>
+                </div>
+            </a>
+
+            <a href="The_Bean_Journal/" class="grid-item">
+                <img src="assets/cafe.jpg" class="thumb" alt="Cafe">
+                <div class="item-info">
+                    <div class="item-cat">Food & Bev</div>
+                    <div class="item-name">The Bean Journal</div>
+                    <div class="live-badge">● Live Demo</div>
+                </div>
+            </a>
+
+            <a href="Urban_Hardware_Pro/" class="grid-item">
+                <img src="assets/hardware.jpg" class="thumb" alt="Hardware">
+                <div class="item-info">
+                    <div class="item-cat">Hardware</div>
+                    <div class="item-name">Urban Hardware</div>
+                    <div class="live-badge">● Live Demo</div>
+                </div>
+            </a>
+
+            <a href="Style_Loft_Guwahati/" class="grid-item">
+                <img src="assets/fashion.jpg" class="thumb" alt="Fashion">
+                <div class="item-info">
+                    <div class="item-cat">Streetwear</div>
+                    <div class="item-name">Style Loft</div>
+                    <div class="live-badge">● Live Demo</div>
+                </div>
+            </a>
+
+            <a href="FreshBasket_Daily/" class="grid-item">
+                <img src="assets/grocery.jpg" class="thumb" alt="Grocery">
+                <div class="item-info">
+                    <div class="item-cat">Grocery</div>
+                    <div class="item-name">FreshBasket</div>
+                    <div class="live-badge">● Live Demo</div>
+                </div>
+            </a>
+
+            <a href="Glow_and_Grace_Salon/" class="grid-item">
+                <img src="assets/spa.jpg" class="thumb" alt="Spa">
+                <div class="item-info">
+                    <div class="item-cat">Service</div>
+                    <div class="item-name">Glow & Grace</div>
+                    <div class="live-badge">● Live Demo</div>
+                </div>
+            </a>
+
+            <a href="The_Momos_Point/" class="grid-item">
+                <img src="assets/food.jpg" class="thumb" alt="Momos">
+                <div class="item-info">
+                    <div class="item-cat">Food</div>
+                    <div class="item-name">The Momos Point</div>
+                    <div class="live-badge">● Live Demo</div>
+                </div>
+            </a>
         </div>
     </div>
 
@@ -369,11 +431,6 @@
             <div class="faq-q">Can I edit my details later?</div>
             <div class="faq-a">We provide one free revision round immediately after delivery. Any future updates are charged a small maintenance fee (₹299).</div>
         </div>
-
-        <div class="faq-item">
-            <div class="faq-q">What do you need from me to activate?</div>
-            <div class="faq-a">Business name, Google Maps link, 5–10 photos, and services/menu list.</div>
-        </div>
         
         <div class="faq-item">
             <div class="faq-q">Do I need a domain name?</div>
@@ -383,12 +440,6 @@
 
     <footer>
         <p>NE Connect · Premium Business Solutions<br>Guwahati, Assam - 781024</p>
-        
-        <p style="font-size:11px; opacity:0.7; max-width: 420px; margin: 10px auto;">
-            Hosting is included as long as NE Connect service is operational. 
-            Major redesigns or custom changes may be chargeable.
-        </p>
-        
         <p style="margin-top: 15px;">
             <a href="legal.html" style="text-decoration: underline;">Privacy & Terms</a>
         </p>
