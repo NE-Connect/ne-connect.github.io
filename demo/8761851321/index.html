@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KGN Gems & Jewellery | Official Profile</title>
+    
+    <meta name="robots" content="noindex">
+    <meta property="og:title" content="KGN Gems & Jewellery - Official Profile">
+    <meta property="og:description" content="Get directions, contact details, WhatsApp booking, and reviews for KGN Gems & Jewellery.">
+    <meta property="og:image" content="profile.jpg">
+    <meta property="og:url" content="https://ne-connect.github.io/demo/8761851321/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #0f172a;       
+            --gold: #d97706;       
+            --bg: #f8fafc;
+            --text-main: #334155;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; -webkit-font-smoothing: antialiased; }
+        body { background: var(--bg); color: var(--text-main); padding-bottom: 110px; }
+        html { scroll-behavior: smooth; }
+
+        .header-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            height: 180px;
+            border-radius: 0 0 30px 30px;
+            position: relative;
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            position: absolute; top: 15px; right: 15px;
+            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+            color: white; padding: 5px 12px; border-radius: 20px;
+            font-size: 12px; font-weight: 700; cursor: pointer; backdrop-filter: blur(5px);
+            display: flex; gap: 5px; align-items: center; z-index: 10;
+        }
+        .lang-toggle span { opacity: 0.5; transition: 0.2s; }
+        .lang-toggle span.active { opacity: 1; color: #fcd34d; }
+
+        .profile-img-container {
+            width: 120px; height: 120px; margin: -60px auto 15px;
+            border-radius: 50%; border: 4px solid white;
+            background: white; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            overflow: hidden; position: relative;
+        }
+        .profile-img-container img { width: 100%; height: 100%; object-fit: cover; }
+
+        .container { max-width: 480px; margin: 0 auto; padding: 0 20px; }
+        
+        .name { font-size: 24px; font-weight: 800; color: var(--dark); text-align: center; margin-bottom: 4px; line-height: 1.2; }
+        .designation { font-size: 14px; font-weight: 600; color: var(--gold); text-align: center; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+        .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 25px; }
+        .btn {
+            display: flex; align-items: center; justify-content: center; gap: 6px;
+            padding: 14px 10px; border-radius: 14px; text-decoration: none;
+            font-weight: 700; font-size: 13px; transition: transform 0.2s;
+            text-align: center; border: none; cursor: pointer; width: 100%;
+        }
+        .btn:active { transform: scale(0.97); }
+        .btn-call { background: var(--dark); color: white; }
+        .btn-wa { background: #16a34a; color: white; }
+        .btn-save { background: var(--gold); color: white; }
+        .btn-map { background: #e11d48; color: white; border: none; box-shadow: 0 4px 10px rgba(225, 29, 72, 0.2); }
+        .btn-book { background: var(--primary); color: white; grid-column: span 2; padding: 16px; font-size: 15px; margin-top: 5px; }
+        
+        .card { background: white; border-radius: 20px; padding: 25px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.02); }
+        .card-title { font-size: 14px; font-weight: 800; color: var(--dark); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+        .card-text { font-size: 15px; color: var(--text-main); line-height: 1.6; }
+        
+        .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
+        .gallery-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 12px; cursor: pointer; transition: 0.2s; border: 1px solid #f1f5f9; }
+        .gallery-grid img:active { transform: scale(0.95); }
+
+        .stars { display: flex; justify-content: center; gap: 8px; margin-bottom: 10px; direction: ltr; }
+        .stars span { font-size: 44px; color: #e2e8f0; cursor: pointer; transition: all 0.2s; text-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .stars span.active { color: #f59e0b; transform: scale(1.1); }
+        #review-engine-card { border: 2px solid rgba(245, 158, 11, 0.3); background: #fffbeb; }
+
+        .fab { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: #ef4444; color: white; padding: 14px 28px; border-radius: 30px; font-weight: 800; text-decoration: none; box-shadow: 0 10px 25px rgba(239, 68, 68, 0.4); border: 2px solid white; font-size: 15px; display: none; z-index: 1000; white-space: nowrap; }
+        
+        #demoBadge { position: absolute; top: 15px; left: 15px; background: #ef4444; color: white; font-size: 10px; font-weight: 800; padding: 4px 8px; border-radius: 6px; letter-spacing: 1px; display: none; z-index: 10; }
+
+        /* Booking Modal Styles */
+        #booking-modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:flex-end; backdrop-filter: blur(3px); }
+        .modal-content { background:#fff; width:100%; max-width:480px; border-radius:24px 24px 0 0; padding:30px; box-shadow:0 -5px 15px rgba(0,0,0,0.1); animation: slideUp 0.3s ease-out; }
+        @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+    </style>
+</head>
+<body>
+    <div style="background:#dc2626;color:white;text-align:center;padding:8px;font-size:12px;font-weight:700;">PREVIEW MODE: This profile is a demo draft. It will be deleted on 2026-03-31.</div>
+    
+    <div class="header-bg">
+        <div id="demoBadge">PREVIEW</div>
+        <div class="lang-toggle" id="lang-btn">
+            <span class="active" id="lang-en">EN</span> | <span id="lang-as">AS</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="profile-img-container">
+            <img src="profile.jpg" alt="Profile" onerror="this.src='https://via.placeholder.com/150?text=Logo'">
+        </div>
+
+        <h1 class="name">KGN Gems & Jewellery</h1>
+        <div class="designation" id="t-desig">Owner</div>
+
+        <div style="text-align: center; font-size: 13px; color: #64748b; margin-top: -12px; margin-bottom: 20px; padding: 0 15px;">
+            📍 Fancy Ali, Jorhat, Kalakhowa Gaon, Assam 785001, India
+        </div>
+
+        <div class="actions">
+            <a href="tel:8761851321" class="btn btn-call" id="btnCall">📞 <span id="t-call">Call</span></a>
+            <a href="https://wa.me/918761851321" class="btn btn-wa" id="btnWa">💬 <span id="t-wa">WhatsApp</span></a>
+            <button class="btn btn-save" id="saveContactBtn">💾 <span id="t-save">Save Contact</span></button>
+            <a href="#" class="btn btn-map" id="mapBtn" target="_blank">📍 <span id="t-map">Directions</span></a>
+            <button class="btn btn-book" id="bookBtn">📅 <span id="t-book">Book Appointment</span></button>
+        </div>
+
+        <div class="card">
+            <div class="card-title" id="t-about">About Us</div>
+            <div class="card-text">Welcome to KGN Gems & Jewellery. The #1 Fashion destination in Jorhat, Assam 785001.</div>
+        </div>
+
+        <div class="card" id="gallery-card">
+            <div class="card-title" id="t-gallery">Gallery</div>
+            <div class="gallery-grid" id="gallery-container"></div>
+        </div>
+
+        <div class="card" id="review-engine-card">
+            <div class="card-title" style="text-align: center; color: #b45309;" id="t-review">⭐ Rate Your Experience</div>
+            <p style="text-align: center; font-size: 13px; color: #92400e; margin-top: -10px; margin-bottom: 15px;" id="t-rate-sub">Tap a star to rate us</p>
+            
+            <div class="stars" id="star-rating">
+                <span data-value="1">★</span>
+                <span data-value="2">★</span>
+                <span data-value="3">★</span>
+                <span data-value="4">★</span>
+                <span data-value="5">★</span>
+            </div>
+
+            <div id="feedback-form" style="display:none; margin-top:20px; border-top: 1px dashed #fcd34d; padding-top: 15px;">
+                <p style="font-size:13px; color:#dc2626; font-weight: 600; margin-bottom:10px; text-align: center;" id="t-feed-msg">We want to make it right. How can we improve?</p>
+                <form action="https://docs.google.com/forms/d/e/1FAIpQLSfnZu6j1ZbR4pUSctyfkhEJzy9gVvCa05kC8HnC5upFZf6C4Q/formResponse" method="POST" target="hidden_iframe" onsubmit="document.getElementById('feedback-form').innerHTML='<div style=\'text-align:center; padding:20px; color:#10b981; font-weight:bold;\'>✅ Sent!</div>';">
+                    <textarea name="entry.1000000" rows="3" placeholder="Tell us what went wrong..." style="width:100%; padding:12px; border:1px solid #fcd34d; border-radius:12px; margin-bottom:10px; font-family: inherit; resize: none;" required></textarea>
+                    <input type="text" name="entry.2000000" placeholder="Phone Number (Optional)" style="width:100%; padding:12px; border:1px solid #fcd34d; border-radius:12px; margin-bottom:15px; font-family: inherit;">
+                    <button type="submit" style="width:100%; background:#b45309; color:#fff; border:none; padding:14px; border-radius:12px; font-size:14px; font-weight:700; cursor:pointer;" id="t-feed-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        
+            <div style="background:#fff7ed; border:2px dashed #f97316; padding:20px; text-align:center; margin:20px 0; border-radius:12px;">
+                <h3 style="color:#c2410c; margin-top:0; font-size:18px;">🔓 FINAL ACTIVATION</h3>
+
+                <div style="font-size:16px; font-weight:800; color:#ea580c; margin-bottom:10px;">
+                    BALANCE DUE: ₹1,499
+                </div>
+
+                <img src="payment.png" style="width:160px; border-radius:8px; border:1px solid #fed7aa;">
+                
+                <p style="font-size:12px; color:#7c2d12; margin-top:8px; font-weight:600;">
+                    Scan & Pay to NE Connect Official<br>to remove watermark instantly.
+                </p>
+            </div>
+            
+
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+        <br>
+    </div>
+
+    <div id="booking-modal">
+        <div class="modal-content">
+            <h3 style="color:#0f172a; margin-bottom:5px; font-size:20px;" id="m-title">Request Appointment</h3>
+            <p style="color:#64748b; font-size:13px; margin-bottom:20px;" id="m-sub">Fast, secure booking via WhatsApp.</p>
+            
+            <input type="text" id="b-name" placeholder="Your Name" style="width:100%; padding:14px; margin-bottom:12px; border:1px solid #cbd5e1; border-radius:12px; font-family:inherit;">
+            
+            <div style="display:flex; gap:10px; margin-bottom:12px;">
+                <input type="date" id="b-date" style="flex:1; padding:14px; border:1px solid #cbd5e1; border-radius:12px; font-family:inherit;">
+                <select id="b-time" style="flex:1; padding:14px; border:1px solid #cbd5e1; border-radius:12px; font-family:inherit; background:#fff;">
+                    <option value="Morning">Morning</option>
+                    <option value="Afternoon">Afternoon</option>
+                    <option value="Evening">Evening</option>
+                </select>
+            </div>
+            
+            <button id="send-booking" style="width:100%; background:#2563eb; color:white; padding:16px; border:none; border-radius:12px; font-weight:700; font-size:16px; cursor:pointer; margin-bottom:10px;">Confirm & Send</button>
+            <button id="close-modal" style="width:100%; background:transparent; color:#64748b; padding:12px; border:none; font-weight:600; cursor:pointer;">Cancel</button>
+        </div>
+    </div>
+
+    <a href="#" class="fab" id="buyFab">⚡ Activate Profile</a>
+
+    <script>
+        function clean(p) { return String(p).replace(/\D/g, '').slice(-10); }
+        
+        // --- 1. LOCALIZATION ENGINE (English / Assamese) ---
+        let currentLang = 'en';
+        const langData = {
+            en: {
+                call: "Call", wa: "WhatsApp", save: "Save Contact", map: "Directions", book: "Book Appointment",
+                about: "About Us", gallery: "Gallery", review: "⭐ Rate Your Experience",
+                rateSub: "Tap a star to rate us", feedMsg: "We want to make it right. How can we improve?",
+                feedBtn: "Send Message", mTitle: "Request Appointment", mSub: "Fast, secure booking via WhatsApp.",
+                mConf: "Confirm & Send", mCan: "Cancel"
+            },
+            as: {
+                call: "Koll Korok", wa: "WhatsApp", save: "Number Save Korok", map: "Rasta Swa", book: "Appointment Book Korok",
+                about: "Aamar Bikhoye", gallery: "Gallery", review: "⭐ Apunar Anubhab Jonauk",
+                rateSub: "Rating diboloi star t click korok", feedMsg: "Aami bhal koribo bisaru. Kenekoi unnati korim?",
+                feedBtn: "Message Pothauk", mTitle: "Appointment Khujok", mSub: "WhatsApp or dwara xahoj booking.",
+                mConf: "Nischito Korok", mCan: "Batil Korok"
+            }
+        };
+
+        document.getElementById('lang-btn').addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'as' : 'en';
+            document.getElementById('lang-en').classList.toggle('active');
+            document.getElementById('lang-as').classList.toggle('active');
+            
+            const t = langData[currentLang];
+            document.getElementById('t-call').innerText = t.call;
+            document.getElementById('t-wa').innerText = t.wa;
+            document.getElementById('t-save').innerText = t.save;
+            document.getElementById('t-map').innerText = t.map;
+            document.getElementById('t-book').innerText = t.book;
+            document.getElementById('t-about').innerText = t.about;
+            document.getElementById('t-gallery').innerText = t.gallery;
+            document.getElementById('t-review').innerText = t.review;
+            document.getElementById('t-rate-sub').innerText = t.rateSub;
+            document.getElementById('t-feed-msg').innerText = t.feedMsg;
+            document.getElementById('t-feed-btn').innerText = t.feedBtn;
+            document.getElementById('m-title').innerText = t.mTitle;
+            document.getElementById('m-sub').innerText = t.mSub;
+            document.getElementById('send-booking').innerText = t.mConf;
+            document.getElementById('close-modal').innerText = t.mCan;
+        });
+
+        // --- 2. VCARD: SAVE CONTACT ---
+        document.getElementById('saveContactBtn').addEventListener('click', () => {
+            const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:KGN Gems & Jewellery\nORG:KGN Gems & Jewellery\nTEL;TYPE=WORK,VOICE:+918761851321\nTEL;TYPE=WHATSAPP:+918761851321\nURL:https://ne-connect.github.io/demo/8761851321/\nEND:VCARD`;
+            const blob = new Blob([vcard], { type: 'text/vcard' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `KGN Gems & Jewellery.vcf`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        });
+
+       // --- 3. GPS DIRECT-TO-DRIVE OVERRIDE ---
+        const mapLink = "https://maps.google.com/?cid=738726510911639679&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA";
+        const bizName = "KGN Gems & Jewellery";
+        const bizAddress = "Fancy Ali, Jorhat, Kalakhowa Gaon, Assam 785001, India";
+        if(!mapLink || mapLink.length < 5 || mapLink.includes("MAP_LINK")) {
+            document.getElementById("mapBtn").style.display="none";
+        } else {
+            const encodedQuery = encodeURIComponent(bizName + ", " + bizAddress);
+            // THE FLAWLESS, DIRECT-TO-DRIVE GOOGLE MAPS API LINK
+            document.getElementById("mapBtn").href = `https://www.google.com/maps/dir/?api=1&destination=${encodedQuery}`;
+        }
+
+        // --- 4. NATIVE BOOKING MODAL ---
+        const waNum = clean("8761851321");
+        const bookBtn = document.getElementById("bookBtn");
+        const modal = document.getElementById("booking-modal");
+
+        if(waNum && waNum.length >= 10 && !waNum.includes("WHATSAPP")) {
+            bookBtn.addEventListener('click', (e) => {
+                e.preventDefault(); modal.style.display = "flex";
+            });
+        } else {
+            bookBtn.style.display = "none";
+        }
+
+        document.getElementById("close-modal").addEventListener('click', () => { modal.style.display = "none"; });
+        
+        document.getElementById("send-booking").addEventListener('click', () => {
+            const name = document.getElementById("b-name").value || "A Customer";
+            const date = document.getElementById("b-date").value || "Upcoming";
+            const time = document.getElementById("b-time").value;
+            const msg = `📅 *NEW BOOKING REQUEST*%0A%0A*Name:* ${name}%0A*Date:* ${date}%0A*Time:* ${time}%0A%0A_Sent via VIP Digital Profile_`;
+            window.open(`https://wa.me/91${waNum}?text=${msg}`, '_blank');
+            modal.style.display = "none";
+        });
+
+        // --- 5. PERFECT-5 REVIEW GATEKEEPER ---
+        const revLink = "https://maps.google.com/?cid=738726510911639679&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA"; 
+        const reviewCard = document.getElementById("review-engine-card");
+        
+        if(!revLink || revLink.length < 5 || revLink.includes("REVIEW_LINK")) {
+            if(reviewCard) reviewCard.style.display="none";
+        } else {
+            const stars = document.querySelectorAll('#star-rating span');
+            const feedbackForm = document.getElementById('feedback-form');
+
+            stars.forEach(star => {
+                star.addEventListener('click', function() {
+                    const rating = this.getAttribute('data-value');
+                    stars.forEach(s => { s.classList.toggle('active', s.getAttribute('data-value') <= rating); });
+
+                    if(rating == 5) {
+                        feedbackForm.style.display = 'none';
+                        setTimeout(() => { window.open(revLink, '_blank'); }, 400);
+                    } else {
+                        feedbackForm.style.display = 'block';
+                    }
+                });
+            });
+        }
+
+        // --- 6. LAZY LOAD GALLERY INJECTION ---
+        const gFiles = ['g/1.jpg']; 
+        const gCont = document.getElementById('gallery-container');
+        if(gFiles.length) {
+            gFiles.forEach(s=>{ 
+                let i = document.createElement('img'); 
+                i.src = s; 
+                i.loading = "lazy"; // SUPER FAST LOADING
+                i.onclick = () => window.open(s, '_blank'); 
+                gCont.appendChild(i); 
+            });
+        } else {
+            document.getElementById('gallery-card').style.display="none";
+        }
+
+        // --- 7. DEMO EXPIRY LOGIC ---
+        const exp = "2026-03-31"; 
+        const isDemo = (exp && exp !== "2099-12-31" && exp !== "");
+        const fab = document.getElementById("buyFab");
+        
+        if(isDemo) {
+            document.getElementById("demoBadge").style.display = "block";
+            const salesWa = clean("916001699400");
+            if(salesWa.length === 10) {
+                fab.href = `https://wa.me/91${salesWa}?text=Hi%2C%20I%20want%20to%20activate%20my%20profile%20for%20%2B918761851321`;
+                fab.style.display = "block";
+            }
+        }
+    </script>
+
+<style>
+    .watermark-overlay {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><text x="15" y="100" font-family="Arial" font-size="25" fill="rgba(0,0,0,0.1)" transform="rotate(-45 15 100)">PREVIEW MODE</text></svg>');
+        pointer-events: none; z-index: 9999;
+    }
+    .watermark-banner {
+        position: fixed; bottom: 0; left: 0; width: 100%;
+        background: #ef4444; color: white; text-align: center; padding: 10px;
+        font-family: sans-serif; font-weight: bold; z-index: 10000; box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    }
+</style>
+<div class="watermark-overlay"></div>
+<div class="watermark-banner">
+    ⚠️ DEMO MODE: Expires in 10 Days. <a href="https://wa.me/916001699400?text=I%20want%20to%20buy%20my%20digital%20card" style="color:yellow; text-decoration:underline;">Pay Balance to Remove</a>
+</div>
+<script>
+    // 10-DAY EXPIRY LOCK
+    const createdDateStr = "2026-03-21"; 
+    const createdDate = new Date(createdDateStr);
+    const expiryDays = 10;
+    
+    // Check local storage so they can't just change system clock easily to trick it
+    const installDate = localStorage.getItem('site_install_date');
+    if (!installDate) {
+        localStorage.setItem('site_install_date', createdDate.toISOString());
+    }
+
+    const start = installDate ? new Date(installDate) : createdDate;
+    const now = new Date();
+    const diffTime = Math.abs(now - start);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+
+    if (diffDays > expiryDays) {
+        document.body.innerHTML = `
+            <div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#000;color:white;font-family:sans-serif;text-align:center;">
+                <div>
+                    <h1>🚫 TRIAL EXPIRED</h1>
+                    <p>This digital card has been deactivated.</p>
+                    <a href="https://wa.me/916001699400" style="color:yellow;font-size:20px;">Contact NE Connect to Reactivate</a>
+                </div>
+            </div>
+        `;
+    }
+</script>
+</body>
+</html>
