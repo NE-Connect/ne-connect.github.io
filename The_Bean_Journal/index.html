@@ -9,7 +9,7 @@
     <meta property="og:title" content="The Bean Journal - Official Profile">
     <meta property="og:description" content="Get directions, contact details, WhatsApp booking, and reviews for The Bean Journal.">
     <meta property="og:image" content="profile.jpg">
-    <meta property="og:url" content="https://ne-connect.github.io/cards/8888888888/">
+    <meta property="og:url" content="https://ne-connect.github.io/The_Bean_Journal/">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,353 +18,310 @@
     <style>
         :root {
             --primary: #2563eb;
-            --dark: #0f172a;       /* Midnight Blue */
-            --gold: #d97706;       /* Rich Gold */
-            --gold-light: #fef3c7; /* Pale Gold */
+            --dark: #0f172a;       
+            --gold: #d97706;       
             --bg: #f8fafc;
             --text-main: #334155;
         }
 
-        /* RESET & BASE */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; -webkit-font-smoothing: antialiased; }
         body { background: var(--bg); color: var(--text-main); padding-bottom: 110px; }
         html { scroll-behavior: smooth; }
 
-        /* HEADER SECTION */
         .header-bg {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             height: 180px;
-            border-radius: 0 0 32px 32px;
+            border-radius: 0 0 30px 30px;
             position: relative;
-            box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.4);
-            border-bottom: 4px solid var(--gold);
-        }
-        .header-bg::after {
-            content: ''; position: absolute; top:0; left:0; width:100%; height:100%;
-            background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
-            background-size: 20px 20px; opacity: 0.5;
         }
 
-        .profile-container { text-align: center; margin-top: -90px; padding: 0 20px; position: relative; }
-
-        /* PROFILE PICTURE (Gold Ring) */
-        .profile-pic-wrap {
-            display: inline-block; padding: 4px; border-radius: 50%;
-            background: linear-gradient(135deg, #fcd34d, #d97706, #fef3c7);
-            box-shadow: 0 16px 30px -12px rgba(0,0,0,0.35);
-            margin-bottom: 8px;
+        /* Language Toggle */
+        .lang-toggle {
+            position: absolute; top: 15px; right: 15px;
+            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+            color: white; padding: 5px 12px; border-radius: 20px;
+            font-size: 12px; font-weight: 700; cursor: pointer; backdrop-filter: blur(5px);
+            display: flex; gap: 5px; align-items: center; z-index: 10;
         }
-        .profile-pic {
-            width: 140px; height: 140px;
-            border-radius: 50%;
-            border: 5px solid #fff;
-            background: #fff;
-            object-fit: cover;
-            display: block;
-        }
+        .lang-toggle span { opacity: 0.5; transition: 0.2s; }
+        .lang-toggle span.active { opacity: 1; color: #fcd34d; }
 
-        /* TYPOGRAPHY */
-        h1 {
-            margin: 12px 0 6px 0; color: var(--dark);
-            font-size: 24px; font-weight: 800;
-            display: flex; align-items: center; justify-content: center; gap: 6px;
+        .profile-img-container {
+            width: 120px; height: 120px; margin: -60px auto 15px;
+            border-radius: 50%; border: 4px solid white;
+            background: white; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            overflow: hidden; position: relative;
         }
-        .verified-tick { color: #d97706; font-size: 18px; } /* The Gold Tick */
+        .profile-img-container img { width: 100%; height: 100%; object-fit: cover; }
 
-        .badge {
-            background: var(--gold-light); color: var(--gold);
-            padding: 6px 16px; border-radius: 20px;
-            font-size: 12px; font-weight: 800; text-transform: uppercase;
-            border: 1px solid rgba(217, 119, 6, 0.2);
-            display: inline-block; margin-bottom: 10px;
-        }
+        .container { max-width: 480px; margin: 0 auto; padding: 0 20px; }
+        
+        .name { font-size: 24px; font-weight: 800; color: var(--dark); text-align: center; margin-bottom: 4px; line-height: 1.2; }
+        .designation { font-size: 14px; font-weight: 600; color: var(--gold); text-align: center; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.05em; }
 
-        /* TRUST STRIP */
-        .trust-strip {
-            font-size: 11px; font-weight: 700;
-            color: rgba(15,23,42,0.8);
-            background: rgba(254,243,199,0.6);
-            border: 1px solid rgba(217,119,6,0.2);
-            padding: 8px 14px; border-radius: 99px;
-            display: inline-block; margin-top: 6px;
-            white-space: normal; line-height: 1.4; max-width: 95%;
-        }
-
-        /* GOLD DIVIDER */
-        .profile-divider {
-            width: 120px; height: 4px; margin: 20px auto 24px auto;
-            border-radius: 99px;
-            background: linear-gradient(90deg, transparent, rgba(217,119,6,0.6), transparent);
-        }
-
-        /* BUTTONS GRID */
-        .actions {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
-            max-width: 500px; margin: 0 auto 24px auto; padding: 0 20px;
-        }
-
+        .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 25px; }
         .btn {
-            border: none; padding: 16px; border-radius: 16px;
-            font-weight: 700; font-size: 14px; cursor: pointer;
-            display: flex; align-items: center; justify-content: center; gap: 8px;
-            text-decoration: none; color: white;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex; align-items: center; justify-content: center; gap: 6px;
+            padding: 14px 10px; border-radius: 14px; text-decoration: none;
+            font-weight: 700; font-size: 13px; transition: transform 0.2s;
+            text-align: center; border: none; cursor: pointer; width: 100%;
         }
         .btn:active { transform: scale(0.97); }
+        .btn-call { background: var(--dark); color: white; }
+        .btn-wa { background: #16a34a; color: white; }
+        .btn-save { background: var(--gold); color: white; }
+        .btn-map { background: #e11d48; color: white; border: none; box-shadow: 0 4px 10px rgba(225, 29, 72, 0.2); }
+        .btn-book { background: var(--primary); color: white; grid-column: span 2; padding: 16px; font-size: 15px; margin-top: 5px; }
+        
+        .card { background: white; border-radius: 20px; padding: 25px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.02); }
+        .card-title { font-size: 14px; font-weight: 800; color: var(--dark); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+        .card-text { font-size: 15px; color: var(--text-main); line-height: 1.6; }
+        
+        .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
+        .gallery-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 12px; cursor: pointer; transition: 0.2s; border: 1px solid #f1f5f9; }
+        .gallery-grid img:active { transform: scale(0.95); }
 
-        /* VIP SAVE BUTTON (Shine Effect) */
-        .btn-save {
-            grid-column: 1 / -1; background: #0f172a; color: var(--gold);
-            border: 1px solid #1e293b; font-size: 16px; padding: 18px;
-            position: relative; overflow: hidden;
-            box-shadow: 0 10px 20px -5px rgba(15, 23, 42, 0.25);
-        }
-        .btn-save::after {
-            content:""; position:absolute; top:-50%; left:-30%; width:40%; height:200%;
-            background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.35), transparent);
-            transform: rotate(20deg); animation: shine 4s infinite;
-        }
-        @keyframes shine{ 0%{ left:-40%; } 60%{ left:120%; } 100%{ left:120%; } }
+        .stars { display: flex; justify-content: center; gap: 8px; margin-bottom: 10px; direction: ltr; }
+        .stars span { font-size: 44px; color: #e2e8f0; cursor: pointer; transition: all 0.2s; text-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .stars span.active { color: #f59e0b; transform: scale(1.1); }
+        #review-engine-card { border: 2px solid rgba(245, 158, 11, 0.3); background: #fffbeb; }
 
-        .btn-call { background: linear-gradient(135deg, #3b82f6, #2563eb); }
-        .btn-wa   { background: linear-gradient(135deg, #22c55e, #16a34a); }
-        .btn-book { background: linear-gradient(135deg, #8b5cf6, #7c3aed); } /* Royal Purple */
+        .fab { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: #ef4444; color: white; padding: 14px 28px; border-radius: 30px; font-weight: 800; text-decoration: none; box-shadow: 0 10px 25px rgba(239, 68, 68, 0.4); border: 2px solid white; font-size: 15px; display: none; z-index: 1000; white-space: nowrap; }
+        
+        #demoBadge { position: absolute; top: 15px; left: 15px; background: #ef4444; color: white; font-size: 10px; font-weight: 800; padding: 4px 8px; border-radius: 6px; letter-spacing: 1px; display: none; z-index: 10; }
 
-        /* UTILITY BUTTON (Directions) - UPGRADED TO SLATE */
-        .btn-map { 
-            background: #475569; /* Slate 600 */
-            color: white; 
-            border: 1px solid #334155;
-            box-shadow: 0 4px 6px rgba(71, 85, 105, 0.2);
-        }
-        .btn-map:hover { 
-            background: #334155; /* Darker Slate */
-            transform: translateY(-2px);
-            box-shadow: 0 8px 15px rgba(51, 65, 85, 0.3);
-        }
-
-        /* REVIEW BUTTON (Gold - The Star Feature) */
-        .btn-review {
-            grid-column: 1 / -1; /* Full Width */
-            background: linear-gradient(135deg, #f59e0b, #d97706); 
-            color: white; 
-            border: 1px solid #b45309;
-            box-shadow: 0 4px 6px rgba(217,119,6,0.2);
-            font-size: 15px;
-        }
-        .btn-review:hover {
-            box-shadow: 0 8px 15px rgba(217,119,6,0.3);
-            transform: translateY(-2px);
-        }
-
-        /* CARDS (Glass Effect) */
-        .card {
-            background: rgba(255,255,255,0.95); backdrop-filter: blur(10px);
-            border-radius: 24px; padding: 24px; margin: 0 20px 22px 20px;
-            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.05);
-            border: 1px solid rgba(226,232,240,0.8);
-            border-top: 3px solid rgba(217,119,6,0.25);
-            max-width: 500px;
-        }
-        @media(min-width: 540px) { .card, .actions { margin-left: auto; margin-right: auto; } }
-
-        .card-title {
-            font-size: 15px; font-weight: 800; margin-bottom: 16px;
-            color: var(--dark); text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.9;
-        }
-        p { font-size: 15px; line-height: 1.7; color: var(--text-main); }
-
-        /* GALLERY */
-        .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .gallery img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 12px; cursor: pointer; transition: 0.2s; }
-        .gallery img:hover { transform: scale(1.02); }
-
-        /* QR SECTION */
-        .qr-section { text-align: center; background: #fffbeb; padding: 20px; border-radius: 16px; border: 2px dashed #fcd34d; }
-        .qr-code { width: 140px; mix-blend-mode: multiply; }
-
-        /* CONTACT INFO */
-        .contact-row { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
-        .icon-box {
-            width: 44px; height: 44px; background: var(--gold-light);
-            border-radius: 12px; display: flex; align-items: center; justify-content: center;
-            color: var(--gold); font-size: 20px;
-        }
-
-        /* FOOTER & FAB */
-        .footer { text-align: center; font-size: 11px; color: #94a3b8; margin-top: 40px; padding-bottom: 20px; }
-        .fab {
-            position: fixed; bottom: 24px; right: 24px;
-            background: #0f172a; color: var(--gold);
-            padding: 14px 24px; border-radius: 50px;
-            text-decoration: none; font-weight: 700;
-            box-shadow: 0 15px 30px -10px rgba(0,0,0,0.4);
-            z-index: 100; border: 1px solid rgba(255,255,255,0.1);
-            display: flex; align-items: center; gap: 8px;
-        }
-
-        #demoBadge {
-            position: fixed; top: 12px; right: 12px;
-            background: #dc2626; color: white; padding: 6px 12px;
-            font-size: 11px; font-weight: 700; border-radius: 20px;
-            z-index: 999; display: none;
-        }
+        /* Booking Modal Styles */
+        #booking-modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:flex-end; backdrop-filter: blur(3px); }
+        .modal-content { background:#fff; width:100%; max-width:480px; border-radius:24px 24px 0 0; padding:30px; box-shadow:0 -5px 15px rgba(0,0,0,0.1); animation: slideUp 0.3s ease-out; }
+        @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
     </style>
 </head>
 <body>
-
     
-    <div id="demoBadge">PREVIEW</div>
-
-    <div class="header-bg"></div>
-    <div class="profile-container">
-        <div class="profile-pic-wrap">
-            <img src="profile.jpg" class="profile-pic" alt="Logo" onerror="this.src='https://via.placeholder.com/150?text=Logo'">
-        </div>
-        
-        <h1>The Bean Journal <span class="verified-tick">✔</span></h1>
-        <div class="badge">Cafe/Food</div>
-        
-        <div class="trust-strip">✅ One-time setup • ⚡ Instant Call/Chat • ⭐ Review Boost</div>
-        <div class="profile-divider"></div>
-    </div>
-
-    <div class="actions">
-        <button onclick="downloadVCard()" class="btn btn-save">💾 Save Contact</button>
-
-        <a href="tel:+918888888888" class="btn btn-call">📞 Call</a>
-        <a href="#" class="btn btn-wa">💬 Chat</a>
-        
-        <a id="bookBtn" href="8888888888.0" target="_blank" class="btn btn-book">📅 Book Now</a>
-        <a id="mapBtn" href="https://wa.me/916001699400?text=I%20loved%20the%20Cafe%20Demo" target="_blank" class="btn btn-map">📍 Directions</a>
-        
-        <a id="reviewBtn" href="" target="_blank" class="btn btn-review">⭐ Rate Us 5 Stars</a>
-    </div>
-
-    <div class="card">
-        <div class="card-title">ℹ️ About Us</div>
-        <p>Artisan Coffee & Continental Brews</p>
-    </div>
-
-    <div class="card" id="gallery-card">
-        <div class="card-title">📷 Our Gallery</div>
-        <div class="gallery" id="gallery-container"></div>
-    </div>
-
-    <div class="card">
-        <div class="card-title">📱 Scan to Share</div>
-        <div class="qr-section">
-            <img src="qr.png" class="qr-code" alt="QR Code">
-            <p style="font-size:13px; color:#b45309; margin-top:12px; font-weight:600;">Scan to call or review instantly</p>
+    
+    <div class="header-bg">
+        <div id="demoBadge">PREVIEW</div>
+        <div class="lang-toggle" id="lang-btn">
+            <span class="active" id="lang-en">EN</span> | <span id="lang-as">AS</span>
         </div>
     </div>
 
-    <div class="card">
-        <div class="card-title">📍 Contact Details</div>
-        <div class="contact-row">
-            <div class="icon-box">👤</div>
-            <div>
-                <div style="font-size:11px; font-weight:700; color:#94a3b8;">CONTACT</div>
-                <div style="font-weight:600;">{NAME}</div>
+    <div class="container">
+        <div class="profile-img-container">
+            <img src="profile.jpg" alt="Profile" onerror="this.src='https://via.placeholder.com/150?text=Logo'">
+        </div>
+
+        <h1 class="name">The Bean Journal</h1>
+        <div class="designation" id="t-desig">Cafe</div>
+
+        <div style="text-align: center; font-size: 13px; color: #64748b; margin-top: -12px; margin-bottom: 20px; padding: 0 15px;">
+            📍 G.S. Road, Guwahati
+        </div>
+
+        <div class="actions">
+            <a href="tel:9876543210" class="btn btn-call" id="btnCall">📞 <span id="t-call">Call</span></a>
+            <a href="https://wa.me/919876543210" class="btn btn-wa" id="btnWa">💬 <span id="t-wa">WhatsApp</span></a>
+            <button class="btn btn-save" id="saveContactBtn">💾 <span id="t-save">Save Contact</span></button>
+            <a href="#" class="btn btn-map" id="mapBtn" target="_blank">📍 <span id="t-map">Directions</span></a>
+            <button class="btn btn-book" id="bookBtn">📅 <span id="t-book">Book Appointment</span></button>
+        </div>
+
+        <div class="card">
+            <div class="card-title" id="t-about">About Us</div>
+            <div class="card-text">Artisan Coffee & Continental Brews</div>
+        </div>
+
+        <div class="card" id="gallery-card">
+            <div class="card-title" id="t-gallery">Gallery</div>
+            <div class="gallery-grid" id="gallery-container"></div>
+        </div>
+
+        <div class="card" id="review-engine-card">
+            <div class="card-title" style="text-align: center; color: #b45309;" id="t-review">⭐ Rate Your Experience</div>
+            <p style="text-align: center; font-size: 13px; color: #92400e; margin-top: -10px; margin-bottom: 15px;" id="t-rate-sub">Tap a star to rate us</p>
+            
+            <div class="stars" id="star-rating">
+                <span data-value="1">★</span>
+                <span data-value="2">★</span>
+                <span data-value="3">★</span>
+                <span data-value="4">★</span>
+                <span data-value="5">★</span>
+            </div>
+
+            <div id="feedback-form" style="display:none; margin-top:20px; border-top: 1px dashed #fcd34d; padding-top: 15px;">
+                <p style="font-size:13px; color:#dc2626; font-weight: 600; margin-bottom:10px; text-align: center;" id="t-feed-msg">We want to make it right. How can we improve?</p>
+                <form action="https://docs.google.com/forms/d/e/1FAIpQLSfnZu6j1ZbR4pUSctyfkhEJzy9gVvCa05kC8HnC5upFZf6C4Q/formResponse" method="POST" target="hidden_iframe" onsubmit="document.getElementById('feedback-form').innerHTML='<div style=\'text-align:center; padding:20px; color:#10b981; font-weight:bold;\'>✅ Sent!</div>';">
+                    <textarea name="entry.1000000" rows="3" placeholder="Tell us what went wrong..." style="width:100%; padding:12px; border:1px solid #fcd34d; border-radius:12px; margin-bottom:10px; font-family: inherit; resize: none;" required></textarea>
+                    <input type="text" name="entry.2000000" placeholder="Phone Number (Optional)" style="width:100%; padding:12px; border:1px solid #fcd34d; border-radius:12px; margin-bottom:15px; font-family: inherit;">
+                    <button type="submit" style="width:100%; background:#b45309; color:#fff; border:none; padding:14px; border-radius:12px; font-size:14px; font-weight:700; cursor:pointer;" id="t-feed-btn">Send Message</button>
+                </form>
             </div>
         </div>
-        <div class="contact-row">
-            <div class="icon-box">📞</div>
-            <div>
-                <div style="font-size:11px; font-weight:700; color:#94a3b8;">PHONE</div>
-                <div style="font-weight:600;">+91 8888888888</div>
-            </div>
-        </div>
-        <div class="contact-row">
-            <div class="icon-box">🏠</div>
-            <div>
-                <div style="font-size:11px; font-weight:700; color:#94a3b8;">ADDRESS</div>
-                <div style="font-weight:600;">Beltola, Guwahati</div>
-            </div>
-        </div>
-    </div>
 
-    <div class="card" id="owner-card" style="display:none; border: 2px solid #2563eb; background:#eff6ff;">
-        <div class="card-title" style="color:#1e40af;">🎁 Owner Tools</div>
-        <p style="font-size:13px; margin-bottom:15px; color:#1e40af;">You are viewing the Preview Mode. We generated these assets for you:</p>
         
-        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
-            <a href="Growth_Playbook.pdf" download class="btn" style="background:white; color:#1e40af; border:1px solid #bfdbfe; font-size:12px; padding:10px;">
-                📄 Growth PDF
-            </a>
-            <a href="qr.png" download class="btn" style="background:white; color:#1e40af; border:1px solid #bfdbfe; font-size:12px; padding:10px;">
-                🖨️ Download QR
-            </a>
+            <div class="card" style="background:linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border:1px solid #f59e0b; text-align:center; padding:25px; margin-bottom:22px;">
+                <div style="font-size:40px; margin-bottom:10px;">🛡️</div>
+                <h3 style="color:#92400e; font-size:18px; margin-bottom:5px; text-transform:uppercase; letter-spacing:0.05em;">Official Verified Profile</h3>
+                <p style="color:#b45309; font-size:13px; font-weight:600;">
+                    This business is digitally verified & trusted by <a href="https://ne-connect.github.io/" style="color:#d97706; font-weight:800; text-decoration:none;">NE Connect</a>.
+                </p>
+            </div>
+            
+
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+        <br>
+    </div>
+
+    <div id="booking-modal">
+        <div class="modal-content">
+            <h3 style="color:#0f172a; margin-bottom:5px; font-size:20px;" id="m-title">Request Appointment</h3>
+            <p style="color:#64748b; font-size:13px; margin-bottom:20px;" id="m-sub">Fast, secure booking via WhatsApp.</p>
+            
+            <input type="text" id="b-name" placeholder="Your Name" style="width:100%; padding:14px; margin-bottom:12px; border:1px solid #cbd5e1; border-radius:12px; font-family:inherit;">
+            
+            <div style="display:flex; gap:10px; margin-bottom:12px;">
+                <input type="date" id="b-date" style="flex:1; padding:14px; border:1px solid #cbd5e1; border-radius:12px; font-family:inherit;">
+                <select id="b-time" style="flex:1; padding:14px; border:1px solid #cbd5e1; border-radius:12px; font-family:inherit; background:#fff;">
+                    <option value="Morning">Morning</option>
+                    <option value="Afternoon">Afternoon</option>
+                    <option value="Evening">Evening</option>
+                </select>
+            </div>
+            
+            <button id="send-booking" style="width:100%; background:#2563eb; color:white; padding:16px; border:none; border-radius:12px; font-weight:700; font-size:16px; cursor:pointer; margin-bottom:10px;">Confirm & Send</button>
+            <button id="close-modal" style="width:100%; background:transparent; color:#64748b; padding:12px; border:none; font-weight:600; cursor:pointer;">Cancel</button>
         </div>
     </div>
 
-    <div class="footer">
-        POWERED BY <a href="https://ne-connect.github.io/" style="color:#0f172a; font-weight:900; text-decoration:none;">NE CONNECT</a>
-    </div>
-
-    <a id="buyFab" href="#" class="fab">Activate This Profile</a>
+    <a href="#" class="fab" id="buyFab">⚡ Activate Profile</a>
 
     <script>
-        // --- UTILS ---
-        function clean(n){ return (n||"").toString().replace(/[^\d]/g,"").replace(/^91/,"").slice(-10); }
+        function clean(p) { return String(p).replace(/\D/g, '').slice(-10); }
         
-        // 1. VCard Generator
-        function downloadVCard() {
-            const name = "The Bean Journal".replace(/[\/\\:*?"<>|]+/g, "").trim();
-            const vcard = [
-                "BEGIN:VCARD", "VERSION:3.0",
-                `FN:The Bean Journal`, `ORG:The Bean Journal`,
-                `TEL;TYPE=WORK,VOICE:+918888888888`,
-                `ADR;TYPE=WORK:;;Beltola, Guwahati`,
-                `URL:https://ne-connect.github.io/cards/8888888888/`, "END:VCARD"
-            ].join("\r\n");
+        // --- 1. LOCALIZATION ENGINE (English / Assamese) ---
+        let currentLang = 'en';
+        const langData = {
+            en: {
+                call: "Call", wa: "WhatsApp", save: "Save Contact", map: "Directions", book: "Book Appointment",
+                about: "About Us", gallery: "Gallery", review: "⭐ Rate Your Experience",
+                rateSub: "Tap a star to rate us", feedMsg: "We want to make it right. How can we improve?",
+                feedBtn: "Send Message", mTitle: "Request Appointment", mSub: "Fast, secure booking via WhatsApp.",
+                mConf: "Confirm & Send", mCan: "Cancel"
+            },
+            as: {
+                call: "Koll Korok", wa: "WhatsApp", save: "Number Save Korok", map: "Rasta Swa", book: "Appointment Book Korok",
+                about: "Aamar Bikhoye", gallery: "Gallery", review: "⭐ Apunar Anubhab Jonauk",
+                rateSub: "Rating diboloi star t click korok", feedMsg: "Aami bhal koribo bisaru. Kenekoi unnati korim?",
+                feedBtn: "Message Pothauk", mTitle: "Appointment Khujok", mSub: "WhatsApp or dwara xahoj booking.",
+                mConf: "Nischito Korok", mCan: "Batil Korok"
+            }
+        };
+
+        document.getElementById('lang-btn').addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'as' : 'en';
+            document.getElementById('lang-en').classList.toggle('active');
+            document.getElementById('lang-as').classList.toggle('active');
             
-            const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
-            const a = document.createElement("a");
-            a.href = URL.createObjectURL(blob);
-            a.download = name + ".vcf";
-            document.body.appendChild(a); a.click(); document.body.removeChild(a);
+            const t = langData[currentLang];
+            document.getElementById('t-call').innerText = t.call;
+            document.getElementById('t-wa').innerText = t.wa;
+            document.getElementById('t-save').innerText = t.save;
+            document.getElementById('t-map').innerText = t.map;
+            document.getElementById('t-book').innerText = t.book;
+            document.getElementById('t-about').innerText = t.about;
+            document.getElementById('t-gallery').innerText = t.gallery;
+            document.getElementById('t-review').innerText = t.review;
+            document.getElementById('t-rate-sub').innerText = t.rateSub;
+            document.getElementById('t-feed-msg').innerText = t.feedMsg;
+            document.getElementById('t-feed-btn').innerText = t.feedBtn;
+            document.getElementById('m-title').innerText = t.mTitle;
+            document.getElementById('m-sub').innerText = t.mSub;
+            document.getElementById('send-booking').innerText = t.mConf;
+            document.getElementById('close-modal').innerText = t.mCan;
+        });
+
+        // --- 2. VCARD: SAVE CONTACT ---
+        document.getElementById('saveContactBtn').addEventListener('click', () => {
+            const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:The Bean Journal\nORG:The Bean Journal\nTEL;TYPE=WORK,VOICE:+919876543210\nTEL;TYPE=WHATSAPP:+919876543210\nURL:https://ne-connect.github.io/The_Bean_Journal/\nEND:VCARD`;
+            const blob = new Blob([vcard], { type: 'text/vcard' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `The Bean Journal.vcf`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        });
+
+       // --- 3. GPS DIRECT-TO-DRIVE OVERRIDE ---
+        const mapLink = "https://www.google.com/maps/search/?api=1&query=Guwahati+Assam";
+        const bizName = "The Bean Journal";
+        const bizAddress = "G.S. Road, Guwahati";
+        if(!mapLink || mapLink.length < 5 || mapLink.includes("MAP_LINK")) {
+            document.getElementById("mapBtn").style.display="none";
+        } else {
+            const encodedQuery = encodeURIComponent(bizName + ", " + bizAddress);
+            // THE FLAWLESS, DIRECT-TO-DRIVE GOOGLE MAPS API LINK
+            document.getElementById("mapBtn").href = `https://www.google.com/maps/dir/?api=1&destination=${encodedQuery}`;
         }
 
-        // 2. WhatsApp Logic
-        const waBtn = document.querySelector(".btn-wa");
-        const waNum = clean("8888888888" || "8888888888");
-        if(waNum.length >= 10) waBtn.href = `https://wa.me/91${waNum}?text=Hi`;
-        else waBtn.style.display="none";
-
-        // 3. Smart Booking Logic
+        // --- 4. NATIVE BOOKING MODAL ---
+        const waNum = clean("9876543210");
         const bookBtn = document.getElementById("bookBtn");
-        let bookLink = "8888888888.0";
-        
-        if(bookLink && bookLink.length > 5 && !bookLink.includes("BOOK_LINK")) {
-            bookBtn.href = bookLink; 
-        } else if (waNum.length >= 10) {
-            bookBtn.href = `https://wa.me/91${waNum}?text=I%20want%20to%20book%20an%20appointment`;
+        const modal = document.getElementById("booking-modal");
+
+        if(waNum && waNum.length >= 10 && !waNum.includes("WHATSAPP")) {
+            bookBtn.addEventListener('click', (e) => {
+                e.preventDefault(); modal.style.display = "flex";
+            });
         } else {
             bookBtn.style.display = "none";
         }
 
-        // 4. Map & Review
-        const mapLink = "https://wa.me/916001699400?text=I%20loved%20the%20Cafe%20Demo"; 
-        if(!mapLink || mapLink.length < 5 || mapLink.includes("MAP_LINK")) document.getElementById("mapBtn").style.display="none";
+        document.getElementById("close-modal").addEventListener('click', () => { modal.style.display = "none"; });
         
-        const revLink = ""; 
-        if(!revLink || revLink.length < 5 || revLink.includes("REVIEW_LINK")) document.getElementById("reviewBtn").style.display="none";
-
-        // 5. Grid Fix
-        let visibleBtns = 0; 
-        document.querySelectorAll('.actions .btn').forEach(b=>{ 
-            if(b.style.display !== 'none' && !b.classList.contains('btn-save') && !b.classList.contains('btn-review')) visibleBtns++; 
+        document.getElementById("send-booking").addEventListener('click', () => {
+            const name = document.getElementById("b-name").value || "A Customer";
+            const date = document.getElementById("b-date").value || "Upcoming";
+            const time = document.getElementById("b-time").value;
+            const msg = `📅 *NEW BOOKING REQUEST*%0A%0A*Name:* ${name}%0A*Date:* ${date}%0A*Time:* ${time}%0A%0A_Sent via VIP Digital Profile_`;
+            window.open(`https://wa.me/91${waNum}?text=${msg}`, '_blank');
+            modal.style.display = "none";
         });
-        if(visibleBtns === 1) document.querySelector('.actions').style.gridTemplateColumns = "1fr";
 
-        // 6. Gallery
+        // --- 5. PERFECT-5 REVIEW GATEKEEPER ---
+        const revLink = "https://www.google.com/maps"; 
+        const reviewCard = document.getElementById("review-engine-card");
+        
+        if(!revLink || revLink.length < 5 || revLink.includes("REVIEW_LINK")) {
+            if(reviewCard) reviewCard.style.display="none";
+        } else {
+            const stars = document.querySelectorAll('#star-rating span');
+            const feedbackForm = document.getElementById('feedback-form');
+
+            stars.forEach(star => {
+                star.addEventListener('click', function() {
+                    const rating = this.getAttribute('data-value');
+                    stars.forEach(s => { s.classList.toggle('active', s.getAttribute('data-value') <= rating); });
+
+                    if(rating == 5) {
+                        feedbackForm.style.display = 'none';
+                        setTimeout(() => { window.open(revLink, '_blank'); }, 400);
+                    } else {
+                        feedbackForm.style.display = 'block';
+                    }
+                });
+            });
+        }
+
+        // --- 6. LAZY LOAD GALLERY INJECTION ---
         const gFiles = ['g/1.jpg','g/2.jpg','g/3.jpg','g/4.jpg','g/5.jpg','g/6.jpg']; 
         const gCont = document.getElementById('gallery-container');
         if(gFiles.length) {
             gFiles.forEach(s=>{ 
-                let i = document.createElement('img'); i.src = s; 
+                let i = document.createElement('img'); 
+                i.src = s; 
+                i.loading = "lazy"; // SUPER FAST LOADING
                 i.onclick = () => window.open(s, '_blank'); 
                 gCont.appendChild(i); 
             });
@@ -372,41 +329,18 @@
             document.getElementById('gallery-card').style.display="none";
         }
 
-        // 7. Expiry & Demo Logic
+        // --- 7. DEMO EXPIRY LOGIC ---
         const exp = "2099-12-31"; 
-        const isDemo = (exp && exp !== "2099-12-31");
+        const isDemo = (exp && exp !== "2099-12-31" && exp !== "");
         const fab = document.getElementById("buyFab");
         
         if(isDemo) {
             document.getElementById("demoBadge").style.display = "block";
-            const ownerCard = document.getElementById("owner-card");
-            if(ownerCard) ownerCard.style.display = "block";
-
             const salesWa = clean("916001699400");
             if(salesWa.length === 10) {
-                fab.href = `https://wa.me/91${salesWa}?text=Hi%2C%20I%20want%20to%20activate%20my%20profile%20for%20%2B918888888888`;
-            } else {
-                fab.style.display = "none";
+                fab.href = `https://wa.me/91${salesWa}?text=Hi%2C%20I%20want%20to%20activate%20my%20profile%20for%20%2B919876543210`;
+                fab.style.display = "block";
             }
-
-            // Check if Expired
-            const [y,m,d] = exp.split("-").map(Number);
-            const expiryDate = new Date(y, m-1, d, 23, 59, 59);
-            
-            if(new Date() > expiryDate) {
-                document.body.innerHTML = `
-                    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;background:#fffbeb;text-align:center;padding:20px;font-family:'Plus Jakarta Sans',sans-serif;">
-                        <h1 style="color:#dc2626;font-size:28px;margin-bottom:10px;">⚠️ TRIAL EXPIRED</h1>
-                        <p style="color:#4b5563;margin-bottom:20px;">This business hub preview has ended.</p>
-                        <a href="https://wa.me/91${salesWa}?text=My%20trial%20expired%20for%20%2B918888888888%2C%20I%20want%20to%20renew" 
-                           style="background:#0f172a;color:#fcd34d;padding:16px 32px;border-radius:50px;text-decoration:none;font-weight:700;box-shadow:0 10px 20px rgba(0,0,0,0.1);">
-                           Contact to Activate
-                        </a>
-                    </div>
-                `;
-            }
-        } else {
-            fab.style.display = "none";
         }
     </script>
 </body>
