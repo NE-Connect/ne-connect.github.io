@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -438,4 +439,446 @@
     </footer>
 
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NE Connect Business Hub | Guwahati's #1 Digital Hub Creator</title>
+    <meta name="description" content="Turn Google Maps visitors into customers. Automated WhatsApp bookings and 5-Star Review growth.">
+    
+    <link rel="icon" type="image/png" href="./logo.png">
+
+    <meta property="og:site_name" content="NE Connect">
+    <meta property="og:title" content="NE Connect Business Hub">
+    <meta property="og:description" content="One-time activation. No monthly fees. Turn Google visitors into WhatsApp enquiries & 5-star reviews.">
+    <meta property="og:image" content="https://ne-connect.github.io/logo.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ne-connect.github.io/">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0a4275;       /* Trust Blue */
+            --primary-dark: #062e56;
+            --gold: #d4af37;          /* Premium Gold */
+            --gold-light: #fffcf5;
+            --bg: #f4f7fa;            
+            --text: #1f2937;
+            --text-light: #6b7280;
+        }
+        
+        * { box-sizing: border-box; }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            background: var(--bg); 
+            color: var(--text); 
+            line-height: 1.6; 
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* NAVBAR */
+        .navbar { 
+            background: rgba(255, 255, 255, 0.95); 
+            backdrop-filter: blur(10px);
+            padding: 12px 5%; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03); 
+            display: flex; 
+            justify-content: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .brand { display: flex; flex-direction: column; align-items: center; text-decoration: none; }
+        .logo-img { height: 60px; width: auto; margin-bottom: 2px; }
+        .brand-text { font-weight: 800; font-size: 18px; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; line-height: 1; }
+        .msme-badge { font-size: 9px; background: var(--primary); color: white; padding: 2px 6px; border-radius: 4px; margin-top: 4px; font-weight: 600; letter-spacing: 0.5px; }
+
+        /* HERO SECTION */
+        .hero { 
+            text-align: center; 
+            padding: 60px 20px 100px; 
+            background: linear-gradient(135deg, #0a4275 0%, #001f3f 100%); 
+            color: white; 
+            position: relative;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+        }
+        
+        .hero h1 { 
+            font-size: 36px; 
+            margin-bottom: 15px; 
+            font-weight: 800; 
+            line-height: 1.2; 
+            max-width: 800px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            position: relative;
+        }
+        .hero p { 
+            font-size: 18px; 
+            opacity: 0.9; 
+            max-width: 600px; 
+            margin: 0 auto 30px; 
+            font-weight: 400;
+            position: relative;
+        }
+        
+        /* CARD CONTAINER */
+        .container { max-width: 500px; margin: -80px auto 60px; padding: 0 20px; position: relative; z-index: 10; }
+        
+        .offer-card { 
+            background: white; 
+            border-radius: 24px; 
+            text-align: center; 
+            overflow: hidden; 
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); 
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+        }
+        .offer-card::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #b08d28, #d4af37, #b08d28);
+        }
+
+        .header-ribbon { 
+            background: var(--gold-light); 
+            color: #8a6d1c; 
+            font-weight: 700; 
+            padding: 12px; 
+            font-size: 13px; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            border-bottom: 1px dashed #e0d0a0;
+            margin-top: 6px;
+        }
+        
+        .card-body { padding: 30px 24px; }
+        
+        .product-title { font-size: 26px; font-weight: 800; color: var(--primary); margin-bottom: 4px; letter-spacing: -0.5px; }
+        .product-subtitle { color: var(--text-light); font-size: 15px; margin-bottom: 15px; font-weight: 500; }
+        
+        .target-audience { font-size: 13px; color: #4b5563; margin-bottom: 25px; font-weight: 500; background: #f3f4f6; display: inline-block; padding: 4px 12px; border-radius: 20px; }
+
+        .price-container { 
+            margin: 20px 0; 
+            background: #f8fafc; 
+            padding: 20px; 
+            border-radius: 16px; 
+            border: 1px solid #e2e8f0; 
+        }
+        .old-price { font-size: 14px; color: var(--text-light); font-weight: 600; text-decoration: line-through; margin-bottom: 2px; }
+        .new-price { font-size: 48px; font-weight: 800; color: var(--text); line-height: 1; letter-spacing: -1px; }
+        .validity { font-size: 13px; font-weight: 700; color: var(--primary); text-transform: uppercase; margin-top: 8px; letter-spacing: 0.5px; }
+
+        /* FEATURES */
+        .features { list-style: none; padding: 0; margin: 30px 0; text-align: left; }
+        .features li { 
+            padding: 12px 0; 
+            border-bottom: 1px solid #f1f5f9; 
+            display: flex; 
+            align-items: flex-start; 
+            gap: 15px; 
+            font-size: 15px; 
+            color: #374151; 
+        }
+        .features li:last-child { border-bottom: none; }
+        .icon-check { color: #10b981; margin-top: 3px; font-size: 16px; }
+
+        /* PULSE ANIMATION */
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* BUTTONS */
+        .cta-btn { 
+            width: 100%; 
+            padding: 18px; 
+            border-radius: 12px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-size: 18px; 
+            transition: all 0.2s ease;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-wa {
+            background: linear-gradient(180deg, #25D366 0%, #128C7E 100%);
+            color: white; 
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            animation: pulse-green 2s infinite; 
+        }
+        .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(37, 211, 102, 0.4); }
+
+        .btn-order {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        .btn-order:hover { background: #f0f7ff; transform: translateY(-2px); }
+
+        /* PORTFOLIO GRID */
+        .portfolio-section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .grid-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            border: 1px solid #f1f5f9;
+        }
+        .grid-item:hover { transform: translateY(-3px); border-color: var(--primary); }
+        
+        .thumb {
+            height: 120px;
+            width: 100%;
+            object-fit: cover;
+            background: #e2e8f0;
+        }
+        .item-info { padding: 12px; text-align: left; }
+        .item-cat { font-size: 10px; color: var(--text-light); text-transform: uppercase; font-weight: 700; }
+        .item-name { font-size: 13px; font-weight: 700; color: var(--text); margin-top: 2px; }
+        .live-badge { 
+            font-size: 9px; background: #ecfdf5; color: #059669; padding: 2px 6px; 
+            border-radius: 4px; display: inline-block; margin-top: 6px; font-weight: 600;
+        }
+
+        /* FAQ SECTION */
+        .faq-section { max-width: 600px; margin: 40px auto 60px; padding: 0 20px; }
+        .faq-title { text-align: center; font-weight: 800; color: var(--primary); margin-bottom: 25px; font-size: 22px; }
+        .faq-item { 
+            background: white; 
+            border-radius: 12px; 
+            margin-bottom: 15px; 
+            padding: 20px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04); 
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        .faq-q { font-weight: 700; color: var(--text); font-size: 16px; margin-bottom: 8px; }
+        .faq-a { color: var(--text-light); font-size: 15px; line-height: 1.6; }
+
+        footer { 
+            text-align: center; 
+            font-size: 13px; 
+            color: var(--text-light); 
+            border-top: 1px solid #e5e7eb; 
+            padding: 40px 20px; 
+            background: white;
+        }
+        footer a { color: var(--text-light); transition: 0.2s; }
+        footer a:hover { color: var(--primary); }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 28px; }
+            .grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="brand">
+            <img src="./logo.png" alt="NE Connect" class="logo-img">
+            <div class="brand-text">NE Connect</div>
+            <div class="msme-badge">REG. MSME: UDYAM-AS-03-0083968</div>
+        </a>
+    </nav>
+
+    <header class="hero">
+        <h1>Turn Google Visitors into WhatsApp Enquiries & 5-Star Reviews</h1>
+        <p>A lightweight business hub that opens instantly—no app, no monthly fee.</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="offer-card">
+            <div class="header-ribbon">Empowering Local Businesses to Grow Online</div>
+            
+            <div class="card-body">
+                <div class="product-title">NE Connect Business Hub</div>
+                <div class="product-subtitle">Google Conversion System (All-in-One)</div>
+                
+                <div class="target-audience">Works for: Clinics · Shops · Restaurants · Services</div>
+
+                <div class="price-container">
+                    <div class="old-price">Standard Price: ₹2,499</div>
+                    <div class="new-price">₹1,499</div>
+                    
+                    <div class="validity">One-time Activation · No Monthly Fees</div>
+                    
+                    <div style="font-size:12px;color:#dc2626;font-weight:600;margin-top:6px;">
+                        Introductory Price · Limited Slots
+                    </div>
+                </div>
+
+                <ul class="features">
+                    <li>
+                        <i class="fa-solid fa-star icon-check"></i>
+                        <span><b>5-Star Review Booster:</b> Dedicated link to increase Google ratings.</span>
+                    </li>
+                    <li>
+                        <i class="fa-brands fa-whatsapp icon-check"></i>
+                        <span><b>1-Tap WhatsApp Booking:</b> Customers send pre-filled enquiries instantly.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-images icon-check"></i>
+                        <span><b>Digital Portfolio:</b> Showcase your menu, services, or clinic photos.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-bolt icon-check"></i>
+                        <span><b>Fast-Loading:</b> Hosted on reliable, lightweight infrastructure.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-gift icon-check"></i>
+                        <span><b>Bonus:</b> Printable QR Code Design included.</span>
+                    </li>
+                </ul>
+
+                <a href="order.html" class="cta-btn btn-wa">
+                <i class="fa-solid fa-bolt"></i> Activate for ₹1,499
+                </a>
+
+                <a href="#portfolio" class="cta-btn btn-order" style="border: 1px solid #ccc; color: #444;">
+                    <i class="fa-solid fa-eye"></i> View Live Examples
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="portfolio" class="portfolio-section">
+        <div class="section-title">Live Client Demos</div>
+        <p style="font-size:16px; color:#64748b; margin-bottom:30px;">Tap any card to see the real website.</p>
+        
+        <div class="grid">
+            <a href="Srinivas_Silk_Heritage/" class="grid-item">
+                <div class="thumb-container"><img src="assets/silk.jpg" class="thumb" alt="Silk Saree"></div>
+                <div class="item-info">
+                    <div class="item-cat">Fashion</div>
+                    <div class="item-name">Srinivas Silk</div>
+                    <div class="live-badge">Live Demo</div>
+                </div>
+            </a>
+
+            <a href="The_Bean_Journal/" class="grid-item">
+                <div class="thumb-container"><img src="assets/cafe.jpg" class="thumb" alt="Cafe"></div>
+                <div class="item-info">
+                    <div class="item-cat">Food & Bev</div>
+                    <div class="item-name">The Bean Journal</div>
+                    <div class="live-badge">Live Demo</div>
+                </div>
+            </a>
+
+            <a href="Urban_Hardware_Pro/" class="grid-item">
+                <div class="thumb-container"><img src="assets/hardware.jpg" class="thumb" alt="Hardware"></div>
+                <div class="item-info">
+                    <div class="item-cat">Hardware</div>
+                    <div class="item-name">Urban Hardware</div>
+                    <div class="live-badge">Live Demo</div>
+                </div>
+            </a>
+
+            <a href="FreshBasket_Daily/" class="grid-item">
+                <div class="thumb-container"><img src="assets/grocery.jpg" class="thumb" alt="Grocery"></div>
+                <div class="item-info">
+                    <div class="item-cat">Grocery</div>
+                    <div class="item-name">FreshBasket</div>
+                    <div class="live-badge">Live Demo</div>
+                </div>
+            </a>
+
+            <a href="Glow_and_Grace_Salon/" class="grid-item">
+                <div class="thumb-container"><img src="assets/spa.jpg" class="thumb" alt="Spa"></div>
+                <div class="item-info">
+                    <div class="item-cat">Service</div>
+                    <div class="item-name">Glow & Grace</div>
+                    <div class="live-badge">Live Demo</div>
+                </div>
+            </a>
+
+            <a href="The_Momos_Point/" class="grid-item">
+                <div class="thumb-container"><img src="assets/food.jpg" class="thumb" alt="Momos"></div>
+                <div class="item-info">
+                    <div class="item-cat">Food</div>
+                    <div class="item-name">The Momos Point</div>
+                    <div class="live-badge">Live Demo</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="faq-section">
+        <div class="faq-title">Frequently Asked Questions</div>
+        
+        <div class="faq-item">
+            <div class="faq-q">Is there really no monthly fee?</div>
+            <div class="faq-a">Yes. You pay a one-time activation fee. Hosting is included. Updates/revisions are separate.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Can I edit my details later?</div>
+            <div class="faq-a">We provide one free revision round immediately after delivery. Any future updates are charged a small maintenance fee (₹299).</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-q">Do I need a domain name?</div>
+            <div class="faq-a">No. Your hub is hosted on our secure NE Connect platform, so you don't need to buy a domain or server.</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>NE Connect · Premium Business Solutions<br>Guwahati, Assam - 781024</p>
+        <p style="margin-top: 15px;">
+            <a href="legal.html" style="text-decoration: underline;">Privacy & Terms</a>
+        </p>
+        <p>© 2026 NE Connect. All rights reserved.</p>
+    </footer>
+
+</body>
+>>>>>>> b9edbd412067b86ecd6bfb1f17cbff22d22b3fe4
 </html>
