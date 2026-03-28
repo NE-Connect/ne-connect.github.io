@@ -61,7 +61,7 @@
         /* HERO SECTION */
         .hero { 
             text-align: center; 
-            padding: 60px 20px 100px; 
+            padding: 60px 20px 130px; 
             background: linear-gradient(135deg, #0a4275 0%, #001f3f 100%); 
             color: white; 
             position: relative;
@@ -274,6 +274,37 @@
             .hero h1 { font-size: 28px; }
             .grid { grid-template-columns: 1fr 1fr; }
         }
+
+        /* STICKY WHATSAPP BUTTON */
+        .sticky-wa {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            animation: pulse-green 2s infinite;
+        }
+        
+        .sticky-wa:hover {
+            transform: scale(1.1);
+        }
+
+        @media (min-width: 768px) {
+            .sticky-wa {
+                display: none; 
+            }
+        }
     </style>
 </head>
 <body>
@@ -287,8 +318,8 @@
     </nav>
 
     <header class="hero">
-        <h1>Show your business clearly online so customers can contact you easily</h1>
-        <p>A simple business profile with WhatsApp, call, directions, and reviews — all in one place</p>
+        <h1>Turn WhatsApp Clicks into Paying Customers</h1>
+        <p>Get a premium digital profile for your business with 1-tap WhatsApp booking, Google Maps directions, and customer reviews — all in one place.</p>
     </header>
 
     <div class="container">
@@ -341,6 +372,10 @@
                 
                 <div style="font-size:12px;color:#6b7280;margin-top:8px;margin-bottom:15px;">
                     You can ask questions first before deciding
+                </div>
+
+                <div style="font-size:12px;color:#10b981;margin-bottom:15px;font-weight:600;">
+                    <i class="fa-solid fa-fire"></i> Join 40+ local businesses in Assam upgrading their digital presence this month
                 </div>
 
                 <a href="#portfolio" class="cta-btn btn-order">
@@ -441,5 +476,8 @@
         <p>© 2026 NE Connect. All rights reserved.</p>
     </footer>
 
+    <a href="https://wa.me/916001699400?text=Hi,%20I%20want%20to%20know%20more%20about%20NE%20Connect" class="sticky-wa" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 </body>
 </html>
