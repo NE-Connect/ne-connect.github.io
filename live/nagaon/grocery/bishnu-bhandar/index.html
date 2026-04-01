@@ -37,7 +37,6 @@
             position: relative;
         }
 
-        /* Language Toggle */
         .lang-toggle {
             position: absolute; top: 15px; right: 15px;
             background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
@@ -93,17 +92,14 @@
         
         #demoBadge { position: absolute; top: 15px; left: 15px; background: #ef4444; color: white; font-size: 10px; font-weight: 800; padding: 4px 8px; border-radius: 6px; letter-spacing: 1px; display: none; z-index: 10; }
 
-        /* Booking Modal Styles */
         #booking-modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:flex-end; backdrop-filter: blur(3px); }
         .modal-content { background:#fff; width:100%; max-width:480px; border-radius:24px 24px 0 0; padding:30px; box-shadow:0 -5px 15px rgba(0,0,0,0.1); animation: slideUp 0.3s ease-out; }
         @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
 
-        /* Modal inputs */
         .modal-input { width:100%; padding:14px; border:1px solid #cbd5e1; border-radius:12px; font-family:inherit; }
         .modal-input-row { display:flex; gap:10px; margin-bottom:12px; }
         .modal-input-row .modal-input { flex:1; }
 
-        /* Modal buttons */
         .btn-modal-confirm { width:100%; background:#2563eb; color:white; padding:16px; border:none; border-radius:12px; font-weight:700; font-size:16px; cursor:pointer; margin-bottom:10px; font-family:inherit; }
         .btn-modal-cancel { width:100%; background:transparent; color:#64748b; padding:12px; border:none; font-weight:600; cursor:pointer; font-family:inherit; }
     </style>
@@ -189,9 +185,12 @@
             </div>
         </div>
 
-        <div style="text-align: center; margin-top: 10px; margin-bottom: 20px;">
+        <div style="text-align: center; margin-top: 30px; margin-bottom: 25px;">
             <div style="font-size: 13px; font-weight: 700; color: var(--dark);">Bishnu Bhandar</div>
-            <div style="font-size: 11px; color: #94a3b8; margin-top: 3px;">https://ne-connect.github.io/live/nagaon/grocery/bishnu-bhandar/</div>
+            
+            <a href="https://ne-connect.github.io" target="_blank" style="text-decoration: none; display: inline-block; padding: 8px 16px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 20px; color: #64748b; font-size: 11px; font-weight: 600; margin-top: 12px; transition: 0.2s;">
+                ⚡ Powered by <span style="color: var(--primary); font-weight: 800;">NE Connect</span>
+            </a>
         </div>
 
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
@@ -369,7 +368,7 @@
         }
 
         // --- 6. LAZY LOAD GALLERY INJECTION ---
-        const gFilesStr = '['g/1.jpg','g/2.jpg']';
+        const gFilesStr = '["g/1.jpg","g/2.jpg"]';
         let gFiles = [];
         if(gFilesStr.startsWith('[')) {
             try { gFiles = JSON.parse(gFilesStr); } catch(e) { gFiles = []; }
@@ -388,13 +387,13 @@
             document.getElementById('gallery-card').style.display="none";
         }
 
-        // --- 8. SHOW QR CARD ONLY IF CONTENT WAS INJECTED ---
+        // --- 7. SHOW QR CARD ONLY IF CONTENT WAS INJECTED ---
         const qrCard = document.getElementById('qr-card');
         if (qrCard && qrCard.querySelector('img, canvas, svg')) {
             qrCard.style.display = 'block';
         }
 
-        // --- 9. DEMO EXPIRY LOGIC ---
+        // --- 8. DEMO EXPIRY LOGIC ---
         const exp = "2099-12-31"; 
         const isDemo = (exp && exp !== "2099-12-31" && exp !== "");
         const fab = document.getElementById("buyFab");
