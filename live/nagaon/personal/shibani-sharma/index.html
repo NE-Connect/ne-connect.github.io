@@ -9,7 +9,7 @@
     <meta name="description" content="Get directions, contact details, WhatsApp booking, and reviews for Shibani Sharma.">
     <meta property="og:title" content="Shibani Sharma - Official Profile">
     <meta property="og:description" content="Get directions, contact details, WhatsApp booking, and reviews for Shibani Sharma.">
-    <meta property="og:image" content="https://placehold.co/150x150?text=Logo">
+    <meta property="og:image" content="profile.jpg">
     <meta property="og:url" content="https://ne-connect.github.io/live/nagaon/personal/shibani-sharma/">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -116,7 +116,7 @@
 
     <div class="container">
         <div class="profile-img-container">
-            <img src="https://placehold.co/150x150?text=Logo" alt="Profile" onerror="this.src='https://placehold.co/150x150?text=Logo'">
+            <img src="profile.jpg" alt="Profile" onerror="this.src='https://placehold.co/150x150?text=Logo'">
         </div>
 
         <h1 class="name">Shibani Sharma</h1>
@@ -378,7 +378,7 @@
         }
 
         // --- 6. LAZY LOAD GALLERY INJECTION ---
-        const gFilesStr = '[]';
+        const gFilesStr = '["g/1.jpg","g/2.jpg","g/3.jpg","g/4.jpg","g/5.jpg","g/6.jpg"]';
         let gFiles = [];
         if(gFilesStr.startsWith('[')) {
             try { gFiles = JSON.parse(gFilesStr); } catch(e) { gFiles = []; }
