@@ -3,21 +3,21 @@ import shutil
 
 def purge_demos():
     current_dir = os.getcwd()
-    demos_dir = os.path.join(current_dir, "demos")
+    demos_dir = os.path.join(current_dir, "demo")
     
     print("========================================")
     print("🗑️  INITIATING DEMO PIPELINE PURGE")
     print("========================================\n")
     
     if not os.path.exists(demos_dir):
-        print("✅ The '/demos' folder does not exist yet. Nothing to clean.")
+        print("✅ The '/demo' folder does not exist yet. Nothing to clean.")
         return
 
-    # List all items in the /demos folder
+    # List all items in the /demo folder
     demo_folders = [f for f in os.listdir(demos_dir) if os.path.isdir(os.path.join(demos_dir, f))]
     
     if not demo_folders:
-        print("✅ The '/demos' folder is already empty.")
+        print("✅ The '/demo' folder is already empty.")
         return
         
     print(f"Found {len(demo_folders)} unpaid demo(s) scheduled for deletion:")
@@ -34,7 +34,7 @@ def purge_demos():
             folder_path = os.path.join(demos_dir, folder)
             try:
                 shutil.rmtree(folder_path)
-                print(f"💀 NUKED: /demos/{folder}")
+                print(f"💀 NUKED: /demo/{folder}")
                 deleted_count += 1
             except Exception as e:
                 print(f"❌ ERROR deleting {folder}: {e}")
