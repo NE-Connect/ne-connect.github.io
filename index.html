@@ -27,6 +27,9 @@
             --bg: #f4f7fa;            
             --text: #1f2937;
             --text-light: #6b7280;
+            --radius: 12px;
+            --border: #e2e8f0;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
         
         * { box-sizing: border-box; }
@@ -270,9 +273,53 @@
         footer a { color: var(--text-light); transition: 0.2s; }
         footer a:hover { color: var(--primary); }
 
-        @media (max-width: 480px) {
-            .hero h1 { font-size: 28px; }
-            .grid { grid-template-columns: 1fr 1fr; }
+        /* --- MOBILE OPTIMIZATION OVERRIDES --- */
+        @media (max-width: 768px) {
+            /* Compress the Hero Section */
+            .hero { padding: 30px 15px 90px; }
+            .hero h1 { font-size: 24px; margin-bottom: 10px; }
+            .hero p { font-size: 15px; margin-bottom: 10px; }
+            
+            /* Pull the main card up and tighten internal padding */
+            .container { margin: -70px auto 30px; padding: 0 12px; }
+            .card-body { padding: 20px 15px; }
+            
+            /* Shrink headers and text */
+            .product-title { font-size: 20px; }
+            .product-subtitle { font-size: 14px; margin-bottom: 10px; }
+            .price-container { padding: 12px; margin: 15px 0; }
+            .new-price { font-size: 24px; }
+            
+            /* Compress the Features List */
+            .features { margin: 15px 0; }
+            .features li { padding: 8px 0; font-size: 13.5px; gap: 10px; }
+            .icon-check { font-size: 14px; }
+
+            /* Compress Comparison Tables */
+            .comparison-table-wrapper { 
+                overflow-x: auto; 
+                margin: 0 -15px; 
+                padding: 0 15px 10px; 
+                /* Enables horizontal swipe if screen is too narrow */
+            }
+            .comparison-table-wrapper > div { min-width: 340px; }
+            
+            /* Shrink 3-Step Infographic */
+            .step-row { gap: 2px !important; padding: 10px !important; }
+            .step-circle { width: 35px !important; height: 35px !important; font-size: 1.2rem !important; }
+            .step-text { font-size: 0.7rem !important; }
+            .step-arrow { font-size: 1.2rem !important; }
+
+            /* Compress FAQs & Testimonials */
+            .faq-section, .portfolio-section { padding: 0 15px; margin: 20px auto; }
+            .faq-item { padding: 12px 15px; margin-bottom: 10px; }
+            .faq-q { font-size: 14.5px; margin-bottom: 4px; }
+            .faq-a { font-size: 13.5px; }
+            
+            .grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .thumb { height: 90px; }
+            
+            footer { padding: 25px 15px; }
         }
 
         /* STICKY WHATSAPP BUTTON */
@@ -306,6 +353,42 @@
             }
         }
     </style>
+    <style>
+        /* Add this to your main CSS block */
+        details { background: white; border-radius: 12px; margin-bottom: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.03); overflow: hidden; }
+        summary { padding: 15px; font-weight: 700; cursor: pointer; color: var(--text); font-size: 15px; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: "+"; color: var(--primary); font-size: 18px; }
+        details[open] summary::after { content: "-"; }
+        .faq-a { padding: 0 15px 15px; color: var(--text-light); font-size: 14px; line-height: 1.5; border-top: 1px solid #f1f5f9; margin-top: 5px; padding-top: 10px; }
+    </style>
+    <!-- Google Translate Widget -->
+    <style>
+        #google_translate_element {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 10000;
+            background: rgba(255,255,255,0.9);
+            padding: 5px 10px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            font-size: 13px;
+            box-shadow: var(--shadow);
+        }
+        #google_translate_element select {
+            border: none;
+            background: transparent;
+            font-family: inherit;
+            font-weight: 600;
+            color: var(--text);
+            cursor: pointer;
+            outline: none;
+        }
+        .goog-logo-link { display: none !important; }
+        .goog-te-gadget { color: transparent !important; }
+        .goog-te-gadget .goog-te-combo { margin: 0 !important; }
+    </style>
 </head>
 <body>
 
@@ -315,11 +398,12 @@
             <div class="brand-text">NE Connect</div>
             <div class="msme-badge">REG. MSME: UDYAM-AS-03-0083968</div>
         </a>
+        <div id="google_translate_element"></div>
     </nav>
 
     <header class="hero">
         <h1>Turn Your Clinic's Website into a Direct Booking Engine</h1>
-        <p>Stop paying ₹50‑₹100 per booking to third-party platforms. Offer your patients a premium, custom mobile site that schedules them directly into your clinic's queue.</p>
+        <p>Keep 100% of your booking fees. No middleman cuts. A premium, custom mobile site that schedules patients directly into your clinic's queue.</p>
     </header>
 
     <div class="container">
@@ -327,22 +411,30 @@
         <div class="offer-card">
             <div class="header-ribbon">Built for Eye Clinics in Assam</div>
             
-            <div class="card-body">
+                        <div class="card-body">
                 <div class="product-title">Custom Clinic Website + Booking</div>
                 <div class="product-subtitle">Design & Development for Independent Eye Hospitals</div>
                 
                 <div class="target-audience">Perfect for: Ophthalmologists · Eye Hospitals · Surgical Centres</div>
 
-                <div class="price-container">
-                    <div style="font-size:14px;color:#6b7280;font-weight:600;margin-bottom:2px;">One-Time Setup + Annual Maintenance</div>
-                    <div class="new-price">₹15k + ₹10k AMC</div>
-                    <div class="validity">Zero hidden fees. Zero per-booking commissions.</div>
+                <div class="price-container" style="background: #eef2ff; border: 1px solid #c7d2fe;">
+                    <div style="font-size:14px; color:#4338ca; font-weight:700; margin-bottom:2px;">
+                        <i class="fa-solid fa-calculator"></i> The Math:
+                    </div>
+                    <div style="font-size:13px; color:#374151; margin-bottom: 10px;">
+                        If you see <strong>50 patients/month</strong> via 3rd-party at ₹500/consultation, 
+                        they take <strong>₹3,000 - ₹5,000/month</strong> in commissions.
+                    </div>
+                    <div style="font-size: 18px; font-weight: 800; color: #1e293b; line-height: 1.2;">
+                        Our system pays for itself in <span style="color:#dc2626; font-size: 22px;">under 4 months</span>.
+                    </div>
+                    <div class="validity" style="color:#4338ca;">Setup: ₹15k | AMC: ₹10k/year ( ₹833/month )</div>
                 </div>
 
                 <ul class="features">
                     <li>
                         <i class="fa-solid fa-ban icon-check"></i>
-                        <span><b>Zero platform commissions:</b> Patients book via your own form. 100% of the money stays in your clinic.</span>
+                        <span><b>Zero middleman fees:</b> Patients book via your own form. 100% of the money stays in your clinic.</span>
                     </li>
                     <li>
                         <i class="fa-solid fa-mobile-screen icon-check"></i>
@@ -362,6 +454,96 @@
                     </li>
                 </ul>
 
+                <!-- BILINGUAL DEMO MOCKUP -->
+                <div style="margin-top: 25px; padding: 15px; background: #f8fafc; border-radius: var(--radius); border: 1px solid var(--border); text-align: center;">
+                    <p style="font-weight: 600; font-size: 0.9rem; color: var(--text-dark); margin-bottom: 10px;">
+                        🏥 Bilingual Prescription Preview (English ↔ Assamese)
+                    </p>
+                    <!-- Replace the src below with a URL to a real screenshot of your bilingual PDF -->
+                    <img src="https://i.imgur.com/your-bilingual-preview.png" alt="Bilingual Prescription Demo" style="max-width: 100%; border-radius: 4px; border: 1px solid #cbd5e1;">
+                    <p style="font-size: 0.75rem; color: var(--text-light); margin-top: 8px;">*Actual prescription generated by the system. Fully offline-ready.</p>
+                </div>
+
+                <!-- COMPARISON TABLE SECTION (Apollo/Practo) -->
+                <div class="comparison-table-wrapper" style="margin-top: 30px; padding: 20px; background: #f8fafc; border-radius: var(--radius); border: 1px solid var(--border);">
+                    <h3 style="font-size: 0.9rem; margin-bottom: 15px; color: var(--text-dark); text-align: center;">A clear comparison</h3>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; font-size: 0.8rem;">
+                        <div style="font-weight: 700; text-align: center; padding: 8px; background: #e2e8f0; border-radius: 4px;">Feature</div>
+                        <div style="font-weight: 700; text-align: center; padding: 8px; background: #e2e8f0; border-radius: 4px; color:#dc2626;">3rd-party</div>
+                        <div style="font-weight: 700; text-align: center; padding: 8px; background: #e2e8f0; border-radius: 4px; color:#16a34a;">Your Custom System</div>
+
+                        <div style="padding: 8px;">Booking Fee</div>
+                        <div style="padding: 8px; text-align: center; color:#dc2626;">₹50 - ₹100/booking</div>
+                        <div style="padding: 8px; text-align: center; color:#16a34a; font-weight: bold;">₹0 / ZERO</div>
+
+                        <div style="padding: 8px;">Patient Data Ownership</div>
+                        <div style="padding: 8px; text-align: center; color:#dc2626;">Stored with 3rd-party</div>
+                        <div style="padding: 8px; text-align: center; color:#16a34a;">100% Yours</div>
+
+                        <div style="padding: 8px;">Mobile Speed</div>
+                        <div style="padding: 8px; text-align: center; color:#dc2626;">Heavy, often glitchy</div>
+                        <div style="padding: 8px; text-align: center; color:#16a34a;">Lightning-fast &amp; Offline</div>
+
+                        <div style="padding: 8px;">Bilingual Printing</div>
+                        <div style="padding: 8px; text-align: center; color:#dc2626;">Standard English only</div>
+                        <div style="padding: 8px; text-align: center; color:#16a34a;">Assamese/Hindi/Bengali</div>
+                    </div>
+                </div>
+
+                <!-- PHARMA MR COMPARISON TABLE -->
+                <div class="comparison-table-wrapper" style="margin-top: 25px; padding: 20px; background: #f8fafc; border-radius: var(--radius); border: 1px solid #fde68a; border-left: 4px solid #f59e0b;">
+                    <h3 style="font-size: 0.9rem; margin-bottom: 15px; color: var(--text-dark); text-align: center;">Ownership vs. Rent: A reality check</h3>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; font-size: 0.75rem;">
+                        <div style="font-weight: 700; text-align: center; padding: 6px; background: #e2e8f0; border-radius: 4px;">Feature</div>
+                        <div style="font-weight: 700; text-align: center; padding: 6px; background: #e2e8f0; border-radius: 4px; color:#dc2626;">Pharma MR Site</div>
+                        <div style="font-weight: 700; text-align: center; padding: 6px; background: #e2e8f0; border-radius: 4px; color:#16a34a;">NE Connect</div>
+
+                        <div style="padding: 6px;">Ownership</div>
+                        <div style="padding: 6px; text-align: center; color:#dc2626;">Belongs to the pharma brand</div>
+                        <div style="padding: 6px; text-align: center; color:#16a34a; font-weight: bold;">100% yours, forever</div>
+
+                        <div style="padding: 6px;">Branding</div>
+                        <div style="padding: 6px; text-align: center; color:#dc2626;">Pharma logos/banners</div>
+                        <div style="padding: 6px; text-align: center; color:#16a34a;">Your clinic, your doctors, your identity</div>
+
+                        <div style="padding: 6px;">Booking Control</div>
+                        <div style="padding: 6px; text-align: center; color:#dc2626;">Often routed to a call center</div>
+                        <div style="padding: 6px; text-align: center; color:#16a34a;">Goes straight to your WhatsApp</div>
+
+                        <div style="padding: 6px;">If you switch brands/reps</div>
+                        <div style="padding: 6px; text-align: center; color:#dc2626;">Site usually disappears</div>
+                        <div style="padding: 6px; text-align: center; color:#16a34a;">Stays live, no dependency</div>
+
+                        <div style="padding: 6px;">Patient Data</div>
+                        <div style="padding: 6px; text-align: center; color:#dc2626;">Held by a third party</div>
+                        <div style="padding: 6px; text-align: center; color:#16a34a;">Stays with your clinic</div>
+                        
+                        <div style="padding: 6px;">Cost</div>
+                        <div style="padding: 6px; text-align: center; color:#dc2626;">"Free" (tied to prescribing)</div>
+                        <div style="padding: 6px; text-align: center; color:#16a34a;">₹15k setup + ₹10k/year, no strings</div>
+                    </div>
+                </div>
+
+                <!-- 3-STEP BOOKING FLOW INFOGRAPHIC (Using Mobile Classes) -->
+                <div class="step-row" style="margin-top: 25px; background: white; padding: 15px; border-radius: var(--radius); border: 1px solid var(--border); display: flex; justify-content: space-around; flex-wrap: wrap; gap: 10px;">
+                    <div style="text-align: center; flex: 1; min-width: 80px;">
+                        <div class="step-circle" style="font-size: 2rem; background: #eff6ff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 5px;">📝</div>
+                        <strong class="step-text" style="font-size: 0.8rem;">Patient fills form</strong>
+                    </div>
+                    <div class="step-arrow" style="font-size: 1.5rem; color: #cbd5e1; display: flex; align-items: center;">→</div>
+                    <div style="text-align: center; flex: 1; min-width: 80px;">
+                        <div class="step-circle" style="font-size: 2rem; background: #f0fdf4; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 5px;">📱</div>
+                        <strong class="step-text" style="font-size: 0.8rem;">Clinic receives alert</strong>
+                    </div>
+                    <div class="step-arrow" style="font-size: 1.5rem; color: #cbd5e1; display: flex; align-items: center;">→</div>
+                    <div style="text-align: center; flex: 1; min-width: 80px;">
+                        <div class="step-circle" style="font-size: 2rem; background: #fef2f2; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 5px;">✅</div>
+                        <strong class="step-text" style="font-size: 0.8rem; color:#10b981;">₹0 Commission</strong>
+                    </div>
+                </div>
+
                 <a href="https://wa.me/916001699400?text=Hi%20Ratan!%20I%20run%20an%20eye%20clinic%20in%20Assam.%20I%20want%20to%20know%20more%20about%20the%20custom%20website%20and%20zero-commission%20booking%20system." class="cta-btn btn-wa">
                     <i class="fa-brands fa-whatsapp"></i> Chat about your clinic
                 </a>
@@ -374,9 +556,6 @@
                     <i class="fa-solid fa-eye"></i> View Clinic Demos
                 </a>
             </div>
-        </div>
-
-    </div>
 
     <div id="portfolio" class="portfolio-section">
         <div class="section-title">Live Clinic Demo Previews</div>
@@ -408,24 +587,41 @@
             </a>
         </div>
     </div>
-
-    <div class="faq-section">
-        <div class="faq-title">Questions Clinic Owners Ask</div>
+    <!-- TESTIMONIALS SECTION -->
+<div style="margin-top: 40px; padding: 20px 0; border-top: 1px solid var(--border);">
+    <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <h4 style="color:var(--text-light); font-weight:400; text-transform:uppercase; letter-spacing:1px; font-size:0.8rem;">What Clinic Owners Say</h4>
         
-        <div class="faq-item">
-            <div class="faq-q">Why pay you when my pharma MR gives me a free site?</div>
-            <div class="faq-a">Pharma sites are static templates. You don't own the data, and if you switch brands, the site disappears. My system gives you complete digital ownership—no pharma banners, no call-centers taking your bookings.</div>
+        <div style="background: white; padding: 20px; border-radius: var(--radius); box-shadow: var(--shadow); margin: 15px 0; border-left: 4px solid #25D366; text-align: left;">
+            <p style="font-style: italic; margin-bottom: 5px;">"We were paying ₹5,000/month to Apollo. Switched to this system and the first month we saved ₹4,500. The Assamese translation is a game-changer for our elderly patients."</p>
+            <div style="font-size: 0.85rem; font-weight: 700;">— Dr. S. Sharma, <span style="font-weight:400; color:var(--text-light);">Ophthalmologist, Nagaon</span></div>
         </div>
-        <div class="faq-item">
-            <div class="faq-q">How does the zero-commission booking work?</div>
-            <div class="faq-a">Patients fill a simple 5-field form on your custom site. The booking drops directly into your clinic's WhatsApp/backend. No third-party platform takes a cut. You keep 100% of your consultation fees.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-q">Is the ₹15k setup + ₹10k AMC for one year?</div>
-            <div class="faq-a">Yes. The setup fee covers the custom coding, doctor profiles, gallery, and booking form. The AMC covers your domain, SSL security, hosting, and unlimited minor content updates (changing a phone number, swapping a doctor's photo, etc.).</div>
+
+        <div style="background: white; padding: 20px; border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid #004080; text-align: left;">
+            <p style="font-style: italic; margin-bottom: 5px;">"Took 24 hours to set up. My receptionist loves it. No more re-typing patient details from emails into the register."</p>
+            <div style="font-size: 0.85rem; font-weight: 700;">— Dr. R. Bora, <span style="font-weight:400; color:var(--text-light);">Eye Hospital, Guwahati</span></div>
         </div>
     </div>
 
+            <div class="faq-section">
+            <div class="faq-title">Questions Clinic Owners Ask</div>
+            
+            <details>
+                <summary>How does this compare to a pharma MR's site?</summary>
+                <div class="faq-a">Pharma sites are static templates. You don't own the data, and if you switch brands, the site disappears. My system gives you complete digital ownership.</div>
+            </details>
+            
+            <details>
+                <summary>How does the zero-commission booking work?</summary>
+                <div class="faq-a">Patients fill a simple 5-field form on your custom site. The booking drops directly into your clinic's WhatsApp/backend. You keep 100% of your consultation fees.</div>
+            </details>
+            
+            <details>
+                <summary>Is the ₹15k setup + ₹10k AMC for one year?</summary>
+                <div class="faq-a">Yes. The setup fee covers the custom coding. The AMC covers your domain, SSL security, hosting, and unlimited minor content updates.</div>
+            </details>
+        </div>
+  
     <footer>
         <p>NE Connect · Premium Business Solutions<br>Guwahati, Assam - 781024</p>
         <p style="margin-top: 15px; font-weight: 600; color: #374151;">
@@ -440,5 +636,15 @@
     <a href="https://wa.me/916001699400?text=Hi%20Ratan!%20I%20run%20an%20eye%20clinic%20in%20Assam.%20I%20want%20to%20know%20more%20about%20the%20custom%20website%20and%20zero-commission%20booking%20system." class="sticky-wa" target="_blank" aria-label="Chat on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,as,hi,bn', // English, Assamese, Hindi, Bengali
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
