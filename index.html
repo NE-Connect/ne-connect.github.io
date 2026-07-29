@@ -136,15 +136,31 @@
         
         .target-audience { font-size: 13px; color: #4b5563; margin-bottom: 25px; font-weight: 500; background: #f3f4f6; display: inline-block; padding: 4px 12px; border-radius: 20px; }
 
-        .price-container { 
-            margin: 20px 0; 
-            background: #f8fafc; 
-            padding: 20px; 
-            border-radius: 16px; 
-            border: 1px solid #e2e8f0; 
+        /* NEW 3-TIER PRICING TABLE */
+        .pricing-container { 
+            margin: 25px 0; 
+            text-align: left; 
+            border: 1px solid var(--border); 
+            border-radius: var(--radius); 
+            overflow: hidden;
         }
-        .new-price { font-size: 32px; font-weight: 800; color: var(--text); line-height: 1; letter-spacing: -1px; margin: 4px 0; }
-        .validity { font-size: 13px; font-weight: 700; color: var(--primary); text-transform: uppercase; margin-top: 8px; letter-spacing: 0.5px; }
+        .pricing-row { 
+            display: grid; 
+            grid-template-columns: 2fr 1fr 1fr; 
+            padding: 12px 15px; 
+            border-bottom: 1px solid var(--border); 
+            font-size: 0.85rem; 
+            align-items: center;
+            background: white;
+        }
+        .pricing-row:last-child { border-bottom: none; }
+        .pricing-row.header { background: var(--bg); font-weight: 700; color: var(--text); border-bottom: 2px solid var(--border); }
+        .pricing-row.highlight { background: #eef2ff; border-left: 3px solid #3b82f6; }
+        .plan-name { font-weight: 600; color: var(--text-dark); }
+        .plan-price { font-weight: 700; color: var(--primary); text-align: center; }
+        .plan-amc { color: var(--text-light); text-align: center; font-size: 0.75rem; }
+        .plan-badge { background: #22c55e; color: white; font-size: 0.7rem; padding: 2px 8px; border-radius: 12px; margin-left: 8px; }
+        .footer-note { text-align: center; font-size: 0.75rem; color: var(--text-light); padding-top: 15px; border-top: 1px solid var(--border); margin-top: 15px; }
 
         /* FEATURES */
         .features { list-style: none; padding: 0; margin: 30px 0; text-align: left; }
@@ -251,16 +267,12 @@
         /* FAQ SECTION */
         .faq-section { max-width: 600px; margin: 40px auto 60px; padding: 0 20px; }
         .faq-title { text-align: center; font-weight: 800; color: var(--primary); margin-bottom: 25px; font-size: 22px; }
-        .faq-item { 
-            background: white; 
-            border-radius: 12px; 
-            margin-bottom: 15px; 
-            padding: 20px; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04); 
-            border: 1px solid rgba(0,0,0,0.03);
-        }
-        .faq-q { font-weight: 700; color: var(--text); font-size: 16px; margin-bottom: 8px; }
-        .faq-a { color: var(--text-light); font-size: 15px; line-height: 1.6; }
+        details { background: white; border-radius: 12px; margin-bottom: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.03); overflow: hidden; }
+        summary { padding: 15px; font-weight: 700; cursor: pointer; color: var(--text); font-size: 15px; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: "+"; color: var(--primary); font-size: 18px; }
+        details[open] summary::after { content: "-"; }
+        .faq-a { padding: 0 15px 15px; color: var(--text-light); font-size: 14px; line-height: 1.5; border-top: 1px solid #f1f5f9; margin-top: 5px; padding-top: 10px; }
 
         footer { 
             text-align: center; 
@@ -273,53 +285,10 @@
         footer a { color: var(--text-light); transition: 0.2s; }
         footer a:hover { color: var(--primary); }
 
-        /* --- MOBILE OPTIMIZATION OVERRIDES --- */
-        @media (max-width: 768px) {
-            /* Compress the Hero Section */
-            .hero { padding: 30px 15px 90px; }
-            .hero h1 { font-size: 24px; margin-bottom: 10px; }
-            .hero p { font-size: 15px; margin-bottom: 10px; }
-            
-            /* Pull the main card up and tighten internal padding */
-            .container { margin: -70px auto 30px; padding: 0 12px; }
-            .card-body { padding: 20px 15px; }
-            
-            /* Shrink headers and text */
-            .product-title { font-size: 20px; }
-            .product-subtitle { font-size: 14px; margin-bottom: 10px; }
-            .price-container { padding: 12px; margin: 15px 0; }
-            .new-price { font-size: 24px; }
-            
-            /* Compress the Features List */
-            .features { margin: 15px 0; }
-            .features li { padding: 8px 0; font-size: 13.5px; gap: 10px; }
-            .icon-check { font-size: 14px; }
-
-            /* Compress Comparison Tables */
-            .comparison-table-wrapper { 
-                overflow-x: auto; 
-                margin: 0 -15px; 
-                padding: 0 15px 10px; 
-                /* Enables horizontal swipe if screen is too narrow */
-            }
-            .comparison-table-wrapper > div { min-width: 340px; }
-            
-            /* Shrink 3-Step Infographic */
-            .step-row { gap: 2px !important; padding: 10px !important; }
-            .step-circle { width: 35px !important; height: 35px !important; font-size: 1.2rem !important; }
-            .step-text { font-size: 0.7rem !important; }
-            .step-arrow { font-size: 1.2rem !important; }
-
-            /* Compress FAQs & Testimonials */
-            .faq-section, .portfolio-section { padding: 0 15px; margin: 20px auto; }
-            .faq-item { padding: 12px 15px; margin-bottom: 10px; }
-            .faq-q { font-size: 14.5px; margin-bottom: 4px; }
-            .faq-a { font-size: 13.5px; }
-            
-            .grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-            .thumb { height: 90px; }
-            
-            footer { padding: 25px 15px; }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 28px; }
+            .grid { grid-template-columns: 1fr 1fr; }
+            .pricing-row { grid-template-columns: 1fr 1fr 1fr; font-size: 0.75rem; padding: 10px; }
         }
 
         /* STICKY WHATSAPP BUTTON */
@@ -353,42 +322,6 @@
             }
         }
     </style>
-    <style>
-        /* Add this to your main CSS block */
-        details { background: white; border-radius: 12px; margin-bottom: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.03); overflow: hidden; }
-        summary { padding: 15px; font-weight: 700; cursor: pointer; color: var(--text); font-size: 15px; list-style: none; display: flex; justify-content: space-between; align-items: center; }
-        summary::-webkit-details-marker { display: none; }
-        summary::after { content: "+"; color: var(--primary); font-size: 18px; }
-        details[open] summary::after { content: "-"; }
-        .faq-a { padding: 0 15px 15px; color: var(--text-light); font-size: 14px; line-height: 1.5; border-top: 1px solid #f1f5f9; margin-top: 5px; padding-top: 10px; }
-    </style>
-    <!-- Google Translate Widget -->
-    <style>
-        #google_translate_element {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            z-index: 10000;
-            background: rgba(255,255,255,0.9);
-            padding: 5px 10px;
-            border-radius: 6px;
-            border: 1px solid var(--border);
-            font-size: 13px;
-            box-shadow: var(--shadow);
-        }
-        #google_translate_element select {
-            border: none;
-            background: transparent;
-            font-family: inherit;
-            font-weight: 600;
-            color: var(--text);
-            cursor: pointer;
-            outline: none;
-        }
-        .goog-logo-link { display: none !important; }
-        .goog-te-gadget { color: transparent !important; }
-        .goog-te-gadget .goog-te-combo { margin: 0 !important; }
-    </style>
 </head>
 <body>
 
@@ -401,7 +334,7 @@
         <div id="google_translate_element"></div>
     </nav>
 
-        <header class="hero">
+    <header class="hero">
         <h1>A Custom Website for Your Clinic</h1>
         <p>Patients search online before they call. Give your practice a clean, professional digital presence that builds trust, shares your services, and makes booking effortless.</p>
     </header>
@@ -411,17 +344,38 @@
         <div class="offer-card">
             <div class="header-ribbon">Built for Clinics in Assam</div>
             
-                        <div class="card-body">
-                <div class="product-title">Custom Clinic Website + Booking</div>
+            <div class="card-body">
+                <div class="product-title">Clinic Website Solutions</div>
                 <div class="product-subtitle">Design & Development for Independent Clinics</div>
                 
-                <div class="target-audience">Perfect for: Healthcare Clinics · Surgical Centres</div>
-                <div class="price-container" style="background: #eef2ff; border: 1px solid #c7d2fe;">
-                    <div style="font-size:14px; color:#4338ca; font-weight:700; margin-bottom:2px;">
-                        <i class="fa-solid fa-calculator"></i> The Math:
+                <div class="target-audience">Perfect for: Ophthalmologists · Dentists · Surgical Centres</div>
+
+                <!-- NEW 3-TIER PRICING TABLE -->
+                <div class="pricing-container">
+                    <div class="pricing-row header">
+                        <div>Plan</div>
+                        <div style="text-align:center;">Setup</div>
+                        <div style="text-align:center;">AMC / Year</div>
                     </div>
-                    <div class="validity" style="color:#4338ca;">Setup: ₹15k | AMC: ₹10k/year ( ₹833/month )</div>
+                    <div class="pricing-row">
+                        <div class="plan-name">WhatsApp Connect <span class="plan-badge">Start Here</span></div>
+                        <div class="plan-price">₹10k</div>
+                        <div class="plan-amc">₹3k</div>
+                    </div>
+                    <div class="pricing-row highlight">
+                        <div class="plan-name">Smart Queue <span class="plan-badge" style="background:#3b82f6;">Most Popular</span></div>
+                        <div class="plan-price">₹15k</div>
+                        <div class="plan-amc">₹5k</div>
+                    </div>
+                    <div class="pricing-row">
+                        <div class="plan-name">Admin Dashboard</div>
+                        <div class="plan-price">₹25k</div>
+                        <div class="plan-amc">₹10k</div>
+                    </div>
                 </div>
+                <div class="footer-note">All plans include a 24-hour custom demo. No plugin updates. No bloated WordPress agency fees.</div>
+
+                <!-- Core Features -->
                 <ul class="features">
                     <li>
                         <i class="fa-solid fa-ban icon-check"></i>
@@ -466,10 +420,15 @@
                 <a href="#portfolio" class="cta-btn btn-order">
                     <i class="fa-solid fa-eye"></i> View Clinic Demos
                 </a>
+                
+                <div style="font-size:12px;color:#6b7280;margin-top:8px;margin-bottom:15px; border-top: 1px solid var(--border); padding-top: 15px;">
+                    <i class="fa-regular fa-clock" style="color: var(--gold);"></i> Free 30-minute consultation to discuss your clinic's needs.
+                </div>
             </div>
-        <div>
-    <div>
-        
+        </div>
+
+    </div>
+
     <div id="portfolio" class="portfolio-section">
         <div class="section-title">Live Clinic Demo Previews</div>
         <p style="font-size:16px; color:#64748b; margin-bottom:10px;">See what your patients will experience when they search for your clinic.</p>
@@ -478,7 +437,6 @@
         <div class="grid">
             <a href="https://ratankalita-lgtm.github.io/clinic/" target="_blank" class="grid-item">
                 <div class="thumb-container">
-                    <!-- Replace with a clinical/ophthalmology placeholder -->
                     <div style="height:120px; background:#e2e8f0; display:flex; align-items:center; justify-content:center; color:#6b7280;">👁️ Clinic Demo A</div>
                 </div>
                 <div class="item-info">
@@ -501,24 +459,24 @@
         </div>
     </div>
     
-           <div class="faq-section">
-    <div class="faq-title">Questions from local clinics</div>
-    
-    <details>
-        <summary>Why do I need a website if I already have a Facebook page?</summary>
-        <div class="faq-a">Facebook feeds are crowded. Patients miss your contact info. A website gives you a permanent, professional home that never gets buried in the algorithm.</div>
-    </details>
-    
-    <details>
-        <summary>How much time does it take to set up?</summary>
-        <div class="faq-a">Once you send me your clinic name, doctor photos, and address, I can have a live preview for you within 24 hours.</div>
-    </details>
-    
-    <details>
-        <summary>Is the ₹15k setup + ₹10k AMC for one year?</summary>
-        <div class="faq-a">Yes. The setup fee covers the custom coding. The AMC covers your domain, SSL security, hosting, and unlimited minor content updates.</div>
-    </details>
-</div>
+    <div class="faq-section">
+        <div class="faq-title">Questions from local clinics</div>
+        
+        <details>
+            <summary>What if I just want a WhatsApp button and not a complex system?</summary>
+            <div class="faq-a">The <strong>WhatsApp Connect</strong> plan is perfect for this. We build your premium mobile site, and when a patient books, it opens a pre-filled WhatsApp message directly to your clinic number. ₹10k setup + ₹3k/year.</div>
+        </details>
+        
+        <details>
+            <summary>How do I upgrade from WhatsApp to a full dashboard later?</summary>
+            <div class="faq-a">Seamlessly. You can move up to the <strong>Smart Queue</strong> or <strong>Admin Dashboard</strong> tiers anytime. The AMC simply adjusts to the new tier, and we migrate your existing data to the new system.</div>
+        </details>
+        
+        <details>
+            <summary>How much time does it take to set up?</summary>
+            <div class="faq-a">Once you send me your clinic name, doctor photos, and address, I can have a live preview for you within 24 hours.</div>
+        </details>
+    </div>
   
     <footer>
         <p>NE Connect · Premium Business Solutions<br>Guwahati, Assam - 781024</p>
@@ -534,6 +492,7 @@
     <a href="https://wa.me/916001699400?text=Hi%20Ratan!%20I%20run%20a%20clinic%20in%20Assam.%20I%20want%20to%20know%20more%20about%20the%20custom%20website%20and%20zero-commission%20booking%20system." class="sticky-wa" target="_blank" aria-label="Chat on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
+    
     <script type="text/javascript">
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({
